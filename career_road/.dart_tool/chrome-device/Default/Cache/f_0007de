@@ -1,0 +1,3727 @@
+define(['dart_sdk', 'packages/flutter/src/widgets/widget_span.dart', 'packages/flutter/src/material/icon_button.dart', 'packages/career_road/utilities/constants.dart', 'packages/google_nav_bar/src/gnav.dart', 'packages/google_nav_bar/src/gbutton.dart', 'packages/flutter/src/material/icons.dart', 'packages/flutter/src/material/colors.dart', 'packages/flutter/src/widgets/single_child_scroll_view.dart', 'packages/flutter/src/rendering/flex.dart', 'packages/flutter/src/widgets/scroll_view.dart', 'packages/flutter/src/material/page.dart', 'packages/flutter/src/widgets/form.dart', 'packages/flutter/src/material/text_form_field.dart', 'packages/flutter/src/painting/edge_insets.dart', 'packages/flutter/src/material/input_border.dart', 'packages/flutter/src/widgets/icon.dart', 'packages/flutter/src/painting/rounded_rectangle_border.dart', 'packages/flutter/src/painting/border_radius.dart', 'packages/flutter/src/widgets/safe_area.dart', 'packages/bottom_navy_bar/bottom_navy_bar.dart'], (function load__packages__career_road__screens__career_screen_dart(dart_sdk, packages__flutter__src__widgets__widget_span$46dart, packages__flutter__src__material__icon_button$46dart, packages__career_road__utilities__constants$46dart, packages__google_nav_bar__src__gnav$46dart, packages__google_nav_bar__src__gbutton$46dart, packages__flutter__src__material__icons$46dart, packages__flutter__src__material__colors$46dart, packages__flutter__src__widgets__single_child_scroll_view$46dart, packages__flutter__src__rendering__flex$46dart, packages__flutter__src__widgets__scroll_view$46dart, packages__flutter__src__material__page$46dart, packages__flutter__src__widgets__form$46dart, packages__flutter__src__material__text_form_field$46dart, packages__flutter__src__painting__edge_insets$46dart, packages__flutter__src__material__input_border$46dart, packages__flutter__src__widgets__icon$46dart, packages__flutter__src__painting__rounded_rectangle_border$46dart, packages__flutter__src__painting__border_radius$46dart, packages__flutter__src__widgets__safe_area$46dart, packages__bottom_navy_bar__bottom_navy_bar$46dart) {
+  'use strict';
+  const core = dart_sdk.core;
+  const _interceptors = dart_sdk._interceptors;
+  const async = dart_sdk.async;
+  const dart = dart_sdk.dart;
+  const dartx = dart_sdk.dartx;
+  const framework = packages__flutter__src__widgets__widget_span$46dart.src__widgets__framework;
+  const basic = packages__flutter__src__widgets__widget_span$46dart.src__widgets__basic;
+  const text = packages__flutter__src__widgets__widget_span$46dart.src__widgets__text;
+  const widget_inspector = packages__flutter__src__widgets__widget_span$46dart.src__widgets__widget_inspector;
+  const container = packages__flutter__src__widgets__widget_span$46dart.src__widgets__container;
+  const navigator = packages__flutter__src__widgets__widget_span$46dart.src__widgets__navigator;
+  const media_query = packages__flutter__src__widgets__widget_span$46dart.src__widgets__media_query;
+  const editable_text = packages__flutter__src__widgets__widget_span$46dart.src__widgets__editable_text;
+  const visibility = packages__flutter__src__widgets__widget_span$46dart.src__widgets__visibility;
+  const scaffold = packages__flutter__src__material__icon_button$46dart.src__material__scaffold;
+  const app_bar = packages__flutter__src__material__icon_button$46dart.src__material__app_bar;
+  const list_tile = packages__flutter__src__material__icon_button$46dart.src__material__list_tile;
+  const input_decorator = packages__flutter__src__material__icon_button$46dart.src__material__input_decorator;
+  const raised_button = packages__flutter__src__material__icon_button$46dart.src__material__raised_button;
+  const constants = packages__career_road__utilities__constants$46dart.utilities__constants;
+  const gnav = packages__google_nav_bar__src__gnav$46dart.src__gnav;
+  const gbutton = packages__google_nav_bar__src__gbutton$46dart.src__gbutton;
+  const icons = packages__flutter__src__material__icons$46dart.src__material__icons;
+  const colors = packages__flutter__src__material__colors$46dart.src__material__colors;
+  const single_child_scroll_view = packages__flutter__src__widgets__single_child_scroll_view$46dart.src__widgets__single_child_scroll_view;
+  const flex = packages__flutter__src__rendering__flex$46dart.src__rendering__flex;
+  const scroll_view = packages__flutter__src__widgets__scroll_view$46dart.src__widgets__scroll_view;
+  const page = packages__flutter__src__material__page$46dart.src__material__page;
+  const form = packages__flutter__src__widgets__form$46dart.src__widgets__form;
+  const text_form_field = packages__flutter__src__material__text_form_field$46dart.src__material__text_form_field;
+  const edge_insets = packages__flutter__src__painting__edge_insets$46dart.src__painting__edge_insets;
+  const input_border = packages__flutter__src__material__input_border$46dart.src__material__input_border;
+  const icon = packages__flutter__src__widgets__icon$46dart.src__widgets__icon;
+  const rounded_rectangle_border = packages__flutter__src__painting__rounded_rectangle_border$46dart.src__painting__rounded_rectangle_border;
+  const border_radius = packages__flutter__src__painting__border_radius$46dart.src__painting__border_radius;
+  const safe_area = packages__flutter__src__widgets__safe_area$46dart.src__widgets__safe_area;
+  const bottom_navy_bar = packages__bottom_navy_bar__bottom_navy_bar$46dart.bottom_navy_bar;
+  var career_screen = Object.create(dart.library);
+  var search_screen = Object.create(dart.library);
+  var searchBar = Object.create(dart.library);
+  var home_screen = Object.create(dart.library);
+  var menu_screen = Object.create(dart.library);
+  var quiz_screen = Object.create(dart.library);
+  var bookmark_screen = Object.create(dart.library);
+  var bottomNavBar = Object.create(dart.library);
+  var career_list_screen = Object.create(dart.library);
+  var $toString = dartx.toString;
+  var $isEmpty = dartx.isEmpty;
+  dart._checkModuleNullSafetyMode(false);
+  var T = {
+    _LocationL: () => (T._LocationL = dart.constFn(dart.legacy(widget_inspector._Location)))(),
+    VoidToNull: () => (T.VoidToNull = dart.constFn(dart.fnType(core.Null, [])))(),
+    GButtonL: () => (T.GButtonL = dart.constFn(dart.legacy(gbutton.GButton)))(),
+    JSArrayOfGButtonL: () => (T.JSArrayOfGButtonL = dart.constFn(_interceptors.JSArray$(T.GButtonL())))(),
+    intL: () => (T.intL = dart.constFn(dart.legacy(core.int)))(),
+    intLToNull: () => (T.intLToNull = dart.constFn(dart.fnType(core.Null, [T.intL()])))(),
+    WidgetL: () => (T.WidgetL = dart.constFn(dart.legacy(framework.Widget)))(),
+    JSArrayOfWidgetL: () => (T.JSArrayOfWidgetL = dart.constFn(_interceptors.JSArray$(T.WidgetL())))(),
+    CareerScreenL: () => (T.CareerScreenL = dart.constFn(dart.legacy(career_screen.CareerScreen)))(),
+    BuildContextL: () => (T.BuildContextL = dart.constFn(dart.legacy(framework.BuildContext)))(),
+    BuildContextLToCareerScreenL: () => (T.BuildContextLToCareerScreenL = dart.constFn(dart.fnType(T.CareerScreenL(), [T.BuildContextL()])))(),
+    ListTileL: () => (T.ListTileL = dart.constFn(dart.legacy(list_tile.ListTile)))(),
+    BuildContextLAndintLToListTileL: () => (T.BuildContextLAndintLToListTileL = dart.constFn(dart.fnType(T.ListTileL(), [T.BuildContextL(), T.intL()])))(),
+    FormStateL: () => (T.FormStateL = dart.constFn(dart.legacy(form.FormState)))(),
+    GlobalKeyOfFormStateL: () => (T.GlobalKeyOfFormStateL = dart.constFn(framework.GlobalKey$(T.FormStateL())))(),
+    StringL: () => (T.StringL = dart.constFn(dart.legacy(core.String)))(),
+    StringLToStringL: () => (T.StringLToStringL = dart.constFn(dart.fnType(T.StringL(), [T.StringL()])))(),
+    StringLToNull: () => (T.StringLToNull = dart.constFn(dart.fnType(core.Null, [T.StringL()])))(),
+    SearchScreenL: () => (T.SearchScreenL = dart.constFn(dart.legacy(search_screen.SearchScreen)))(),
+    BuildContextLToSearchScreenL: () => (T.BuildContextLToSearchScreenL = dart.constFn(dart.fnType(T.SearchScreenL(), [T.BuildContextL()])))(),
+    FutureOfNull: () => (T.FutureOfNull = dart.constFn(async.Future$(core.Null)))(),
+    FutureLOfNull: () => (T.FutureLOfNull = dart.constFn(dart.legacy(T.FutureOfNull())))(),
+    VoidToFutureLOfNull: () => (T.VoidToFutureLOfNull = dart.constFn(dart.fnType(T.FutureLOfNull(), [])))(),
+    QuizScreenL: () => (T.QuizScreenL = dart.constFn(dart.legacy(quiz_screen.QuizScreen)))(),
+    BuildContextLToQuizScreenL: () => (T.BuildContextLToQuizScreenL = dart.constFn(dart.fnType(T.QuizScreenL(), [T.BuildContextL()])))(),
+    HomeScreenL: () => (T.HomeScreenL = dart.constFn(dart.legacy(home_screen.HomeScreen)))(),
+    BuildContextLToHomeScreenL: () => (T.BuildContextLToHomeScreenL = dart.constFn(dart.fnType(T.HomeScreenL(), [T.BuildContextL()])))(),
+    CareerListScreenL: () => (T.CareerListScreenL = dart.constFn(dart.legacy(career_list_screen.CareerListScreen)))(),
+    BuildContextLToCareerListScreenL: () => (T.BuildContextLToCareerListScreenL = dart.constFn(dart.fnType(T.CareerListScreenL(), [T.BuildContextL()])))(),
+    BookmarkScreenL: () => (T.BookmarkScreenL = dart.constFn(dart.legacy(bookmark_screen.BookmarkScreen)))(),
+    BuildContextLToBookmarkScreenL: () => (T.BuildContextLToBookmarkScreenL = dart.constFn(dart.fnType(T.BookmarkScreenL(), [T.BuildContextL()])))(),
+    MenuL: () => (T.MenuL = dart.constFn(dart.legacy(menu_screen.Menu)))(),
+    BuildContextLToMenuL: () => (T.BuildContextLToMenuL = dart.constFn(dart.fnType(T.MenuL(), [T.BuildContextL()])))(),
+    intLTovoid: () => (T.intLTovoid = dart.constFn(dart.fnType(dart.void, [T.intL()])))(),
+    BottomNavyBarItemL: () => (T.BottomNavyBarItemL = dart.constFn(dart.legacy(bottom_navy_bar.BottomNavyBarItem)))(),
+    JSArrayOfBottomNavyBarItemL: () => (T.JSArrayOfBottomNavyBarItemL = dart.constFn(_interceptors.JSArray$(T.BottomNavyBarItemL())))()
+  };
+  var T$Eval = Object.assign({
+    _: () => T$Eval
+  }, T);
+  var S = {
+    _: () => S
+  };
+  var S$Eval = Object.assign({
+    _: () => S$Eval
+  }, S);
+  const CT = Object.create({
+    _: () => (C, CT)
+  });
+  dart.defineLazy(CT, {
+    get C2() {
+      return C[2] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "data",
+        [_Location_column]: 35,
+        [_Location_line]: 20,
+        [_Location_file]: null
+      });
+    },
+    get C1() {
+      return C[1] = dart.constList([C[2] || CT.C2], T._LocationL());
+    },
+    get C0() {
+      return C[0] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[1] || CT.C1,
+        [_Location_name]: null,
+        [_Location_column]: 30,
+        [_Location_line]: 20,
+        [_Location_file]: "file:///C:/Users/haier/Downloads/Compressed/fyp/CareerRoad/career_road/lib/screens/career_screen.dart"
+      });
+    },
+    get C5() {
+      return C[5] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 23,
+        [_Location_line]: 20,
+        [_Location_file]: null
+      });
+    },
+    get C4() {
+      return C[4] = dart.constList([C[5] || CT.C5], T._LocationL());
+    },
+    get C3() {
+      return C[3] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[4] || CT.C4,
+        [_Location_name]: null,
+        [_Location_column]: 16,
+        [_Location_line]: 20,
+        [_Location_file]: "file:///C:/Users/haier/Downloads/Compressed/fyp/CareerRoad/career_road/lib/screens/career_screen.dart"
+      });
+    },
+    get C8() {
+      return C[8] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "title",
+        [_Location_column]: 9,
+        [_Location_line]: 20,
+        [_Location_file]: null
+      });
+    },
+    get C9() {
+      return C[9] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "automaticallyImplyLeading",
+        [_Location_column]: 9,
+        [_Location_line]: 21,
+        [_Location_file]: null
+      });
+    },
+    get C7() {
+      return C[7] = dart.constList([C[8] || CT.C8, C[9] || CT.C9], T._LocationL());
+    },
+    get C6() {
+      return C[6] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[7] || CT.C7,
+        [_Location_name]: null,
+        [_Location_column]: 15,
+        [_Location_line]: 19,
+        [_Location_file]: "file:///C:/Users/haier/Downloads/Compressed/fyp/CareerRoad/career_road/lib/screens/career_screen.dart"
+      });
+    },
+    get C12() {
+      return C[12] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "icon",
+        [_Location_column]: 17,
+        [_Location_line]: 29,
+        [_Location_file]: null
+      });
+    },
+    get C13() {
+      return C[13] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "text",
+        [_Location_column]: 17,
+        [_Location_line]: 30,
+        [_Location_file]: null
+      });
+    },
+    get C14() {
+      return C[14] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "textStyle",
+        [_Location_column]: 17,
+        [_Location_line]: 31,
+        [_Location_file]: null
+      });
+    },
+    get C15() {
+      return C[15] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "iconColor",
+        [_Location_column]: 17,
+        [_Location_line]: 32,
+        [_Location_file]: null
+      });
+    },
+    get C16() {
+      return C[16] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "iconActiveColor",
+        [_Location_column]: 17,
+        [_Location_line]: 33,
+        [_Location_file]: null
+      });
+    },
+    get C17() {
+      return C[17] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "onPressed",
+        [_Location_column]: 17,
+        [_Location_line]: 34,
+        [_Location_file]: null
+      });
+    },
+    get C11() {
+      return C[11] = dart.constList([C[12] || CT.C12, C[13] || CT.C13, C[14] || CT.C14, C[15] || CT.C15, C[16] || CT.C16, C[17] || CT.C17], T._LocationL());
+    },
+    get C10() {
+      return C[10] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[11] || CT.C11,
+        [_Location_name]: null,
+        [_Location_column]: 15,
+        [_Location_line]: 28,
+        [_Location_file]: "file:///C:/Users/haier/Downloads/Compressed/fyp/CareerRoad/career_road/lib/screens/career_screen.dart"
+      });
+    },
+    get C20() {
+      return C[20] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "icon",
+        [_Location_column]: 17,
+        [_Location_line]: 41,
+        [_Location_file]: null
+      });
+    },
+    get C21() {
+      return C[21] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "text",
+        [_Location_column]: 17,
+        [_Location_line]: 42,
+        [_Location_file]: null
+      });
+    },
+    get C22() {
+      return C[22] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "textStyle",
+        [_Location_column]: 17,
+        [_Location_line]: 43,
+        [_Location_file]: null
+      });
+    },
+    get C23() {
+      return C[23] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "iconColor",
+        [_Location_column]: 17,
+        [_Location_line]: 44,
+        [_Location_file]: null
+      });
+    },
+    get C24() {
+      return C[24] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "iconActiveColor",
+        [_Location_column]: 17,
+        [_Location_line]: 45,
+        [_Location_file]: null
+      });
+    },
+    get C25() {
+      return C[25] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "onPressed",
+        [_Location_column]: 17,
+        [_Location_line]: 46,
+        [_Location_file]: null
+      });
+    },
+    get C19() {
+      return C[19] = dart.constList([C[20] || CT.C20, C[21] || CT.C21, C[22] || CT.C22, C[23] || CT.C23, C[24] || CT.C24, C[25] || CT.C25], T._LocationL());
+    },
+    get C18() {
+      return C[18] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[19] || CT.C19,
+        [_Location_name]: null,
+        [_Location_column]: 15,
+        [_Location_line]: 40,
+        [_Location_file]: "file:///C:/Users/haier/Downloads/Compressed/fyp/CareerRoad/career_road/lib/screens/career_screen.dart"
+      });
+    },
+    get C28() {
+      return C[28] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "icon",
+        [_Location_column]: 17,
+        [_Location_line]: 53,
+        [_Location_file]: null
+      });
+    },
+    get C29() {
+      return C[29] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "text",
+        [_Location_column]: 17,
+        [_Location_line]: 54,
+        [_Location_file]: null
+      });
+    },
+    get C30() {
+      return C[30] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "textStyle",
+        [_Location_column]: 17,
+        [_Location_line]: 55,
+        [_Location_file]: null
+      });
+    },
+    get C31() {
+      return C[31] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "iconColor",
+        [_Location_column]: 17,
+        [_Location_line]: 56,
+        [_Location_file]: null
+      });
+    },
+    get C32() {
+      return C[32] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "iconActiveColor",
+        [_Location_column]: 17,
+        [_Location_line]: 57,
+        [_Location_file]: null
+      });
+    },
+    get C33() {
+      return C[33] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "onPressed",
+        [_Location_column]: 17,
+        [_Location_line]: 58,
+        [_Location_file]: null
+      });
+    },
+    get C27() {
+      return C[27] = dart.constList([C[28] || CT.C28, C[29] || CT.C29, C[30] || CT.C30, C[31] || CT.C31, C[32] || CT.C32, C[33] || CT.C33], T._LocationL());
+    },
+    get C26() {
+      return C[26] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[27] || CT.C27,
+        [_Location_name]: null,
+        [_Location_column]: 15,
+        [_Location_line]: 52,
+        [_Location_file]: "file:///C:/Users/haier/Downloads/Compressed/fyp/CareerRoad/career_road/lib/screens/career_screen.dart"
+      });
+    },
+    get C36() {
+      return C[36] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "haptic",
+        [_Location_column]: 13,
+        [_Location_line]: 26,
+        [_Location_file]: null
+      });
+    },
+    get C37() {
+      return C[37] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "tabs",
+        [_Location_column]: 13,
+        [_Location_line]: 27,
+        [_Location_file]: null
+      });
+    },
+    get C38() {
+      return C[38] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "selectedIndex",
+        [_Location_column]: 13,
+        [_Location_line]: 65,
+        [_Location_file]: null
+      });
+    },
+    get C39() {
+      return C[39] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "onTabChange",
+        [_Location_column]: 13,
+        [_Location_line]: 66,
+        [_Location_file]: null
+      });
+    },
+    get C35() {
+      return C[35] = dart.constList([C[36] || CT.C36, C[37] || CT.C37, C[38] || CT.C38, C[39] || CT.C39], T._LocationL());
+    },
+    get C34() {
+      return C[34] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[35] || CT.C35,
+        [_Location_name]: null,
+        [_Location_column]: 11,
+        [_Location_line]: 25,
+        [_Location_file]: "file:///C:/Users/haier/Downloads/Compressed/fyp/CareerRoad/career_road/lib/screens/career_screen.dart"
+      });
+    },
+    get C42() {
+      return C[42] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "data",
+        [_Location_column]: 48,
+        [_Location_line]: 72,
+        [_Location_file]: null
+      });
+    },
+    get C41() {
+      return C[41] = dart.constList([C[42] || CT.C42], T._LocationL());
+    },
+    get C40() {
+      return C[40] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[41] || CT.C41,
+        [_Location_name]: null,
+        [_Location_column]: 28,
+        [_Location_line]: 72,
+        [_Location_file]: "file:///C:/Users/haier/Downloads/Compressed/fyp/CareerRoad/career_road/lib/screens/career_screen.dart"
+      });
+    },
+    get C45() {
+      return C[45] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 21,
+        [_Location_line]: 72,
+        [_Location_file]: null
+      });
+    },
+    get C44() {
+      return C[44] = dart.constList([C[45] || CT.C45], T._LocationL());
+    },
+    get C43() {
+      return C[43] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[44] || CT.C44,
+        [_Location_name]: null,
+        [_Location_column]: 11,
+        [_Location_line]: 72,
+        [_Location_file]: "file:///C:/Users/haier/Downloads/Compressed/fyp/CareerRoad/career_road/lib/screens/career_screen.dart"
+      });
+    },
+    get C48() {
+      return C[48] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "children",
+        [_Location_column]: 9,
+        [_Location_line]: 24,
+        [_Location_file]: null
+      });
+    },
+    get C47() {
+      return C[47] = dart.constList([C[48] || CT.C48], T._LocationL());
+    },
+    get C46() {
+      return C[46] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[47] || CT.C47,
+        [_Location_name]: null,
+        [_Location_column]: 13,
+        [_Location_line]: 23,
+        [_Location_file]: "file:///C:/Users/haier/Downloads/Compressed/fyp/CareerRoad/career_road/lib/screens/career_screen.dart"
+      });
+    },
+    get C51() {
+      return C[51] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "bottomNavIndex",
+        [_Location_column]: 41,
+        [_Location_line]: 75,
+        [_Location_file]: null
+      });
+    },
+    get C50() {
+      return C[50] = dart.constList([C[51] || CT.C51], T._LocationL());
+    },
+    get C49() {
+      return C[49] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[50] || CT.C50,
+        [_Location_name]: null,
+        [_Location_column]: 28,
+        [_Location_line]: 75,
+        [_Location_file]: "file:///C:/Users/haier/Downloads/Compressed/fyp/CareerRoad/career_road/lib/screens/career_screen.dart"
+      });
+    },
+    get C54() {
+      return C[54] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "backgroundColor",
+        [_Location_column]: 7,
+        [_Location_line]: 18,
+        [_Location_file]: null
+      });
+    },
+    get C55() {
+      return C[55] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "appBar",
+        [_Location_column]: 7,
+        [_Location_line]: 19,
+        [_Location_file]: null
+      });
+    },
+    get C56() {
+      return C[56] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "body",
+        [_Location_column]: 7,
+        [_Location_line]: 23,
+        [_Location_file]: null
+      });
+    },
+    get C57() {
+      return C[57] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "bottomNavigationBar",
+        [_Location_column]: 7,
+        [_Location_line]: 75,
+        [_Location_file]: null
+      });
+    },
+    get C53() {
+      return C[53] = dart.constList([C[54] || CT.C54, C[55] || CT.C55, C[56] || CT.C56, C[57] || CT.C57], T._LocationL());
+    },
+    get C52() {
+      return C[52] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[53] || CT.C53,
+        [_Location_name]: null,
+        [_Location_column]: 12,
+        [_Location_line]: 17,
+        [_Location_file]: "file:///C:/Users/haier/Downloads/Compressed/fyp/CareerRoad/career_road/lib/screens/career_screen.dart"
+      });
+    },
+    get C60() {
+      return C[60] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "data",
+        [_Location_column]: 35,
+        [_Location_line]: 17,
+        [_Location_file]: null
+      });
+    },
+    get C59() {
+      return C[59] = dart.constList([C[60] || CT.C60], T._LocationL());
+    },
+    get C58() {
+      return C[58] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[59] || CT.C59,
+        [_Location_name]: null,
+        [_Location_column]: 30,
+        [_Location_line]: 17,
+        [_Location_file]: "file:///C:/Users/haier/Downloads/Compressed/fyp/CareerRoad/career_road/lib/screens/search_screen.dart"
+      });
+    },
+    get C63() {
+      return C[63] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 23,
+        [_Location_line]: 17,
+        [_Location_file]: null
+      });
+    },
+    get C62() {
+      return C[62] = dart.constList([C[63] || CT.C63], T._LocationL());
+    },
+    get C61() {
+      return C[61] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[62] || CT.C62,
+        [_Location_name]: null,
+        [_Location_column]: 16,
+        [_Location_line]: 17,
+        [_Location_file]: "file:///C:/Users/haier/Downloads/Compressed/fyp/CareerRoad/career_road/lib/screens/search_screen.dart"
+      });
+    },
+    get C66() {
+      return C[66] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "title",
+        [_Location_column]: 9,
+        [_Location_line]: 17,
+        [_Location_file]: null
+      });
+    },
+    get C67() {
+      return C[67] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "automaticallyImplyLeading",
+        [_Location_column]: 9,
+        [_Location_line]: 18,
+        [_Location_file]: null
+      });
+    },
+    get C65() {
+      return C[65] = dart.constList([C[66] || CT.C66, C[67] || CT.C67], T._LocationL());
+    },
+    get C64() {
+      return C[64] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[65] || CT.C65,
+        [_Location_name]: null,
+        [_Location_column]: 15,
+        [_Location_line]: 16,
+        [_Location_file]: "file:///C:/Users/haier/Downloads/Compressed/fyp/CareerRoad/career_road/lib/screens/search_screen.dart"
+      });
+    },
+    get C70() {
+      return C[70] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "data",
+        [_Location_column]: 45,
+        [_Location_line]: 29,
+        [_Location_file]: null
+      });
+    },
+    get C71() {
+      return C[71] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "style",
+        [_Location_column]: 57,
+        [_Location_line]: 29,
+        [_Location_file]: null
+      });
+    },
+    get C69() {
+      return C[69] = dart.constList([C[70] || CT.C70, C[71] || CT.C71], T._LocationL());
+    },
+    get C68() {
+      return C[68] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[69] || CT.C69,
+        [_Location_name]: null,
+        [_Location_column]: 28,
+        [_Location_line]: 29,
+        [_Location_file]: "file:///C:/Users/haier/Downloads/Compressed/fyp/CareerRoad/career_road/lib/screens/search_screen.dart"
+      });
+    },
+    get C74() {
+      return C[74] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "data",
+        [_Location_column]: 31,
+        [_Location_line]: 30,
+        [_Location_file]: null
+      });
+    },
+    get C73() {
+      return C[73] = dart.constList([C[74] || CT.C74], T._LocationL());
+    },
+    get C72() {
+      return C[72] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[73] || CT.C73,
+        [_Location_name]: null,
+        [_Location_column]: 26,
+        [_Location_line]: 30,
+        [_Location_file]: "file:///C:/Users/haier/Downloads/Compressed/fyp/CareerRoad/career_road/lib/screens/search_screen.dart"
+      });
+    },
+    get C76() {
+      return C[76] = dart.constList([], T._LocationL());
+    },
+    get C75() {
+      return C[75] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[76] || CT.C76,
+        [_Location_name]: null,
+        [_Location_column]: 51,
+        [_Location_line]: 35,
+        [_Location_file]: "file:///C:/Users/haier/Downloads/Compressed/fyp/CareerRoad/career_road/lib/screens/search_screen.dart"
+      });
+    },
+    get C79() {
+      return C[79] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "leading",
+        [_Location_column]: 19,
+        [_Location_line]: 29,
+        [_Location_file]: null
+      });
+    },
+    get C80() {
+      return C[80] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "title",
+        [_Location_column]: 19,
+        [_Location_line]: 30,
+        [_Location_file]: null
+      });
+    },
+    get C81() {
+      return C[81] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "onTap",
+        [_Location_column]: 19,
+        [_Location_line]: 31,
+        [_Location_file]: null
+      });
+    },
+    get C78() {
+      return C[78] = dart.constList([C[79] || CT.C79, C[80] || CT.C80, C[81] || CT.C81], T._LocationL());
+    },
+    get C77() {
+      return C[77] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[78] || CT.C78,
+        [_Location_name]: null,
+        [_Location_column]: 24,
+        [_Location_line]: 28,
+        [_Location_file]: "file:///C:/Users/haier/Downloads/Compressed/fyp/CareerRoad/career_road/lib/screens/search_screen.dart"
+      });
+    },
+    get C84() {
+      return C[84] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "shrinkWrap",
+        [_Location_column]: 15,
+        [_Location_line]: 25,
+        [_Location_file]: null
+      });
+    },
+    get C85() {
+      return C[85] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "itemCount",
+        [_Location_column]: 15,
+        [_Location_line]: 26,
+        [_Location_file]: null
+      });
+    },
+    get C86() {
+      return C[86] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "itemBuilder",
+        [_Location_column]: 15,
+        [_Location_line]: 27,
+        [_Location_file]: null
+      });
+    },
+    get C83() {
+      return C[83] = dart.constList([C[84] || CT.C84, C[85] || CT.C85, C[86] || CT.C86], T._LocationL());
+    },
+    get C82() {
+      return C[82] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[83] || CT.C83,
+        [_Location_name]: null,
+        [_Location_column]: 22,
+        [_Location_line]: 24,
+        [_Location_file]: "file:///C:/Users/haier/Downloads/Compressed/fyp/CareerRoad/career_road/lib/screens/search_screen.dart"
+      });
+    },
+    get C89() {
+      return C[89] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "mainAxisAlignment",
+        [_Location_column]: 11,
+        [_Location_line]: 22,
+        [_Location_file]: null
+      });
+    },
+    get C90() {
+      return C[90] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "children",
+        [_Location_column]: 11,
+        [_Location_line]: 23,
+        [_Location_file]: null
+      });
+    },
+    get C88() {
+      return C[88] = dart.constList([C[89] || CT.C89, C[90] || CT.C90], T._LocationL());
+    },
+    get C87() {
+      return C[87] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[88] || CT.C88,
+        [_Location_name]: null,
+        [_Location_column]: 16,
+        [_Location_line]: 21,
+        [_Location_file]: "file:///C:/Users/haier/Downloads/Compressed/fyp/CareerRoad/career_road/lib/screens/search_screen.dart"
+      });
+    },
+    get C93() {
+      return C[93] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 9,
+        [_Location_line]: 21,
+        [_Location_file]: null
+      });
+    },
+    get C92() {
+      return C[92] = dart.constList([C[93] || CT.C93], T._LocationL());
+    },
+    get C91() {
+      return C[91] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[92] || CT.C92,
+        [_Location_name]: null,
+        [_Location_column]: 13,
+        [_Location_line]: 20,
+        [_Location_file]: "file:///C:/Users/haier/Downloads/Compressed/fyp/CareerRoad/career_road/lib/screens/search_screen.dart"
+      });
+    },
+    get C94() {
+      return C[94] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[76] || CT.C76,
+        [_Location_name]: null,
+        [_Location_column]: 28,
+        [_Location_line]: 43,
+        [_Location_file]: "file:///C:/Users/haier/Downloads/Compressed/fyp/CareerRoad/career_road/lib/screens/search_screen.dart"
+      });
+    },
+    get C97() {
+      return C[97] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "backgroundColor",
+        [_Location_column]: 7,
+        [_Location_line]: 15,
+        [_Location_file]: null
+      });
+    },
+    get C98() {
+      return C[98] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "appBar",
+        [_Location_column]: 7,
+        [_Location_line]: 16,
+        [_Location_file]: null
+      });
+    },
+    get C99() {
+      return C[99] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "body",
+        [_Location_column]: 7,
+        [_Location_line]: 20,
+        [_Location_file]: null
+      });
+    },
+    get C100() {
+      return C[100] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "bottomNavigationBar",
+        [_Location_column]: 7,
+        [_Location_line]: 43,
+        [_Location_file]: null
+      });
+    },
+    get C96() {
+      return C[96] = dart.constList([C[97] || CT.C97, C[98] || CT.C98, C[99] || CT.C99, C[100] || CT.C100], T._LocationL());
+    },
+    get C95() {
+      return C[95] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[96] || CT.C96,
+        [_Location_name]: null,
+        [_Location_column]: 12,
+        [_Location_line]: 14,
+        [_Location_file]: "file:///C:/Users/haier/Downloads/Compressed/fyp/CareerRoad/career_road/lib/screens/search_screen.dart"
+      });
+    },
+    get C103() {
+      return C[103] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "icon",
+        [_Location_column]: 23,
+        [_Location_line]: 32,
+        [_Location_file]: null
+      });
+    },
+    get C104() {
+      return C[104] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "color",
+        [_Location_column]: 17,
+        [_Location_line]: 33,
+        [_Location_file]: null
+      });
+    },
+    get C102() {
+      return C[102] = dart.constList([C[103] || CT.C103, C[104] || CT.C104], T._LocationL());
+    },
+    get C101() {
+      return C[101] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[102] || CT.C102,
+        [_Location_name]: null,
+        [_Location_column]: 27,
+        [_Location_line]: 31,
+        [_Location_file]: "file:///C:/Users/haier/Downloads/Compressed/fyp/CareerRoad/career_road/lib/components/searchBar.dart"
+      });
+    },
+    get C107() {
+      return C[107] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "decoration",
+        [_Location_column]: 13,
+        [_Location_line]: 28,
+        [_Location_file]: null
+      });
+    },
+    get C108() {
+      return C[108] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "validator",
+        [_Location_column]: 13,
+        [_Location_line]: 38,
+        [_Location_file]: null
+      });
+    },
+    get C109() {
+      return C[109] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "onChanged",
+        [_Location_column]: 13,
+        [_Location_line]: 44,
+        [_Location_file]: null
+      });
+    },
+    get C106() {
+      return C[106] = dart.constList([C[107] || CT.C107, C[108] || CT.C108, C[109] || CT.C109], T._LocationL());
+    },
+    get C105() {
+      return C[105] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[106] || CT.C106,
+        [_Location_name]: null,
+        [_Location_column]: 18,
+        [_Location_line]: 27,
+        [_Location_file]: "file:///C:/Users/haier/Downloads/Compressed/fyp/CareerRoad/career_road/lib/components/searchBar.dart"
+      });
+    },
+    get C112() {
+      return C[112] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "height",
+        [_Location_column]: 11,
+        [_Location_line]: 24,
+        [_Location_file]: null
+      });
+    },
+    get C113() {
+      return C[113] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "width",
+        [_Location_column]: 11,
+        [_Location_line]: 25,
+        [_Location_file]: null
+      });
+    },
+    get C114() {
+      return C[114] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "decoration",
+        [_Location_column]: 11,
+        [_Location_line]: 26,
+        [_Location_file]: null
+      });
+    },
+    get C115() {
+      return C[115] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 11,
+        [_Location_line]: 27,
+        [_Location_file]: null
+      });
+    },
+    get C111() {
+      return C[111] = dart.constList([C[112] || CT.C112, C[113] || CT.C113, C[114] || CT.C114, C[115] || CT.C115], T._LocationL());
+    },
+    get C110() {
+      return C[110] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[111] || CT.C111,
+        [_Location_name]: null,
+        [_Location_column]: 9,
+        [_Location_line]: 23,
+        [_Location_file]: "file:///C:/Users/haier/Downloads/Compressed/fyp/CareerRoad/career_road/lib/components/searchBar.dart"
+      });
+    },
+    get C118() {
+      return C[118] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "height",
+        [_Location_column]: 11,
+        [_Location_line]: 52,
+        [_Location_file]: null
+      });
+    },
+    get C117() {
+      return C[117] = dart.constList([C[118] || CT.C118], T._LocationL());
+    },
+    get C116() {
+      return C[116] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[117] || CT.C117,
+        [_Location_name]: null,
+        [_Location_column]: 9,
+        [_Location_line]: 51,
+        [_Location_file]: "file:///C:/Users/haier/Downloads/Compressed/fyp/CareerRoad/career_road/lib/components/searchBar.dart"
+      });
+    },
+    get C119() {
+      return C[119] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[76] || CT.C76,
+        [_Location_name]: null,
+        [_Location_column]: 41,
+        [_Location_line]: 69,
+        [_Location_file]: "file:///C:/Users/haier/Downloads/Compressed/fyp/CareerRoad/career_road/lib/components/searchBar.dart"
+      });
+    },
+    get C122() {
+      return C[122] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "data",
+        [_Location_column]: 23,
+        [_Location_line]: 76,
+        [_Location_file]: null
+      });
+    },
+    get C121() {
+      return C[121] = dart.constList([C[122] || CT.C122], T._LocationL());
+    },
+    get C120() {
+      return C[120] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[121] || CT.C121,
+        [_Location_name]: null,
+        [_Location_column]: 18,
+        [_Location_line]: 76,
+        [_Location_file]: "file:///C:/Users/haier/Downloads/Compressed/fyp/CareerRoad/career_road/lib/components/searchBar.dart"
+      });
+    },
+    get C125() {
+      return C[125] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "shape",
+        [_Location_column]: 11,
+        [_Location_line]: 56,
+        [_Location_file]: null
+      });
+    },
+    get C126() {
+      return C[126] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "color",
+        [_Location_column]: 11,
+        [_Location_line]: 59,
+        [_Location_file]: null
+      });
+    },
+    get C127() {
+      return C[127] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "textColor",
+        [_Location_column]: 11,
+        [_Location_line]: 60,
+        [_Location_file]: null
+      });
+    },
+    get C128() {
+      return C[128] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "onPressed",
+        [_Location_column]: 11,
+        [_Location_line]: 61,
+        [_Location_file]: null
+      });
+    },
+    get C129() {
+      return C[129] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 11,
+        [_Location_line]: 76,
+        [_Location_file]: null
+      });
+    },
+    get C124() {
+      return C[124] = dart.constList([C[125] || CT.C125, C[126] || CT.C126, C[127] || CT.C127, C[128] || CT.C128, C[129] || CT.C129], T._LocationL());
+    },
+    get C123() {
+      return C[123] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[124] || CT.C124,
+        [_Location_name]: null,
+        [_Location_column]: 9,
+        [_Location_line]: 55,
+        [_Location_file]: "file:///C:/Users/haier/Downloads/Compressed/fyp/CareerRoad/career_road/lib/components/searchBar.dart"
+      });
+    },
+    get C132() {
+      return C[132] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "children",
+        [_Location_column]: 7,
+        [_Location_line]: 22,
+        [_Location_file]: null
+      });
+    },
+    get C131() {
+      return C[131] = dart.constList([C[132] || CT.C132], T._LocationL());
+    },
+    get C130() {
+      return C[130] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[131] || CT.C131,
+        [_Location_name]: null,
+        [_Location_column]: 12,
+        [_Location_line]: 21,
+        [_Location_file]: "file:///C:/Users/haier/Downloads/Compressed/fyp/CareerRoad/career_road/lib/components/searchBar.dart"
+      });
+    },
+    get C135() {
+      return C[135] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "data",
+        [_Location_column]: 35,
+        [_Location_line]: 26,
+        [_Location_file]: null
+      });
+    },
+    get C134() {
+      return C[134] = dart.constList([C[135] || CT.C135], T._LocationL());
+    },
+    get C133() {
+      return C[133] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[134] || CT.C134,
+        [_Location_name]: null,
+        [_Location_column]: 30,
+        [_Location_line]: 26,
+        [_Location_file]: "file:///C:/Users/haier/Downloads/Compressed/fyp/CareerRoad/career_road/lib/screens/home_screen.dart"
+      });
+    },
+    get C138() {
+      return C[138] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 23,
+        [_Location_line]: 26,
+        [_Location_file]: null
+      });
+    },
+    get C137() {
+      return C[137] = dart.constList([C[138] || CT.C138], T._LocationL());
+    },
+    get C136() {
+      return C[136] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[137] || CT.C137,
+        [_Location_name]: null,
+        [_Location_column]: 16,
+        [_Location_line]: 26,
+        [_Location_file]: "file:///C:/Users/haier/Downloads/Compressed/fyp/CareerRoad/career_road/lib/screens/home_screen.dart"
+      });
+    },
+    get C141() {
+      return C[141] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "title",
+        [_Location_column]: 9,
+        [_Location_line]: 26,
+        [_Location_file]: null
+      });
+    },
+    get C142() {
+      return C[142] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "automaticallyImplyLeading",
+        [_Location_column]: 9,
+        [_Location_line]: 27,
+        [_Location_file]: null
+      });
+    },
+    get C140() {
+      return C[140] = dart.constList([C[141] || CT.C141, C[142] || CT.C142], T._LocationL());
+    },
+    get C139() {
+      return C[139] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[140] || CT.C140,
+        [_Location_name]: null,
+        [_Location_column]: 15,
+        [_Location_line]: 25,
+        [_Location_file]: "file:///C:/Users/haier/Downloads/Compressed/fyp/CareerRoad/career_road/lib/screens/home_screen.dart"
+      });
+    },
+    get C145() {
+      return C[145] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "data",
+        [_Location_column]: 25,
+        [_Location_line]: 41,
+        [_Location_file]: null
+      });
+    },
+    get C146() {
+      return C[146] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "style",
+        [_Location_column]: 25,
+        [_Location_line]: 42,
+        [_Location_file]: null
+      });
+    },
+    get C144() {
+      return C[144] = dart.constList([C[145] || CT.C145, C[146] || CT.C146], T._LocationL());
+    },
+    get C143() {
+      return C[143] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[144] || CT.C144,
+        [_Location_name]: null,
+        [_Location_column]: 30,
+        [_Location_line]: 40,
+        [_Location_file]: "file:///C:/Users/haier/Downloads/Compressed/fyp/CareerRoad/career_road/lib/screens/home_screen.dart"
+      });
+    },
+    get C149() {
+      return C[149] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 23,
+        [_Location_line]: 40,
+        [_Location_file]: null
+      });
+    },
+    get C148() {
+      return C[148] = dart.constList([C[149] || CT.C149], T._LocationL());
+    },
+    get C147() {
+      return C[147] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[148] || CT.C148,
+        [_Location_name]: null,
+        [_Location_column]: 28,
+        [_Location_line]: 39,
+        [_Location_file]: "file:///C:/Users/haier/Downloads/Compressed/fyp/CareerRoad/career_road/lib/screens/home_screen.dart"
+      });
+    },
+    get C152() {
+      return C[152] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 21,
+        [_Location_line]: 39,
+        [_Location_file]: null
+      });
+    },
+    get C151() {
+      return C[151] = dart.constList([C[152] || CT.C152], T._LocationL());
+    },
+    get C150() {
+      return C[150] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[151] || CT.C151,
+        [_Location_name]: null,
+        [_Location_column]: 19,
+        [_Location_line]: 38,
+        [_Location_file]: "file:///C:/Users/haier/Downloads/Compressed/fyp/CareerRoad/career_road/lib/screens/home_screen.dart"
+      });
+    },
+    get C155() {
+      return C[155] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "data",
+        [_Location_column]: 33,
+        [_Location_line]: 47,
+        [_Location_file]: null
+      });
+    },
+    get C156() {
+      return C[156] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "style",
+        [_Location_column]: 44,
+        [_Location_line]: 47,
+        [_Location_file]: null
+      });
+    },
+    get C154() {
+      return C[154] = dart.constList([C[155] || CT.C155, C[156] || CT.C156], T._LocationL());
+    },
+    get C153() {
+      return C[153] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[154] || CT.C154,
+        [_Location_name]: null,
+        [_Location_column]: 28,
+        [_Location_line]: 47,
+        [_Location_file]: "file:///C:/Users/haier/Downloads/Compressed/fyp/CareerRoad/career_road/lib/screens/home_screen.dart"
+      });
+    },
+    get C159() {
+      return C[159] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 21,
+        [_Location_line]: 47,
+        [_Location_file]: null
+      });
+    },
+    get C158() {
+      return C[158] = dart.constList([C[159] || CT.C159], T._LocationL());
+    },
+    get C157() {
+      return C[157] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[158] || CT.C158,
+        [_Location_name]: null,
+        [_Location_column]: 19,
+        [_Location_line]: 46,
+        [_Location_file]: "file:///C:/Users/haier/Downloads/Compressed/fyp/CareerRoad/career_road/lib/screens/home_screen.dart"
+      });
+    },
+    get C162() {
+      return C[162] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "height",
+        [_Location_column]: 21,
+        [_Location_line]: 50,
+        [_Location_file]: null
+      });
+    },
+    get C161() {
+      return C[161] = dart.constList([C[162] || CT.C162], T._LocationL());
+    },
+    get C160() {
+      return C[160] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[161] || CT.C161,
+        [_Location_name]: null,
+        [_Location_column]: 19,
+        [_Location_line]: 49,
+        [_Location_file]: "file:///C:/Users/haier/Downloads/Compressed/fyp/CareerRoad/career_road/lib/screens/home_screen.dart"
+      });
+    },
+    get C163() {
+      return C[163] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[76] || CT.C76,
+        [_Location_name]: null,
+        [_Location_column]: 19,
+        [_Location_line]: 52,
+        [_Location_file]: "file:///C:/Users/haier/Downloads/Compressed/fyp/CareerRoad/career_road/lib/screens/home_screen.dart"
+      });
+    },
+    get C166() {
+      return C[166] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "children",
+        [_Location_column]: 17,
+        [_Location_line]: 37,
+        [_Location_file]: null
+      });
+    },
+    get C165() {
+      return C[165] = dart.constList([C[166] || CT.C166], T._LocationL());
+    },
+    get C164() {
+      return C[164] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[165] || CT.C165,
+        [_Location_name]: null,
+        [_Location_column]: 22,
+        [_Location_line]: 36,
+        [_Location_file]: "file:///C:/Users/haier/Downloads/Compressed/fyp/CareerRoad/career_road/lib/screens/home_screen.dart"
+      });
+    },
+    get C169() {
+      return C[169] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 15,
+        [_Location_line]: 36,
+        [_Location_file]: null
+      });
+    },
+    get C168() {
+      return C[168] = dart.constList([C[169] || CT.C169], T._LocationL());
+    },
+    get C167() {
+      return C[167] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[168] || CT.C168,
+        [_Location_name]: null,
+        [_Location_column]: 20,
+        [_Location_line]: 35,
+        [_Location_file]: "file:///C:/Users/haier/Downloads/Compressed/fyp/CareerRoad/career_road/lib/screens/home_screen.dart"
+      });
+    },
+    get C172() {
+      return C[172] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "padding",
+        [_Location_column]: 13,
+        [_Location_line]: 33,
+        [_Location_file]: null
+      });
+    },
+    get C173() {
+      return C[173] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 13,
+        [_Location_line]: 35,
+        [_Location_file]: null
+      });
+    },
+    get C171() {
+      return C[171] = dart.constList([C[172] || CT.C172, C[173] || CT.C173], T._LocationL());
+    },
+    get C170() {
+      return C[170] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[171] || CT.C171,
+        [_Location_name]: null,
+        [_Location_column]: 18,
+        [_Location_line]: 32,
+        [_Location_file]: "file:///C:/Users/haier/Downloads/Compressed/fyp/CareerRoad/career_road/lib/screens/home_screen.dart"
+      });
+    },
+    get C176() {
+      return C[176] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 11,
+        [_Location_line]: 32,
+        [_Location_file]: null
+      });
+    },
+    get C175() {
+      return C[175] = dart.constList([C[176] || CT.C176], T._LocationL());
+    },
+    get C174() {
+      return C[174] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[175] || CT.C175,
+        [_Location_name]: null,
+        [_Location_column]: 16,
+        [_Location_line]: 31,
+        [_Location_file]: "file:///C:/Users/haier/Downloads/Compressed/fyp/CareerRoad/career_road/lib/screens/home_screen.dart"
+      });
+    },
+    get C179() {
+      return C[179] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 9,
+        [_Location_line]: 31,
+        [_Location_file]: null
+      });
+    },
+    get C178() {
+      return C[178] = dart.constList([C[179] || CT.C179], T._LocationL());
+    },
+    get C177() {
+      return C[177] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[178] || CT.C178,
+        [_Location_name]: null,
+        [_Location_column]: 13,
+        [_Location_line]: 30,
+        [_Location_file]: "file:///C:/Users/haier/Downloads/Compressed/fyp/CareerRoad/career_road/lib/screens/home_screen.dart"
+      });
+    },
+    get C182() {
+      return C[182] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "bottomNavIndex",
+        [_Location_column]: 41,
+        [_Location_line]: 59,
+        [_Location_file]: null
+      });
+    },
+    get C181() {
+      return C[181] = dart.constList([C[182] || CT.C182], T._LocationL());
+    },
+    get C180() {
+      return C[180] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[181] || CT.C181,
+        [_Location_name]: null,
+        [_Location_column]: 28,
+        [_Location_line]: 59,
+        [_Location_file]: "file:///C:/Users/haier/Downloads/Compressed/fyp/CareerRoad/career_road/lib/screens/home_screen.dart"
+      });
+    },
+    get C185() {
+      return C[185] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "appBar",
+        [_Location_column]: 7,
+        [_Location_line]: 25,
+        [_Location_file]: null
+      });
+    },
+    get C186() {
+      return C[186] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "backgroundColor",
+        [_Location_column]: 7,
+        [_Location_line]: 29,
+        [_Location_file]: null
+      });
+    },
+    get C187() {
+      return C[187] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "body",
+        [_Location_column]: 7,
+        [_Location_line]: 30,
+        [_Location_file]: null
+      });
+    },
+    get C188() {
+      return C[188] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "bottomNavigationBar",
+        [_Location_column]: 7,
+        [_Location_line]: 59,
+        [_Location_file]: null
+      });
+    },
+    get C184() {
+      return C[184] = dart.constList([C[185] || CT.C185, C[186] || CT.C186, C[187] || CT.C187, C[188] || CT.C188], T._LocationL());
+    },
+    get C183() {
+      return C[183] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[184] || CT.C184,
+        [_Location_name]: null,
+        [_Location_column]: 12,
+        [_Location_line]: 24,
+        [_Location_file]: "file:///C:/Users/haier/Downloads/Compressed/fyp/CareerRoad/career_road/lib/screens/home_screen.dart"
+      });
+    },
+    get C191() {
+      return C[191] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "data",
+        [_Location_column]: 35,
+        [_Location_line]: 13,
+        [_Location_file]: null
+      });
+    },
+    get C190() {
+      return C[190] = dart.constList([C[191] || CT.C191], T._LocationL());
+    },
+    get C189() {
+      return C[189] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[190] || CT.C190,
+        [_Location_name]: null,
+        [_Location_column]: 30,
+        [_Location_line]: 13,
+        [_Location_file]: "file:///C:/Users/haier/Downloads/Compressed/fyp/CareerRoad/career_road/lib/screens/menu_screen.dart"
+      });
+    },
+    get C194() {
+      return C[194] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 23,
+        [_Location_line]: 13,
+        [_Location_file]: null
+      });
+    },
+    get C193() {
+      return C[193] = dart.constList([C[194] || CT.C194], T._LocationL());
+    },
+    get C192() {
+      return C[192] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[193] || CT.C193,
+        [_Location_name]: null,
+        [_Location_column]: 16,
+        [_Location_line]: 13,
+        [_Location_file]: "file:///C:/Users/haier/Downloads/Compressed/fyp/CareerRoad/career_road/lib/screens/menu_screen.dart"
+      });
+    },
+    get C197() {
+      return C[197] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "title",
+        [_Location_column]: 9,
+        [_Location_line]: 13,
+        [_Location_file]: null
+      });
+    },
+    get C198() {
+      return C[198] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "automaticallyImplyLeading",
+        [_Location_column]: 9,
+        [_Location_line]: 14,
+        [_Location_file]: null
+      });
+    },
+    get C196() {
+      return C[196] = dart.constList([C[197] || CT.C197, C[198] || CT.C198], T._LocationL());
+    },
+    get C195() {
+      return C[195] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[196] || CT.C196,
+        [_Location_name]: null,
+        [_Location_column]: 15,
+        [_Location_line]: 12,
+        [_Location_file]: "file:///C:/Users/haier/Downloads/Compressed/fyp/CareerRoad/career_road/lib/screens/menu_screen.dart"
+      });
+    },
+    get C201() {
+      return C[201] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "data",
+        [_Location_column]: 15,
+        [_Location_line]: 26,
+        [_Location_file]: null
+      });
+    },
+    get C202() {
+      return C[202] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "style",
+        [_Location_column]: 15,
+        [_Location_line]: 27,
+        [_Location_file]: null
+      });
+    },
+    get C200() {
+      return C[200] = dart.constList([C[201] || CT.C201, C[202] || CT.C202], T._LocationL());
+    },
+    get C199() {
+      return C[199] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[200] || CT.C200,
+        [_Location_name]: null,
+        [_Location_column]: 24,
+        [_Location_line]: 25,
+        [_Location_file]: "file:///C:/Users/haier/Downloads/Compressed/fyp/CareerRoad/career_road/lib/screens/menu_screen.dart"
+      });
+    },
+    get C205() {
+      return C[205] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 17,
+        [_Location_line]: 25,
+        [_Location_file]: null
+      });
+    },
+    get C204() {
+      return C[204] = dart.constList([C[205] || CT.C205], T._LocationL());
+    },
+    get C203() {
+      return C[203] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[204] || CT.C204,
+        [_Location_name]: null,
+        [_Location_column]: 20,
+        [_Location_line]: 24,
+        [_Location_file]: "file:///C:/Users/haier/Downloads/Compressed/fyp/CareerRoad/career_road/lib/screens/menu_screen.dart"
+      });
+    },
+    get C208() {
+      return C[208] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "height",
+        [_Location_column]: 13,
+        [_Location_line]: 21,
+        [_Location_file]: null
+      });
+    },
+    get C209() {
+      return C[209] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "width",
+        [_Location_column]: 13,
+        [_Location_line]: 22,
+        [_Location_file]: null
+      });
+    },
+    get C210() {
+      return C[210] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "color",
+        [_Location_column]: 13,
+        [_Location_line]: 23,
+        [_Location_file]: null
+      });
+    },
+    get C211() {
+      return C[211] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 13,
+        [_Location_line]: 24,
+        [_Location_file]: null
+      });
+    },
+    get C207() {
+      return C[207] = dart.constList([C[208] || CT.C208, C[209] || CT.C209, C[210] || CT.C210, C[211] || CT.C211], T._LocationL());
+    },
+    get C206() {
+      return C[206] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[207] || CT.C207,
+        [_Location_name]: null,
+        [_Location_column]: 11,
+        [_Location_line]: 20,
+        [_Location_file]: "file:///C:/Users/haier/Downloads/Compressed/fyp/CareerRoad/career_road/lib/screens/menu_screen.dart"
+      });
+    },
+    get C214() {
+      return C[214] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "icon",
+        [_Location_column]: 23,
+        [_Location_line]: 35,
+        [_Location_file]: null
+      });
+    },
+    get C215() {
+      return C[215] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "color",
+        [_Location_column]: 17,
+        [_Location_line]: 36,
+        [_Location_file]: null
+      });
+    },
+    get C213() {
+      return C[213] = dart.constList([C[214] || CT.C214, C[215] || CT.C215], T._LocationL());
+    },
+    get C212() {
+      return C[212] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[213] || CT.C213,
+        [_Location_name]: null,
+        [_Location_column]: 24,
+        [_Location_line]: 34,
+        [_Location_file]: "file:///C:/Users/haier/Downloads/Compressed/fyp/CareerRoad/career_road/lib/screens/menu_screen.dart"
+      });
+    },
+    get C218() {
+      return C[218] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "data",
+        [_Location_column]: 17,
+        [_Location_line]: 39,
+        [_Location_file]: null
+      });
+    },
+    get C219() {
+      return C[219] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "style",
+        [_Location_column]: 17,
+        [_Location_line]: 40,
+        [_Location_file]: null
+      });
+    },
+    get C217() {
+      return C[217] = dart.constList([C[218] || CT.C218, C[219] || CT.C219], T._LocationL());
+    },
+    get C216() {
+      return C[216] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[217] || CT.C217,
+        [_Location_name]: null,
+        [_Location_column]: 22,
+        [_Location_line]: 38,
+        [_Location_file]: "file:///C:/Users/haier/Downloads/Compressed/fyp/CareerRoad/career_road/lib/screens/menu_screen.dart"
+      });
+    },
+    get C222() {
+      return C[222] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "leading",
+        [_Location_column]: 15,
+        [_Location_line]: 34,
+        [_Location_file]: null
+      });
+    },
+    get C223() {
+      return C[223] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "title",
+        [_Location_column]: 15,
+        [_Location_line]: 38,
+        [_Location_file]: null
+      });
+    },
+    get C221() {
+      return C[221] = dart.constList([C[222] || CT.C222, C[223] || CT.C223], T._LocationL());
+    },
+    get C220() {
+      return C[220] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[221] || CT.C221,
+        [_Location_name]: null,
+        [_Location_column]: 20,
+        [_Location_line]: 33,
+        [_Location_file]: "file:///C:/Users/haier/Downloads/Compressed/fyp/CareerRoad/career_road/lib/screens/menu_screen.dart"
+      });
+    },
+    get C226() {
+      return C[226] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "visible",
+        [_Location_column]: 13,
+        [_Location_line]: 32,
+        [_Location_file]: null
+      });
+    },
+    get C227() {
+      return C[227] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 13,
+        [_Location_line]: 33,
+        [_Location_file]: null
+      });
+    },
+    get C225() {
+      return C[225] = dart.constList([C[226] || CT.C226, C[227] || CT.C227], T._LocationL());
+    },
+    get C224() {
+      return C[224] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[225] || CT.C225,
+        [_Location_name]: null,
+        [_Location_column]: 11,
+        [_Location_line]: 30,
+        [_Location_file]: "file:///C:/Users/haier/Downloads/Compressed/fyp/CareerRoad/career_road/lib/screens/menu_screen.dart"
+      });
+    },
+    get C230() {
+      return C[230] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "icon",
+        [_Location_column]: 21,
+        [_Location_line]: 46,
+        [_Location_file]: null
+      });
+    },
+    get C231() {
+      return C[231] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "color",
+        [_Location_column]: 15,
+        [_Location_line]: 47,
+        [_Location_file]: null
+      });
+    },
+    get C229() {
+      return C[229] = dart.constList([C[230] || CT.C230, C[231] || CT.C231], T._LocationL());
+    },
+    get C228() {
+      return C[228] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[229] || CT.C229,
+        [_Location_name]: null,
+        [_Location_column]: 22,
+        [_Location_line]: 45,
+        [_Location_file]: "file:///C:/Users/haier/Downloads/Compressed/fyp/CareerRoad/career_road/lib/screens/menu_screen.dart"
+      });
+    },
+    get C234() {
+      return C[234] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "data",
+        [_Location_column]: 25,
+        [_Location_line]: 49,
+        [_Location_file]: null
+      });
+    },
+    get C235() {
+      return C[235] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "style",
+        [_Location_column]: 35,
+        [_Location_line]: 49,
+        [_Location_file]: null
+      });
+    },
+    get C233() {
+      return C[233] = dart.constList([C[234] || CT.C234, C[235] || CT.C235], T._LocationL());
+    },
+    get C232() {
+      return C[232] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[233] || CT.C233,
+        [_Location_name]: null,
+        [_Location_column]: 20,
+        [_Location_line]: 49,
+        [_Location_file]: "file:///C:/Users/haier/Downloads/Compressed/fyp/CareerRoad/career_road/lib/screens/menu_screen.dart"
+      });
+    },
+    get C238() {
+      return C[238] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "leading",
+        [_Location_column]: 13,
+        [_Location_line]: 45,
+        [_Location_file]: null
+      });
+    },
+    get C239() {
+      return C[239] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "title",
+        [_Location_column]: 13,
+        [_Location_line]: 49,
+        [_Location_file]: null
+      });
+    },
+    get C237() {
+      return C[237] = dart.constList([C[238] || CT.C238, C[239] || CT.C239], T._LocationL());
+    },
+    get C236() {
+      return C[236] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[237] || CT.C237,
+        [_Location_name]: null,
+        [_Location_column]: 11,
+        [_Location_line]: 44,
+        [_Location_file]: "file:///C:/Users/haier/Downloads/Compressed/fyp/CareerRoad/career_road/lib/screens/menu_screen.dart"
+      });
+    },
+    get C242() {
+      return C[242] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "crossAxisAlignment",
+        [_Location_column]: 9,
+        [_Location_line]: 18,
+        [_Location_file]: null
+      });
+    },
+    get C243() {
+      return C[243] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "children",
+        [_Location_column]: 9,
+        [_Location_line]: 19,
+        [_Location_file]: null
+      });
+    },
+    get C241() {
+      return C[241] = dart.constList([C[242] || CT.C242, C[243] || CT.C243], T._LocationL());
+    },
+    get C240() {
+      return C[240] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[241] || CT.C241,
+        [_Location_name]: null,
+        [_Location_column]: 13,
+        [_Location_line]: 17,
+        [_Location_file]: "file:///C:/Users/haier/Downloads/Compressed/fyp/CareerRoad/career_road/lib/screens/menu_screen.dart"
+      });
+    },
+    get C246() {
+      return C[246] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "bottomNavIndex",
+        [_Location_column]: 41,
+        [_Location_line]: 53,
+        [_Location_file]: null
+      });
+    },
+    get C245() {
+      return C[245] = dart.constList([C[246] || CT.C246], T._LocationL());
+    },
+    get C244() {
+      return C[244] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[245] || CT.C245,
+        [_Location_name]: null,
+        [_Location_column]: 28,
+        [_Location_line]: 53,
+        [_Location_file]: "file:///C:/Users/haier/Downloads/Compressed/fyp/CareerRoad/career_road/lib/screens/menu_screen.dart"
+      });
+    },
+    get C249() {
+      return C[249] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "appBar",
+        [_Location_column]: 7,
+        [_Location_line]: 12,
+        [_Location_file]: null
+      });
+    },
+    get C250() {
+      return C[250] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "backgroundColor",
+        [_Location_column]: 7,
+        [_Location_line]: 16,
+        [_Location_file]: null
+      });
+    },
+    get C251() {
+      return C[251] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "body",
+        [_Location_column]: 7,
+        [_Location_line]: 17,
+        [_Location_file]: null
+      });
+    },
+    get C252() {
+      return C[252] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "bottomNavigationBar",
+        [_Location_column]: 7,
+        [_Location_line]: 53,
+        [_Location_file]: null
+      });
+    },
+    get C248() {
+      return C[248] = dart.constList([C[249] || CT.C249, C[250] || CT.C250, C[251] || CT.C251, C[252] || CT.C252], T._LocationL());
+    },
+    get C247() {
+      return C[247] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[248] || CT.C248,
+        [_Location_name]: null,
+        [_Location_column]: 12,
+        [_Location_line]: 11,
+        [_Location_file]: "file:///C:/Users/haier/Downloads/Compressed/fyp/CareerRoad/career_road/lib/screens/menu_screen.dart"
+      });
+    },
+    get C255() {
+      return C[255] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "data",
+        [_Location_column]: 35,
+        [_Location_line]: 11,
+        [_Location_file]: null
+      });
+    },
+    get C254() {
+      return C[254] = dart.constList([C[255] || CT.C255], T._LocationL());
+    },
+    get C253() {
+      return C[253] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[254] || CT.C254,
+        [_Location_name]: null,
+        [_Location_column]: 30,
+        [_Location_line]: 11,
+        [_Location_file]: "file:///C:/Users/haier/Downloads/Compressed/fyp/CareerRoad/career_road/lib/screens/quiz_screen.dart"
+      });
+    },
+    get C258() {
+      return C[258] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 23,
+        [_Location_line]: 11,
+        [_Location_file]: null
+      });
+    },
+    get C257() {
+      return C[257] = dart.constList([C[258] || CT.C258], T._LocationL());
+    },
+    get C256() {
+      return C[256] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[257] || CT.C257,
+        [_Location_name]: null,
+        [_Location_column]: 16,
+        [_Location_line]: 11,
+        [_Location_file]: "file:///C:/Users/haier/Downloads/Compressed/fyp/CareerRoad/career_road/lib/screens/quiz_screen.dart"
+      });
+    },
+    get C261() {
+      return C[261] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "title",
+        [_Location_column]: 9,
+        [_Location_line]: 11,
+        [_Location_file]: null
+      });
+    },
+    get C262() {
+      return C[262] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "automaticallyImplyLeading",
+        [_Location_column]: 9,
+        [_Location_line]: 12,
+        [_Location_file]: null
+      });
+    },
+    get C260() {
+      return C[260] = dart.constList([C[261] || CT.C261, C[262] || CT.C262], T._LocationL());
+    },
+    get C259() {
+      return C[259] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[260] || CT.C260,
+        [_Location_name]: null,
+        [_Location_column]: 15,
+        [_Location_line]: 10,
+        [_Location_file]: "file:///C:/Users/haier/Downloads/Compressed/fyp/CareerRoad/career_road/lib/screens/quiz_screen.dart"
+      });
+    },
+    get C265() {
+      return C[265] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "data",
+        [_Location_column]: 21,
+        [_Location_line]: 16,
+        [_Location_file]: null
+      });
+    },
+    get C264() {
+      return C[264] = dart.constList([C[265] || CT.C265], T._LocationL());
+    },
+    get C263() {
+      return C[263] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[264] || CT.C264,
+        [_Location_name]: null,
+        [_Location_column]: 16,
+        [_Location_line]: 16,
+        [_Location_file]: "file:///C:/Users/haier/Downloads/Compressed/fyp/CareerRoad/career_road/lib/screens/quiz_screen.dart"
+      });
+    },
+    get C268() {
+      return C[268] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 9,
+        [_Location_line]: 16,
+        [_Location_file]: null
+      });
+    },
+    get C267() {
+      return C[267] = dart.constList([C[268] || CT.C268], T._LocationL());
+    },
+    get C266() {
+      return C[266] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[267] || CT.C267,
+        [_Location_name]: null,
+        [_Location_column]: 13,
+        [_Location_line]: 15,
+        [_Location_file]: "file:///C:/Users/haier/Downloads/Compressed/fyp/CareerRoad/career_road/lib/screens/quiz_screen.dart"
+      });
+    },
+    get C271() {
+      return C[271] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "bottomNavIndex",
+        [_Location_column]: 41,
+        [_Location_line]: 18,
+        [_Location_file]: null
+      });
+    },
+    get C270() {
+      return C[270] = dart.constList([C[271] || CT.C271], T._LocationL());
+    },
+    get C269() {
+      return C[269] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[270] || CT.C270,
+        [_Location_name]: null,
+        [_Location_column]: 28,
+        [_Location_line]: 18,
+        [_Location_file]: "file:///C:/Users/haier/Downloads/Compressed/fyp/CareerRoad/career_road/lib/screens/quiz_screen.dart"
+      });
+    },
+    get C274() {
+      return C[274] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "appBar",
+        [_Location_column]: 7,
+        [_Location_line]: 10,
+        [_Location_file]: null
+      });
+    },
+    get C275() {
+      return C[275] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "backgroundColor",
+        [_Location_column]: 7,
+        [_Location_line]: 14,
+        [_Location_file]: null
+      });
+    },
+    get C276() {
+      return C[276] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "body",
+        [_Location_column]: 7,
+        [_Location_line]: 15,
+        [_Location_file]: null
+      });
+    },
+    get C277() {
+      return C[277] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "bottomNavigationBar",
+        [_Location_column]: 7,
+        [_Location_line]: 18,
+        [_Location_file]: null
+      });
+    },
+    get C273() {
+      return C[273] = dart.constList([C[274] || CT.C274, C[275] || CT.C275, C[276] || CT.C276, C[277] || CT.C277], T._LocationL());
+    },
+    get C272() {
+      return C[272] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[273] || CT.C273,
+        [_Location_name]: null,
+        [_Location_column]: 12,
+        [_Location_line]: 9,
+        [_Location_file]: "file:///C:/Users/haier/Downloads/Compressed/fyp/CareerRoad/career_road/lib/screens/quiz_screen.dart"
+      });
+    },
+    get C280() {
+      return C[280] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "data",
+        [_Location_column]: 35,
+        [_Location_line]: 19,
+        [_Location_file]: null
+      });
+    },
+    get C279() {
+      return C[279] = dart.constList([C[280] || CT.C280], T._LocationL());
+    },
+    get C278() {
+      return C[278] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[279] || CT.C279,
+        [_Location_name]: null,
+        [_Location_column]: 30,
+        [_Location_line]: 19,
+        [_Location_file]: "file:///C:/Users/haier/Downloads/Compressed/fyp/CareerRoad/career_road/lib/screens/bookmark_screen.dart"
+      });
+    },
+    get C283() {
+      return C[283] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 23,
+        [_Location_line]: 19,
+        [_Location_file]: null
+      });
+    },
+    get C282() {
+      return C[282] = dart.constList([C[283] || CT.C283], T._LocationL());
+    },
+    get C281() {
+      return C[281] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[282] || CT.C282,
+        [_Location_name]: null,
+        [_Location_column]: 16,
+        [_Location_line]: 19,
+        [_Location_file]: "file:///C:/Users/haier/Downloads/Compressed/fyp/CareerRoad/career_road/lib/screens/bookmark_screen.dart"
+      });
+    },
+    get C286() {
+      return C[286] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "title",
+        [_Location_column]: 9,
+        [_Location_line]: 19,
+        [_Location_file]: null
+      });
+    },
+    get C287() {
+      return C[287] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "automaticallyImplyLeading",
+        [_Location_column]: 9,
+        [_Location_line]: 20,
+        [_Location_file]: null
+      });
+    },
+    get C285() {
+      return C[285] = dart.constList([C[286] || CT.C286, C[287] || CT.C287], T._LocationL());
+    },
+    get C284() {
+      return C[284] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[285] || CT.C285,
+        [_Location_name]: null,
+        [_Location_column]: 15,
+        [_Location_line]: 18,
+        [_Location_file]: "file:///C:/Users/haier/Downloads/Compressed/fyp/CareerRoad/career_road/lib/screens/bookmark_screen.dart"
+      });
+    },
+    get C290() {
+      return C[290] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "data",
+        [_Location_column]: 45,
+        [_Location_line]: 31,
+        [_Location_file]: null
+      });
+    },
+    get C291() {
+      return C[291] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "style",
+        [_Location_column]: 57,
+        [_Location_line]: 31,
+        [_Location_file]: null
+      });
+    },
+    get C289() {
+      return C[289] = dart.constList([C[290] || CT.C290, C[291] || CT.C291], T._LocationL());
+    },
+    get C288() {
+      return C[288] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[289] || CT.C289,
+        [_Location_name]: null,
+        [_Location_column]: 28,
+        [_Location_line]: 31,
+        [_Location_file]: "file:///C:/Users/haier/Downloads/Compressed/fyp/CareerRoad/career_road/lib/screens/bookmark_screen.dart"
+      });
+    },
+    get C294() {
+      return C[294] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "data",
+        [_Location_column]: 31,
+        [_Location_line]: 32,
+        [_Location_file]: null
+      });
+    },
+    get C293() {
+      return C[293] = dart.constList([C[294] || CT.C294], T._LocationL());
+    },
+    get C292() {
+      return C[292] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[293] || CT.C293,
+        [_Location_name]: null,
+        [_Location_column]: 26,
+        [_Location_line]: 32,
+        [_Location_file]: "file:///C:/Users/haier/Downloads/Compressed/fyp/CareerRoad/career_road/lib/screens/bookmark_screen.dart"
+      });
+    },
+    get C297() {
+      return C[297] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "icon",
+        [_Location_column]: 40,
+        [_Location_line]: 33,
+        [_Location_file]: null
+      });
+    },
+    get C298() {
+      return C[298] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "color",
+        [_Location_column]: 48,
+        [_Location_line]: 33,
+        [_Location_file]: null
+      });
+    },
+    get C296() {
+      return C[296] = dart.constList([C[297] || CT.C297, C[298] || CT.C298], T._LocationL());
+    },
+    get C295() {
+      return C[295] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[296] || CT.C296,
+        [_Location_name]: null,
+        [_Location_column]: 29,
+        [_Location_line]: 33,
+        [_Location_file]: "file:///C:/Users/haier/Downloads/Compressed/fyp/CareerRoad/career_road/lib/screens/bookmark_screen.dart"
+      });
+    },
+    get C301() {
+      return C[301] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "leading",
+        [_Location_column]: 19,
+        [_Location_line]: 31,
+        [_Location_file]: null
+      });
+    },
+    get C302() {
+      return C[302] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "title",
+        [_Location_column]: 19,
+        [_Location_line]: 32,
+        [_Location_file]: null
+      });
+    },
+    get C303() {
+      return C[303] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "trailing",
+        [_Location_column]: 19,
+        [_Location_line]: 33,
+        [_Location_file]: null
+      });
+    },
+    get C300() {
+      return C[300] = dart.constList([C[301] || CT.C301, C[302] || CT.C302, C[303] || CT.C303], T._LocationL());
+    },
+    get C299() {
+      return C[299] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[300] || CT.C300,
+        [_Location_name]: null,
+        [_Location_column]: 24,
+        [_Location_line]: 30,
+        [_Location_file]: "file:///C:/Users/haier/Downloads/Compressed/fyp/CareerRoad/career_road/lib/screens/bookmark_screen.dart"
+      });
+    },
+    get C306() {
+      return C[306] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "shrinkWrap",
+        [_Location_column]: 15,
+        [_Location_line]: 27,
+        [_Location_file]: null
+      });
+    },
+    get C307() {
+      return C[307] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "itemCount",
+        [_Location_column]: 15,
+        [_Location_line]: 28,
+        [_Location_file]: null
+      });
+    },
+    get C308() {
+      return C[308] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "itemBuilder",
+        [_Location_column]: 15,
+        [_Location_line]: 29,
+        [_Location_file]: null
+      });
+    },
+    get C305() {
+      return C[305] = dart.constList([C[306] || CT.C306, C[307] || CT.C307, C[308] || CT.C308], T._LocationL());
+    },
+    get C304() {
+      return C[304] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[305] || CT.C305,
+        [_Location_name]: null,
+        [_Location_column]: 22,
+        [_Location_line]: 26,
+        [_Location_file]: "file:///C:/Users/haier/Downloads/Compressed/fyp/CareerRoad/career_road/lib/screens/bookmark_screen.dart"
+      });
+    },
+    get C311() {
+      return C[311] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "mainAxisAlignment",
+        [_Location_column]: 11,
+        [_Location_line]: 24,
+        [_Location_file]: null
+      });
+    },
+    get C312() {
+      return C[312] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "children",
+        [_Location_column]: 11,
+        [_Location_line]: 25,
+        [_Location_file]: null
+      });
+    },
+    get C310() {
+      return C[310] = dart.constList([C[311] || CT.C311, C[312] || CT.C312], T._LocationL());
+    },
+    get C309() {
+      return C[309] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[310] || CT.C310,
+        [_Location_name]: null,
+        [_Location_column]: 16,
+        [_Location_line]: 23,
+        [_Location_file]: "file:///C:/Users/haier/Downloads/Compressed/fyp/CareerRoad/career_road/lib/screens/bookmark_screen.dart"
+      });
+    },
+    get C315() {
+      return C[315] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 9,
+        [_Location_line]: 23,
+        [_Location_file]: null
+      });
+    },
+    get C314() {
+      return C[314] = dart.constList([C[315] || CT.C315], T._LocationL());
+    },
+    get C313() {
+      return C[313] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[314] || CT.C314,
+        [_Location_name]: null,
+        [_Location_column]: 13,
+        [_Location_line]: 22,
+        [_Location_file]: "file:///C:/Users/haier/Downloads/Compressed/fyp/CareerRoad/career_road/lib/screens/bookmark_screen.dart"
+      });
+    },
+    get C318() {
+      return C[318] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "bottomNavIndex",
+        [_Location_column]: 41,
+        [_Location_line]: 40,
+        [_Location_file]: null
+      });
+    },
+    get C317() {
+      return C[317] = dart.constList([C[318] || CT.C318], T._LocationL());
+    },
+    get C316() {
+      return C[316] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[317] || CT.C317,
+        [_Location_name]: null,
+        [_Location_column]: 28,
+        [_Location_line]: 40,
+        [_Location_file]: "file:///C:/Users/haier/Downloads/Compressed/fyp/CareerRoad/career_road/lib/screens/bookmark_screen.dart"
+      });
+    },
+    get C321() {
+      return C[321] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "backgroundColor",
+        [_Location_column]: 7,
+        [_Location_line]: 17,
+        [_Location_file]: null
+      });
+    },
+    get C322() {
+      return C[322] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "appBar",
+        [_Location_column]: 7,
+        [_Location_line]: 18,
+        [_Location_file]: null
+      });
+    },
+    get C323() {
+      return C[323] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "body",
+        [_Location_column]: 7,
+        [_Location_line]: 22,
+        [_Location_file]: null
+      });
+    },
+    get C324() {
+      return C[324] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "bottomNavigationBar",
+        [_Location_column]: 7,
+        [_Location_line]: 40,
+        [_Location_file]: null
+      });
+    },
+    get C320() {
+      return C[320] = dart.constList([C[321] || CT.C321, C[322] || CT.C322, C[323] || CT.C323, C[324] || CT.C324], T._LocationL());
+    },
+    get C319() {
+      return C[319] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[320] || CT.C320,
+        [_Location_name]: null,
+        [_Location_column]: 12,
+        [_Location_line]: 16,
+        [_Location_file]: "file:///C:/Users/haier/Downloads/Compressed/fyp/CareerRoad/career_road/lib/screens/bookmark_screen.dart"
+      });
+    },
+    get C325() {
+      return C[325] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[76] || CT.C76,
+        [_Location_name]: null,
+        [_Location_column]: 39,
+        [_Location_line]: 32,
+        [_Location_file]: "file:///C:/Users/haier/Downloads/Compressed/fyp/CareerRoad/career_road/lib/components/bottomNavBar.dart"
+      });
+    },
+    get C326() {
+      return C[326] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[76] || CT.C76,
+        [_Location_name]: null,
+        [_Location_column]: 39,
+        [_Location_line]: 39,
+        [_Location_file]: "file:///C:/Users/haier/Downloads/Compressed/fyp/CareerRoad/career_road/lib/components/bottomNavBar.dart"
+      });
+    },
+    get C327() {
+      return C[327] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[76] || CT.C76,
+        [_Location_name]: null,
+        [_Location_column]: 39,
+        [_Location_line]: 46,
+        [_Location_file]: "file:///C:/Users/haier/Downloads/Compressed/fyp/CareerRoad/career_road/lib/components/bottomNavBar.dart"
+      });
+    },
+    get C328() {
+      return C[328] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[76] || CT.C76,
+        [_Location_name]: null,
+        [_Location_column]: 39,
+        [_Location_line]: 53,
+        [_Location_file]: "file:///C:/Users/haier/Downloads/Compressed/fyp/CareerRoad/career_road/lib/components/bottomNavBar.dart"
+      });
+    },
+    get C329() {
+      return C[329] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[76] || CT.C76,
+        [_Location_name]: null,
+        [_Location_column]: 39,
+        [_Location_line]: 60,
+        [_Location_file]: "file:///C:/Users/haier/Downloads/Compressed/fyp/CareerRoad/career_road/lib/components/bottomNavBar.dart"
+      });
+    },
+    get C332() {
+      return C[332] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "icon",
+        [_Location_column]: 28,
+        [_Location_line]: 66,
+        [_Location_file]: null
+      });
+    },
+    get C331() {
+      return C[331] = dart.constList([C[332] || CT.C332], T._LocationL());
+    },
+    get C330() {
+      return C[330] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[331] || CT.C331,
+        [_Location_name]: null,
+        [_Location_column]: 17,
+        [_Location_line]: 66,
+        [_Location_file]: "file:///C:/Users/haier/Downloads/Compressed/fyp/CareerRoad/career_road/lib/components/bottomNavBar.dart"
+      });
+    },
+    get C335() {
+      return C[335] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "data",
+        [_Location_column]: 23,
+        [_Location_line]: 67,
+        [_Location_file]: null
+      });
+    },
+    get C334() {
+      return C[334] = dart.constList([C[335] || CT.C335], T._LocationL());
+    },
+    get C333() {
+      return C[333] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[334] || CT.C334,
+        [_Location_name]: null,
+        [_Location_column]: 18,
+        [_Location_line]: 67,
+        [_Location_file]: "file:///C:/Users/haier/Downloads/Compressed/fyp/CareerRoad/career_road/lib/components/bottomNavBar.dart"
+      });
+    },
+    get C338() {
+      return C[338] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "icon",
+        [_Location_column]: 30,
+        [_Location_line]: 71,
+        [_Location_file]: null
+      });
+    },
+    get C337() {
+      return C[337] = dart.constList([C[338] || CT.C338], T._LocationL());
+    },
+    get C336() {
+      return C[336] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[337] || CT.C337,
+        [_Location_name]: null,
+        [_Location_column]: 19,
+        [_Location_line]: 71,
+        [_Location_file]: "file:///C:/Users/haier/Downloads/Compressed/fyp/CareerRoad/career_road/lib/components/bottomNavBar.dart"
+      });
+    },
+    get C341() {
+      return C[341] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "data",
+        [_Location_column]: 25,
+        [_Location_line]: 72,
+        [_Location_file]: null
+      });
+    },
+    get C340() {
+      return C[340] = dart.constList([C[341] || CT.C341], T._LocationL());
+    },
+    get C339() {
+      return C[339] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[340] || CT.C340,
+        [_Location_name]: null,
+        [_Location_column]: 20,
+        [_Location_line]: 72,
+        [_Location_file]: "file:///C:/Users/haier/Downloads/Compressed/fyp/CareerRoad/career_road/lib/components/bottomNavBar.dart"
+      });
+    },
+    get C344() {
+      return C[344] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "icon",
+        [_Location_column]: 30,
+        [_Location_line]: 79,
+        [_Location_file]: null
+      });
+    },
+    get C343() {
+      return C[343] = dart.constList([C[344] || CT.C344], T._LocationL());
+    },
+    get C342() {
+      return C[342] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[343] || CT.C343,
+        [_Location_name]: null,
+        [_Location_column]: 19,
+        [_Location_line]: 79,
+        [_Location_file]: "file:///C:/Users/haier/Downloads/Compressed/fyp/CareerRoad/career_road/lib/components/bottomNavBar.dart"
+      });
+    },
+    get C347() {
+      return C[347] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "data",
+        [_Location_column]: 25,
+        [_Location_line]: 80,
+        [_Location_file]: null
+      });
+    },
+    get C346() {
+      return C[346] = dart.constList([C[347] || CT.C347], T._LocationL());
+    },
+    get C345() {
+      return C[345] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[346] || CT.C346,
+        [_Location_name]: null,
+        [_Location_column]: 20,
+        [_Location_line]: 80,
+        [_Location_file]: "file:///C:/Users/haier/Downloads/Compressed/fyp/CareerRoad/career_road/lib/components/bottomNavBar.dart"
+      });
+    },
+    get C350() {
+      return C[350] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "icon",
+        [_Location_column]: 30,
+        [_Location_line]: 83,
+        [_Location_file]: null
+      });
+    },
+    get C349() {
+      return C[349] = dart.constList([C[350] || CT.C350], T._LocationL());
+    },
+    get C348() {
+      return C[348] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[349] || CT.C349,
+        [_Location_name]: null,
+        [_Location_column]: 19,
+        [_Location_line]: 83,
+        [_Location_file]: "file:///C:/Users/haier/Downloads/Compressed/fyp/CareerRoad/career_road/lib/components/bottomNavBar.dart"
+      });
+    },
+    get C353() {
+      return C[353] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "data",
+        [_Location_column]: 25,
+        [_Location_line]: 84,
+        [_Location_file]: null
+      });
+    },
+    get C352() {
+      return C[352] = dart.constList([C[353] || CT.C353], T._LocationL());
+    },
+    get C351() {
+      return C[351] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[352] || CT.C352,
+        [_Location_name]: null,
+        [_Location_column]: 20,
+        [_Location_line]: 84,
+        [_Location_file]: "file:///C:/Users/haier/Downloads/Compressed/fyp/CareerRoad/career_road/lib/components/bottomNavBar.dart"
+      });
+    },
+    get C356() {
+      return C[356] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "icon",
+        [_Location_column]: 30,
+        [_Location_line]: 87,
+        [_Location_file]: null
+      });
+    },
+    get C355() {
+      return C[355] = dart.constList([C[356] || CT.C356], T._LocationL());
+    },
+    get C354() {
+      return C[354] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[355] || CT.C355,
+        [_Location_name]: null,
+        [_Location_column]: 19,
+        [_Location_line]: 87,
+        [_Location_file]: "file:///C:/Users/haier/Downloads/Compressed/fyp/CareerRoad/career_road/lib/components/bottomNavBar.dart"
+      });
+    },
+    get C359() {
+      return C[359] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "data",
+        [_Location_column]: 25,
+        [_Location_line]: 88,
+        [_Location_file]: null
+      });
+    },
+    get C358() {
+      return C[358] = dart.constList([C[359] || CT.C359], T._LocationL());
+    },
+    get C357() {
+      return C[357] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[358] || CT.C358,
+        [_Location_name]: null,
+        [_Location_column]: 20,
+        [_Location_line]: 88,
+        [_Location_file]: "file:///C:/Users/haier/Downloads/Compressed/fyp/CareerRoad/career_road/lib/components/bottomNavBar.dart"
+      });
+    },
+    get C362() {
+      return C[362] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "selectedIndex",
+        [_Location_column]: 7,
+        [_Location_line]: 23,
+        [_Location_file]: null
+      });
+    },
+    get C363() {
+      return C[363] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "showElevation",
+        [_Location_column]: 7,
+        [_Location_line]: 24,
+        [_Location_file]: null
+      });
+    },
+    get C364() {
+      return C[364] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "onItemSelected",
+        [_Location_column]: 7,
+        [_Location_line]: 25,
+        [_Location_file]: null
+      });
+    },
+    get C365() {
+      return C[365] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "items",
+        [_Location_column]: 7,
+        [_Location_line]: 64,
+        [_Location_file]: null
+      });
+    },
+    get C361() {
+      return C[361] = dart.constList([C[362] || CT.C362, C[363] || CT.C363, C[364] || CT.C364, C[365] || CT.C365], T._LocationL());
+    },
+    get C360() {
+      return C[360] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[361] || CT.C361,
+        [_Location_name]: null,
+        [_Location_column]: 12,
+        [_Location_line]: 22,
+        [_Location_file]: "file:///C:/Users/haier/Downloads/Compressed/fyp/CareerRoad/career_road/lib/components/bottomNavBar.dart"
+      });
+    },
+    get C366() {
+      return C[366] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[279] || CT.C279,
+        [_Location_name]: null,
+        [_Location_column]: 30,
+        [_Location_line]: 19,
+        [_Location_file]: "file:///C:/Users/haier/Downloads/Compressed/fyp/CareerRoad/career_road/lib/screens/career_list_screen.dart"
+      });
+    },
+    get C367() {
+      return C[367] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[282] || CT.C282,
+        [_Location_name]: null,
+        [_Location_column]: 16,
+        [_Location_line]: 19,
+        [_Location_file]: "file:///C:/Users/haier/Downloads/Compressed/fyp/CareerRoad/career_road/lib/screens/career_list_screen.dart"
+      });
+    },
+    get C368() {
+      return C[368] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[285] || CT.C285,
+        [_Location_name]: null,
+        [_Location_column]: 15,
+        [_Location_line]: 18,
+        [_Location_file]: "file:///C:/Users/haier/Downloads/Compressed/fyp/CareerRoad/career_road/lib/screens/career_list_screen.dart"
+      });
+    },
+    get C371() {
+      return C[371] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "data",
+        [_Location_column]: 47,
+        [_Location_line]: 31,
+        [_Location_file]: null
+      });
+    },
+    get C372() {
+      return C[372] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "style",
+        [_Location_column]: 59,
+        [_Location_line]: 31,
+        [_Location_file]: null
+      });
+    },
+    get C370() {
+      return C[370] = dart.constList([C[371] || CT.C371, C[372] || CT.C372], T._LocationL());
+    },
+    get C369() {
+      return C[369] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[370] || CT.C370,
+        [_Location_name]: null,
+        [_Location_column]: 30,
+        [_Location_line]: 31,
+        [_Location_file]: "file:///C:/Users/haier/Downloads/Compressed/fyp/CareerRoad/career_road/lib/screens/career_list_screen.dart"
+      });
+    },
+    get C375() {
+      return C[375] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "data",
+        [_Location_column]: 33,
+        [_Location_line]: 32,
+        [_Location_file]: null
+      });
+    },
+    get C374() {
+      return C[374] = dart.constList([C[375] || CT.C375], T._LocationL());
+    },
+    get C373() {
+      return C[373] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[374] || CT.C374,
+        [_Location_name]: null,
+        [_Location_column]: 28,
+        [_Location_line]: 32,
+        [_Location_file]: "file:///C:/Users/haier/Downloads/Compressed/fyp/CareerRoad/career_road/lib/screens/career_list_screen.dart"
+      });
+    },
+    get C376() {
+      return C[376] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[76] || CT.C76,
+        [_Location_name]: null,
+        [_Location_column]: 53,
+        [_Location_line]: 37,
+        [_Location_file]: "file:///C:/Users/haier/Downloads/Compressed/fyp/CareerRoad/career_road/lib/screens/career_list_screen.dart"
+      });
+    },
+    get C379() {
+      return C[379] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "leading",
+        [_Location_column]: 21,
+        [_Location_line]: 31,
+        [_Location_file]: null
+      });
+    },
+    get C380() {
+      return C[380] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "title",
+        [_Location_column]: 21,
+        [_Location_line]: 32,
+        [_Location_file]: null
+      });
+    },
+    get C381() {
+      return C[381] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "onTap",
+        [_Location_column]: 21,
+        [_Location_line]: 33,
+        [_Location_file]: null
+      });
+    },
+    get C378() {
+      return C[378] = dart.constList([C[379] || CT.C379, C[380] || CT.C380, C[381] || CT.C381], T._LocationL());
+    },
+    get C377() {
+      return C[377] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[378] || CT.C378,
+        [_Location_name]: null,
+        [_Location_column]: 24,
+        [_Location_line]: 30,
+        [_Location_file]: "file:///C:/Users/haier/Downloads/Compressed/fyp/CareerRoad/career_road/lib/screens/career_list_screen.dart"
+      });
+    },
+    get C382() {
+      return C[382] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[305] || CT.C305,
+        [_Location_name]: null,
+        [_Location_column]: 22,
+        [_Location_line]: 26,
+        [_Location_file]: "file:///C:/Users/haier/Downloads/Compressed/fyp/CareerRoad/career_road/lib/screens/career_list_screen.dart"
+      });
+    },
+    get C383() {
+      return C[383] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[310] || CT.C310,
+        [_Location_name]: null,
+        [_Location_column]: 16,
+        [_Location_line]: 23,
+        [_Location_file]: "file:///C:/Users/haier/Downloads/Compressed/fyp/CareerRoad/career_road/lib/screens/career_list_screen.dart"
+      });
+    },
+    get C384() {
+      return C[384] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[314] || CT.C314,
+        [_Location_name]: null,
+        [_Location_column]: 13,
+        [_Location_line]: 22,
+        [_Location_file]: "file:///C:/Users/haier/Downloads/Compressed/fyp/CareerRoad/career_road/lib/screens/career_list_screen.dart"
+      });
+    },
+    get C387() {
+      return C[387] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "bottomNavIndex",
+        [_Location_column]: 41,
+        [_Location_line]: 44,
+        [_Location_file]: null
+      });
+    },
+    get C386() {
+      return C[386] = dart.constList([C[387] || CT.C387], T._LocationL());
+    },
+    get C385() {
+      return C[385] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[386] || CT.C386,
+        [_Location_name]: null,
+        [_Location_column]: 28,
+        [_Location_line]: 44,
+        [_Location_file]: "file:///C:/Users/haier/Downloads/Compressed/fyp/CareerRoad/career_road/lib/screens/career_list_screen.dart"
+      });
+    },
+    get C390() {
+      return C[390] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "bottomNavigationBar",
+        [_Location_column]: 7,
+        [_Location_line]: 44,
+        [_Location_file]: null
+      });
+    },
+    get C389() {
+      return C[389] = dart.constList([C[321] || CT.C321, C[322] || CT.C322, C[323] || CT.C323, C[390] || CT.C390], T._LocationL());
+    },
+    get C388() {
+      return C[388] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[389] || CT.C389,
+        [_Location_name]: null,
+        [_Location_column]: 12,
+        [_Location_line]: 16,
+        [_Location_file]: "file:///C:/Users/haier/Downloads/Compressed/fyp/CareerRoad/career_road/lib/screens/career_list_screen.dart"
+      });
+    }
+  }, false);
+  var C = Array(391).fill(void 0);
+  var I = [
+    "package:career_road/screens/career_screen.dart",
+    "package:career_road/screens/search_screen.dart",
+    "package:career_road/components/searchBar.dart",
+    "package:career_road/screens/home_screen.dart",
+    "package:career_road/screens/menu_screen.dart",
+    "package:career_road/screens/quiz_screen.dart",
+    "package:career_road/screens/bookmark_screen.dart",
+    "package:career_road/components/bottomNavBar.dart",
+    "package:career_road/screens/career_list_screen.dart"
+  ];
+  career_screen.CareerScreen = class CareerScreen extends framework.StatefulWidget {
+    createState() {
+      return new career_screen._CareerScreenState.new();
+    }
+  };
+  (career_screen.CareerScreen.new = function(opts) {
+    let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
+    career_screen.CareerScreen.__proto__.new.call(this, {$creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
+    ;
+  }).prototype = career_screen.CareerScreen.prototype;
+  dart.addTypeTests(career_screen.CareerScreen);
+  dart.addTypeCaches(career_screen.CareerScreen);
+  dart.setMethodSignature(career_screen.CareerScreen, () => ({
+    __proto__: dart.getMethods(career_screen.CareerScreen.__proto__),
+    createState: dart.fnType(dart.legacy(career_screen._CareerScreenState), [])
+  }));
+  dart.setLibraryUri(career_screen.CareerScreen, I[0]);
+  var _Location_parameterLocations = dart.privateName(widget_inspector, "_Location.parameterLocations");
+  var _Location_name = dart.privateName(widget_inspector, "_Location.name");
+  var _Location_column = dart.privateName(widget_inspector, "_Location.column");
+  var _Location_line = dart.privateName(widget_inspector, "_Location.line");
+  var _Location_file = dart.privateName(widget_inspector, "_Location.file");
+  career_screen._CareerScreenState = class _CareerScreenState extends framework.State$(dart.legacy(career_screen.CareerScreen)) {
+    build(context) {
+      let _bottomNavIndex = 2;
+      let _selectedIndex = 0;
+      return new scaffold.Scaffold.new({backgroundColor: constants.kBackgroundColor, appBar: new app_bar.AppBar.new({title: new basic.Center.new({child: new text.Text.new("Career Info", {$creationLocationd_0dea112b090073317d4: C[0] || CT.C0}), $creationLocationd_0dea112b090073317d4: C[3] || CT.C3}), automaticallyImplyLeading: false, $creationLocationd_0dea112b090073317d4: C[6] || CT.C6}), body: new basic.Column.new({children: T.JSArrayOfWidgetL().of([new gnav.GNav.new({haptic: true, tabs: T.JSArrayOfGButtonL().of([new gbutton.GButton.new({icon: icons.Icons.alternate_email, text: "Info", textStyle: constants.kLabelStyle, iconColor: colors.Colors.white, iconActiveColor: colors.Colors.white, onPressed: dart.fn(() => {
+                    this.setState(dart.fn(() => {
+                      _selectedIndex = 0;
+                    }, T.VoidToNull()));
+                  }, T.VoidToNull()), $creationLocationd_0dea112b090073317d4: C[10] || CT.C10}), new gbutton.GButton.new({icon: icons.Icons.map, text: "Roadmap", textStyle: constants.kLabelStyle, iconColor: colors.Colors.white, iconActiveColor: colors.Colors.white, onPressed: dart.fn(() => {
+                    this.setState(dart.fn(() => {
+                      _selectedIndex = 1;
+                    }, T.VoidToNull()));
+                  }, T.VoidToNull()), $creationLocationd_0dea112b090073317d4: C[18] || CT.C18}), new gbutton.GButton.new({icon: icons.Icons.forum, text: "Forum", textStyle: constants.kLabelStyle, iconColor: colors.Colors.white, iconActiveColor: colors.Colors.white, onPressed: dart.fn(() => {
+                    this.setState(dart.fn(() => {
+                      _selectedIndex = 2;
+                    }, T.VoidToNull()));
+                  }, T.VoidToNull()), $creationLocationd_0dea112b090073317d4: C[26] || CT.C26})]), selectedIndex: _selectedIndex, onTabChange: dart.fn(index => {
+                this.setState(dart.fn(() => {
+                  _selectedIndex = index;
+                }, T.VoidToNull()));
+              }, T.intLToNull()), $creationLocationd_0dea112b090073317d4: C[34] || CT.C34}), new container.Container.new({child: new text.Text.new(dart.toString(_selectedIndex), {$creationLocationd_0dea112b090073317d4: C[40] || CT.C40}), $creationLocationd_0dea112b090073317d4: C[43] || CT.C43})]), $creationLocationd_0dea112b090073317d4: C[46] || CT.C46}), bottomNavigationBar: new bottomNavBar.BottomNavBar.new({bottomNavIndex: _bottomNavIndex, $creationLocationd_0dea112b090073317d4: C[49] || CT.C49}), $creationLocationd_0dea112b090073317d4: C[52] || CT.C52});
+    }
+  };
+  (career_screen._CareerScreenState.new = function() {
+    career_screen._CareerScreenState.__proto__.new.call(this);
+    ;
+  }).prototype = career_screen._CareerScreenState.prototype;
+  dart.addTypeTests(career_screen._CareerScreenState);
+  dart.addTypeCaches(career_screen._CareerScreenState);
+  dart.setMethodSignature(career_screen._CareerScreenState, () => ({
+    __proto__: dart.getMethods(career_screen._CareerScreenState.__proto__),
+    build: dart.fnType(dart.legacy(framework.Widget), [dart.legacy(framework.BuildContext)])
+  }));
+  dart.setLibraryUri(career_screen._CareerScreenState, I[0]);
+  search_screen.SearchScreen = class SearchScreen extends framework.StatefulWidget {
+    createState() {
+      return new search_screen._SearchScreenState.new();
+    }
+  };
+  (search_screen.SearchScreen.new = function(opts) {
+    let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
+    search_screen.SearchScreen.__proto__.new.call(this, {$creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
+    ;
+  }).prototype = search_screen.SearchScreen.prototype;
+  dart.addTypeTests(search_screen.SearchScreen);
+  dart.addTypeCaches(search_screen.SearchScreen);
+  dart.setMethodSignature(search_screen.SearchScreen, () => ({
+    __proto__: dart.getMethods(search_screen.SearchScreen.__proto__),
+    createState: dart.fnType(dart.legacy(search_screen._SearchScreenState), [])
+  }));
+  dart.setLibraryUri(search_screen.SearchScreen, I[1]);
+  search_screen._SearchScreenState = class _SearchScreenState extends framework.State$(dart.legacy(search_screen.SearchScreen)) {
+    build(context) {
+      return new scaffold.Scaffold.new({backgroundColor: constants.kBackgroundColor, appBar: new app_bar.AppBar.new({title: new basic.Center.new({child: new text.Text.new("Search Results", {$creationLocationd_0dea112b090073317d4: C[58] || CT.C58}), $creationLocationd_0dea112b090073317d4: C[61] || CT.C61}), automaticallyImplyLeading: false, $creationLocationd_0dea112b090073317d4: C[64] || CT.C64}), body: new single_child_scroll_view.SingleChildScrollView.new({child: new basic.Column.new({mainAxisAlignment: flex.MainAxisAlignment.center, children: T.JSArrayOfWidgetL().of([new scroll_view.ListView.builder({shrinkWrap: true, itemCount: 10, itemBuilder: dart.fn((context, index) => new list_tile.ListTile.new({leading: new text.Text.new((dart.notNull(index) + 1)[$toString](), {style: constants.kLabelStyle, $creationLocationd_0dea112b090073317d4: C[68] || CT.C68}), title: new text.Text.new("Career Name Here", {$creationLocationd_0dea112b090073317d4: C[72] || CT.C72}), onTap: dart.fn(() => {
+                    navigator.Navigator.push(dart.dynamic, context, new page.MaterialPageRoute.new({builder: dart.fn(context => new career_screen.CareerScreen.new({$creationLocationd_0dea112b090073317d4: C[75] || CT.C75}), T.BuildContextLToCareerScreenL())}));
+                  }, T.VoidToNull()), $creationLocationd_0dea112b090073317d4: C[77] || CT.C77}), T.BuildContextLAndintLToListTileL()), $creationLocationd_0dea112b090073317d4: C[82] || CT.C82})]), $creationLocationd_0dea112b090073317d4: C[87] || CT.C87}), $creationLocationd_0dea112b090073317d4: C[91] || CT.C91}), bottomNavigationBar: new bottomNavBar.BottomNavBar.new({$creationLocationd_0dea112b090073317d4: C[94] || CT.C94}), $creationLocationd_0dea112b090073317d4: C[95] || CT.C95});
+    }
+  };
+  (search_screen._SearchScreenState.new = function() {
+    search_screen._SearchScreenState.__proto__.new.call(this);
+    ;
+  }).prototype = search_screen._SearchScreenState.prototype;
+  dart.addTypeTests(search_screen._SearchScreenState);
+  dart.addTypeCaches(search_screen._SearchScreenState);
+  dart.setMethodSignature(search_screen._SearchScreenState, () => ({
+    __proto__: dart.getMethods(search_screen._SearchScreenState.__proto__),
+    build: dart.fnType(dart.legacy(framework.Widget), [dart.legacy(framework.BuildContext)])
+  }));
+  dart.setLibraryUri(search_screen._SearchScreenState, I[1]);
+  var formKey = dart.privateName(searchBar, "SearchBar.formKey");
+  searchBar.SearchBar = class SearchBar extends framework.StatefulWidget {
+    get formKey() {
+      return this[formKey];
+    }
+    set formKey(value) {
+      super.formKey = value;
+    }
+    createState() {
+      return new searchBar._SearchBarState.new();
+    }
+  };
+  (searchBar.SearchBar.new = function(opts) {
+    let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
+    this[formKey] = T.GlobalKeyOfFormStateL().new();
+    searchBar.SearchBar.__proto__.new.call(this, {$creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
+    ;
+  }).prototype = searchBar.SearchBar.prototype;
+  dart.addTypeTests(searchBar.SearchBar);
+  dart.addTypeCaches(searchBar.SearchBar);
+  dart.setMethodSignature(searchBar.SearchBar, () => ({
+    __proto__: dart.getMethods(searchBar.SearchBar.__proto__),
+    createState: dart.fnType(dart.legacy(searchBar._SearchBarState), [])
+  }));
+  dart.setLibraryUri(searchBar.SearchBar, I[2]);
+  dart.setFieldSignature(searchBar.SearchBar, () => ({
+    __proto__: dart.getFields(searchBar.SearchBar.__proto__),
+    formKey: dart.finalFieldType(dart.legacy(framework.GlobalKey$(dart.legacy(form.FormState))))
+  }));
+  searchBar._SearchBarState = class _SearchBarState extends framework.State$(dart.legacy(searchBar.SearchBar)) {
+    build(context) {
+      let _query = "";
+      let size = media_query.MediaQuery.of(context).size;
+      return new basic.Column.new({children: T.JSArrayOfWidgetL().of([new container.Container.new({height: 50.0, width: dart.notNull(size.width) / 0.5, decoration: constants.kBoxDecorationStyle, child: new text_form_field.TextFormField.new({decoration: new input_decorator.InputDecoration.new({contentPadding: new edge_insets.EdgeInsets.only({top: 15.0}), border: input_border.InputBorder.none, prefixIcon: new icon.Icon.new(icons.Icons.search, {color: colors.Colors.white, $creationLocationd_0dea112b090073317d4: C[101] || CT.C101}), hintText: "Type Career", hintStyle: constants.kHintTextStyle}), validator: dart.fn(str => {
+                if (str[$isEmpty]) {
+                  return "Text is required";
+                }
+                return null;
+              }, T.StringLToStringL()), onChanged: dart.fn(str => {
+                this.setState(dart.fn(() => {
+                  _query = str;
+                }, T.VoidToNull()));
+              }, T.StringLToNull()), $creationLocationd_0dea112b090073317d4: C[105] || CT.C105}), $creationLocationd_0dea112b090073317d4: C[110] || CT.C110}), new basic.SizedBox.new({height: dart.notNull(media_query.MediaQuery.of(context).size.height) / 25, $creationLocationd_0dea112b090073317d4: C[116] || CT.C116}), new raised_button.RaisedButton.new({shape: new rounded_rectangle_border.RoundedRectangleBorder.new({borderRadius: new border_radius.BorderRadius.circular(18.0)}), color: colors.Colors.blue, textColor: colors.Colors.white, onPressed: dart.fn(() => async.async(core.Null, (function*() {
+              if (dart.test(this.widget.formKey.currentState.validate())) {
+                navigator.Navigator.push(dart.dynamic, context, new page.MaterialPageRoute.new({builder: dart.fn(context => new search_screen.SearchScreen.new({$creationLocationd_0dea112b090073317d4: C[119] || CT.C119}), T.BuildContextLToSearchScreenL())}));
+              }
+            }).bind(this)), T.VoidToFutureLOfNull()), child: new text.Text.new("Search", {$creationLocationd_0dea112b090073317d4: C[120] || CT.C120}), $creationLocationd_0dea112b090073317d4: C[123] || CT.C123})]), $creationLocationd_0dea112b090073317d4: C[130] || CT.C130});
+    }
+  };
+  (searchBar._SearchBarState.new = function() {
+    searchBar._SearchBarState.__proto__.new.call(this);
+    ;
+  }).prototype = searchBar._SearchBarState.prototype;
+  dart.addTypeTests(searchBar._SearchBarState);
+  dart.addTypeCaches(searchBar._SearchBarState);
+  dart.setMethodSignature(searchBar._SearchBarState, () => ({
+    __proto__: dart.getMethods(searchBar._SearchBarState.__proto__),
+    build: dart.fnType(dart.legacy(framework.Widget), [dart.legacy(framework.BuildContext)])
+  }));
+  dart.setLibraryUri(searchBar._SearchBarState, I[2]);
+  home_screen.HomeScreen = class HomeScreen extends framework.StatefulWidget {
+    createState() {
+      return new home_screen._HomeScreenState.new();
+    }
+  };
+  (home_screen.HomeScreen.new = function(opts) {
+    let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
+    home_screen.HomeScreen.__proto__.new.call(this, {$creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
+    ;
+  }).prototype = home_screen.HomeScreen.prototype;
+  dart.addTypeTests(home_screen.HomeScreen);
+  dart.addTypeCaches(home_screen.HomeScreen);
+  dart.setMethodSignature(home_screen.HomeScreen, () => ({
+    __proto__: dart.getMethods(home_screen.HomeScreen.__proto__),
+    createState: dart.fnType(dart.legacy(home_screen._HomeScreenState), [])
+  }));
+  dart.setLibraryUri(home_screen.HomeScreen, I[3]);
+  home_screen._HomeScreenState = class _HomeScreenState extends framework.State$(dart.legacy(home_screen.HomeScreen)) {
+    build(context) {
+      let size = media_query.MediaQuery.of(context).size;
+      let _controller = new editable_text.TextEditingController.new();
+      let introText = "\n\n          Welcome To Career Road  this app will help you find and build your career \n          by providing its road map and related learning sources. \n          Assisting you in your self-learning process. We wish you Happy Learning.\n          Regards,\n          Career Road Team";
+      let _bottomNavIndex = 1;
+      return new scaffold.Scaffold.new({appBar: new app_bar.AppBar.new({title: new basic.Center.new({child: new text.Text.new("Home", {$creationLocationd_0dea112b090073317d4: C[133] || CT.C133}), $creationLocationd_0dea112b090073317d4: C[136] || CT.C136}), automaticallyImplyLeading: false, $creationLocationd_0dea112b090073317d4: C[139] || CT.C139}), backgroundColor: constants.kBackgroundColor, body: new safe_area.SafeArea.new({child: new single_child_scroll_view.SingleChildScrollView.new({child: new container.Container.new({padding: new edge_insets.EdgeInsets.symmetric({horizontal: dart.notNull(size.width) / 20, vertical: dart.notNull(size.height) / 20}), child: new container.Container.new({child: new basic.Column.new({children: T.JSArrayOfWidgetL().of([new basic.Center.new({child: new container.Container.new({child: new text.Text.new("Career Road", {style: constants.kTitleStyle, $creationLocationd_0dea112b090073317d4: C[143] || CT.C143}), $creationLocationd_0dea112b090073317d4: C[147] || CT.C147}), $creationLocationd_0dea112b090073317d4: C[150] || CT.C150}), new container.Container.new({child: new text.Text.new(introText, {style: constants.kLabelStyle, $creationLocationd_0dea112b090073317d4: C[153] || CT.C153}), $creationLocationd_0dea112b090073317d4: C[157] || CT.C157}), new basic.SizedBox.new({height: dart.notNull(media_query.MediaQuery.of(context).size.height) / 20, $creationLocationd_0dea112b090073317d4: C[160] || CT.C160}), new searchBar.SearchBar.new({$creationLocationd_0dea112b090073317d4: C[163] || CT.C163})]), $creationLocationd_0dea112b090073317d4: C[164] || CT.C164}), $creationLocationd_0dea112b090073317d4: C[167] || CT.C167}), $creationLocationd_0dea112b090073317d4: C[170] || CT.C170}), $creationLocationd_0dea112b090073317d4: C[174] || CT.C174}), $creationLocationd_0dea112b090073317d4: C[177] || CT.C177}), bottomNavigationBar: new bottomNavBar.BottomNavBar.new({bottomNavIndex: _bottomNavIndex, $creationLocationd_0dea112b090073317d4: C[180] || CT.C180}), $creationLocationd_0dea112b090073317d4: C[183] || CT.C183});
+    }
+  };
+  (home_screen._HomeScreenState.new = function() {
+    home_screen._HomeScreenState.__proto__.new.call(this);
+    ;
+  }).prototype = home_screen._HomeScreenState.prototype;
+  dart.addTypeTests(home_screen._HomeScreenState);
+  dart.addTypeCaches(home_screen._HomeScreenState);
+  dart.setMethodSignature(home_screen._HomeScreenState, () => ({
+    __proto__: dart.getMethods(home_screen._HomeScreenState.__proto__),
+    build: dart.fnType(dart.legacy(framework.Widget), [dart.legacy(framework.BuildContext)])
+  }));
+  dart.setLibraryUri(home_screen._HomeScreenState, I[3]);
+  menu_screen.Menu = class Menu extends framework.StatelessWidget {
+    build(context) {
+      let _bottomNavIndex = 4;
+      return new scaffold.Scaffold.new({appBar: new app_bar.AppBar.new({title: new basic.Center.new({child: new text.Text.new("Menu", {$creationLocationd_0dea112b090073317d4: C[189] || CT.C189}), $creationLocationd_0dea112b090073317d4: C[192] || CT.C192}), automaticallyImplyLeading: false, $creationLocationd_0dea112b090073317d4: C[195] || CT.C195}), backgroundColor: constants.kBackgroundColor, body: new basic.Column.new({crossAxisAlignment: flex.CrossAxisAlignment.center, children: T.JSArrayOfWidgetL().of([new container.Container.new({height: dart.notNull(media_query.MediaQuery.of(context).size.height) / 4, width: media_query.MediaQuery.of(context).size.width, color: colors.Colors.black12, child: new basic.Center.new({child: new text.Text.new("Add USER NAME HERE", {style: constants.kTitleStyle, $creationLocationd_0dea112b090073317d4: C[199] || CT.C199}), $creationLocationd_0dea112b090073317d4: C[203] || CT.C203}), $creationLocationd_0dea112b090073317d4: C[206] || CT.C206}), new visibility.Visibility.new({visible: false, child: new list_tile.ListTile.new({leading: new icon.Icon.new(icons.Icons.add, {color: colors.Colors.white, $creationLocationd_0dea112b090073317d4: C[212] || CT.C212}), title: new text.Text.new("Add/Remove Career", {style: constants.kLabelStyle, $creationLocationd_0dea112b090073317d4: C[216] || CT.C216}), $creationLocationd_0dea112b090073317d4: C[220] || CT.C220}), $creationLocationd_0dea112b090073317d4: C[224] || CT.C224}), new list_tile.ListTile.new({leading: new icon.Icon.new(icons.Icons.logout, {color: colors.Colors.white, $creationLocationd_0dea112b090073317d4: C[228] || CT.C228}), title: new text.Text.new("Logout", {style: constants.kLabelStyle, $creationLocationd_0dea112b090073317d4: C[232] || CT.C232}), $creationLocationd_0dea112b090073317d4: C[236] || CT.C236})]), $creationLocationd_0dea112b090073317d4: C[240] || CT.C240}), bottomNavigationBar: new bottomNavBar.BottomNavBar.new({bottomNavIndex: _bottomNavIndex, $creationLocationd_0dea112b090073317d4: C[244] || CT.C244}), $creationLocationd_0dea112b090073317d4: C[247] || CT.C247});
+    }
+  };
+  (menu_screen.Menu.new = function(opts) {
+    let key = opts && 'key' in opts ? opts.key : null;
+    let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
+    menu_screen.Menu.__proto__.new.call(this, {key: key, $creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
+    ;
+  }).prototype = menu_screen.Menu.prototype;
+  dart.addTypeTests(menu_screen.Menu);
+  dart.addTypeCaches(menu_screen.Menu);
+  dart.setMethodSignature(menu_screen.Menu, () => ({
+    __proto__: dart.getMethods(menu_screen.Menu.__proto__),
+    build: dart.fnType(dart.legacy(framework.Widget), [dart.legacy(framework.BuildContext)])
+  }));
+  dart.setLibraryUri(menu_screen.Menu, I[4]);
+  quiz_screen.QuizScreen = class QuizScreen extends framework.StatelessWidget {
+    build(context) {
+      let _bottomNavIndex = 0;
+      return new scaffold.Scaffold.new({appBar: new app_bar.AppBar.new({title: new basic.Center.new({child: new text.Text.new("Quiz", {$creationLocationd_0dea112b090073317d4: C[253] || CT.C253}), $creationLocationd_0dea112b090073317d4: C[256] || CT.C256}), automaticallyImplyLeading: false, $creationLocationd_0dea112b090073317d4: C[259] || CT.C259}), backgroundColor: constants.kBackgroundColor, body: new container.Container.new({child: new text.Text.new("Quiz time", {$creationLocationd_0dea112b090073317d4: C[263] || CT.C263}), $creationLocationd_0dea112b090073317d4: C[266] || CT.C266}), bottomNavigationBar: new bottomNavBar.BottomNavBar.new({bottomNavIndex: _bottomNavIndex, $creationLocationd_0dea112b090073317d4: C[269] || CT.C269}), $creationLocationd_0dea112b090073317d4: C[272] || CT.C272});
+    }
+  };
+  (quiz_screen.QuizScreen.new = function(opts) {
+    let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
+    quiz_screen.QuizScreen.__proto__.new.call(this, {$creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
+    ;
+  }).prototype = quiz_screen.QuizScreen.prototype;
+  dart.addTypeTests(quiz_screen.QuizScreen);
+  dart.addTypeCaches(quiz_screen.QuizScreen);
+  dart.setMethodSignature(quiz_screen.QuizScreen, () => ({
+    __proto__: dart.getMethods(quiz_screen.QuizScreen.__proto__),
+    build: dart.fnType(dart.legacy(framework.Widget), [dart.legacy(framework.BuildContext)])
+  }));
+  dart.setLibraryUri(quiz_screen.QuizScreen, I[5]);
+  bookmark_screen.BookmarkScreen = class BookmarkScreen extends framework.StatefulWidget {
+    createState() {
+      return new bookmark_screen._BookmarkScreenState.new();
+    }
+  };
+  (bookmark_screen.BookmarkScreen.new = function(opts) {
+    let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
+    bookmark_screen.BookmarkScreen.__proto__.new.call(this, {$creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
+    ;
+  }).prototype = bookmark_screen.BookmarkScreen.prototype;
+  dart.addTypeTests(bookmark_screen.BookmarkScreen);
+  dart.addTypeCaches(bookmark_screen.BookmarkScreen);
+  dart.setMethodSignature(bookmark_screen.BookmarkScreen, () => ({
+    __proto__: dart.getMethods(bookmark_screen.BookmarkScreen.__proto__),
+    createState: dart.fnType(dart.legacy(bookmark_screen._BookmarkScreenState), [])
+  }));
+  dart.setLibraryUri(bookmark_screen.BookmarkScreen, I[6]);
+  bookmark_screen._BookmarkScreenState = class _BookmarkScreenState extends framework.State$(dart.legacy(bookmark_screen.BookmarkScreen)) {
+    build(context) {
+      let _bottomNavIndex = 3;
+      return new scaffold.Scaffold.new({backgroundColor: constants.kBackgroundColor, appBar: new app_bar.AppBar.new({title: new basic.Center.new({child: new text.Text.new("Bookmarks", {$creationLocationd_0dea112b090073317d4: C[278] || CT.C278}), $creationLocationd_0dea112b090073317d4: C[281] || CT.C281}), automaticallyImplyLeading: false, $creationLocationd_0dea112b090073317d4: C[284] || CT.C284}), body: new single_child_scroll_view.SingleChildScrollView.new({child: new basic.Column.new({mainAxisAlignment: flex.MainAxisAlignment.center, children: T.JSArrayOfWidgetL().of([new scroll_view.ListView.builder({shrinkWrap: true, itemCount: 10, itemBuilder: dart.fn((context, index) => new list_tile.ListTile.new({leading: new text.Text.new((dart.notNull(index) + 1)[$toString](), {style: constants.kLabelStyle, $creationLocationd_0dea112b090073317d4: C[288] || CT.C288}), title: new text.Text.new("Career Name Here", {$creationLocationd_0dea112b090073317d4: C[292] || CT.C292}), trailing: new icon.Icon.new(icons.Icons.delete, {color: colors.Colors.white, $creationLocationd_0dea112b090073317d4: C[295] || CT.C295}), $creationLocationd_0dea112b090073317d4: C[299] || CT.C299}), T.BuildContextLAndintLToListTileL()), $creationLocationd_0dea112b090073317d4: C[304] || CT.C304})]), $creationLocationd_0dea112b090073317d4: C[309] || CT.C309}), $creationLocationd_0dea112b090073317d4: C[313] || CT.C313}), bottomNavigationBar: new bottomNavBar.BottomNavBar.new({bottomNavIndex: _bottomNavIndex, $creationLocationd_0dea112b090073317d4: C[316] || CT.C316}), $creationLocationd_0dea112b090073317d4: C[319] || CT.C319});
+    }
+  };
+  (bookmark_screen._BookmarkScreenState.new = function() {
+    bookmark_screen._BookmarkScreenState.__proto__.new.call(this);
+    ;
+  }).prototype = bookmark_screen._BookmarkScreenState.prototype;
+  dart.addTypeTests(bookmark_screen._BookmarkScreenState);
+  dart.addTypeCaches(bookmark_screen._BookmarkScreenState);
+  dart.setMethodSignature(bookmark_screen._BookmarkScreenState, () => ({
+    __proto__: dart.getMethods(bookmark_screen._BookmarkScreenState.__proto__),
+    build: dart.fnType(dart.legacy(framework.Widget), [dart.legacy(framework.BuildContext)])
+  }));
+  dart.setLibraryUri(bookmark_screen._BookmarkScreenState, I[6]);
+  var bottomNavIndex$ = dart.privateName(bottomNavBar, "BottomNavBar.bottomNavIndex");
+  bottomNavBar.BottomNavBar = class BottomNavBar extends framework.StatefulWidget {
+    get bottomNavIndex() {
+      return this[bottomNavIndex$];
+    }
+    set bottomNavIndex(value) {
+      this[bottomNavIndex$] = value;
+    }
+    createState() {
+      return new bottomNavBar._BottomNavBarState.new();
+    }
+  };
+  (bottomNavBar.BottomNavBar.new = function(opts) {
+    let bottomNavIndex = opts && 'bottomNavIndex' in opts ? opts.bottomNavIndex : null;
+    let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
+    this[bottomNavIndex$] = bottomNavIndex;
+    bottomNavBar.BottomNavBar.__proto__.new.call(this, {$creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
+    ;
+  }).prototype = bottomNavBar.BottomNavBar.prototype;
+  dart.addTypeTests(bottomNavBar.BottomNavBar);
+  dart.addTypeCaches(bottomNavBar.BottomNavBar);
+  dart.setMethodSignature(bottomNavBar.BottomNavBar, () => ({
+    __proto__: dart.getMethods(bottomNavBar.BottomNavBar.__proto__),
+    createState: dart.fnType(dart.legacy(bottomNavBar._BottomNavBarState), [])
+  }));
+  dart.setLibraryUri(bottomNavBar.BottomNavBar, I[7]);
+  dart.setFieldSignature(bottomNavBar.BottomNavBar, () => ({
+    __proto__: dart.getFields(bottomNavBar.BottomNavBar.__proto__),
+    bottomNavIndex: dart.fieldType(dart.legacy(core.int))
+  }));
+  bottomNavBar._BottomNavBarState = class _BottomNavBarState extends framework.State$(dart.legacy(bottomNavBar.BottomNavBar)) {
+    build(context) {
+      return new bottom_navy_bar.BottomNavyBar.new({selectedIndex: this.widget.bottomNavIndex, showElevation: true, onItemSelected: dart.fn(index => this.setState(dart.fn(() => {
+          this.widget.bottomNavIndex = index;
+          if (index === 0) {
+            navigator.Navigator.push(dart.dynamic, context, new page.MaterialPageRoute.new({builder: dart.fn(context => new quiz_screen.QuizScreen.new({$creationLocationd_0dea112b090073317d4: C[325] || CT.C325}), T.BuildContextLToQuizScreenL())}));
+          } else if (index === 1) {
+            navigator.Navigator.push(dart.dynamic, context, new page.MaterialPageRoute.new({builder: dart.fn(context => new home_screen.HomeScreen.new({$creationLocationd_0dea112b090073317d4: C[326] || CT.C326}), T.BuildContextLToHomeScreenL())}));
+          } else if (index === 2) {
+            navigator.Navigator.push(dart.dynamic, context, new page.MaterialPageRoute.new({builder: dart.fn(context => new career_list_screen.CareerListScreen.new({$creationLocationd_0dea112b090073317d4: C[327] || CT.C327}), T.BuildContextLToCareerListScreenL())}));
+          } else if (index === 3) {
+            navigator.Navigator.push(dart.dynamic, context, new page.MaterialPageRoute.new({builder: dart.fn(context => new bookmark_screen.BookmarkScreen.new({$creationLocationd_0dea112b090073317d4: C[328] || CT.C328}), T.BuildContextLToBookmarkScreenL())}));
+          } else if (index === 4) {
+            navigator.Navigator.push(dart.dynamic, context, new page.MaterialPageRoute.new({builder: dart.fn(context => new menu_screen.Menu.new({$creationLocationd_0dea112b090073317d4: C[329] || CT.C329}), T.BuildContextLToMenuL())}));
+          }
+        }, T.VoidToNull())), T.intLTovoid()), items: T.JSArrayOfBottomNavyBarItemL().of([new bottom_navy_bar.BottomNavyBarItem.new({icon: new icon.Icon.new(icons.Icons.assignment, {$creationLocationd_0dea112b090073317d4: C[330] || CT.C330}), title: new text.Text.new("Quiz", {$creationLocationd_0dea112b090073317d4: C[333] || CT.C333}), activeColor: constants.kBackgroundColor}), new bottom_navy_bar.BottomNavyBarItem.new({icon: new icon.Icon.new(icons.Icons.home, {$creationLocationd_0dea112b090073317d4: C[336] || CT.C336}), title: new text.Text.new("Home", {$creationLocationd_0dea112b090073317d4: C[339] || CT.C339}), activeColor: constants.kBackgroundColor}), new bottom_navy_bar.BottomNavyBarItem.new({icon: new icon.Icon.new(icons.Icons.work, {$creationLocationd_0dea112b090073317d4: C[342] || CT.C342}), title: new text.Text.new("Career", {$creationLocationd_0dea112b090073317d4: C[345] || CT.C345}), activeColor: constants.kBackgroundColor}), new bottom_navy_bar.BottomNavyBarItem.new({icon: new icon.Icon.new(icons.Icons.bookmark, {$creationLocationd_0dea112b090073317d4: C[348] || CT.C348}), title: new text.Text.new("Bookmark", {$creationLocationd_0dea112b090073317d4: C[351] || CT.C351}), activeColor: constants.kBackgroundColor}), new bottom_navy_bar.BottomNavyBarItem.new({icon: new icon.Icon.new(icons.Icons.menu, {$creationLocationd_0dea112b090073317d4: C[354] || CT.C354}), title: new text.Text.new("Settings", {$creationLocationd_0dea112b090073317d4: C[357] || CT.C357}), activeColor: colors.Colors.blue})]), $creationLocationd_0dea112b090073317d4: C[360] || CT.C360});
+    }
+  };
+  (bottomNavBar._BottomNavBarState.new = function() {
+    bottomNavBar._BottomNavBarState.__proto__.new.call(this);
+    ;
+  }).prototype = bottomNavBar._BottomNavBarState.prototype;
+  dart.addTypeTests(bottomNavBar._BottomNavBarState);
+  dart.addTypeCaches(bottomNavBar._BottomNavBarState);
+  dart.setMethodSignature(bottomNavBar._BottomNavBarState, () => ({
+    __proto__: dart.getMethods(bottomNavBar._BottomNavBarState.__proto__),
+    build: dart.fnType(dart.legacy(framework.Widget), [dart.legacy(framework.BuildContext)])
+  }));
+  dart.setLibraryUri(bottomNavBar._BottomNavBarState, I[7]);
+  career_list_screen.CareerListScreen = class CareerListScreen extends framework.StatefulWidget {
+    createState() {
+      return new career_list_screen._CareerListScreenState.new();
+    }
+  };
+  (career_list_screen.CareerListScreen.new = function(opts) {
+    let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
+    career_list_screen.CareerListScreen.__proto__.new.call(this, {$creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
+    ;
+  }).prototype = career_list_screen.CareerListScreen.prototype;
+  dart.addTypeTests(career_list_screen.CareerListScreen);
+  dart.addTypeCaches(career_list_screen.CareerListScreen);
+  dart.setMethodSignature(career_list_screen.CareerListScreen, () => ({
+    __proto__: dart.getMethods(career_list_screen.CareerListScreen.__proto__),
+    createState: dart.fnType(dart.legacy(career_list_screen._CareerListScreenState), [])
+  }));
+  dart.setLibraryUri(career_list_screen.CareerListScreen, I[8]);
+  career_list_screen._CareerListScreenState = class _CareerListScreenState extends framework.State$(dart.legacy(career_list_screen.CareerListScreen)) {
+    build(context) {
+      let _bottomNavIndex = 2;
+      return new scaffold.Scaffold.new({backgroundColor: constants.kBackgroundColor, appBar: new app_bar.AppBar.new({title: new basic.Center.new({child: new text.Text.new("Courses", {$creationLocationd_0dea112b090073317d4: C[366] || CT.C366}), $creationLocationd_0dea112b090073317d4: C[367] || CT.C367}), automaticallyImplyLeading: false, $creationLocationd_0dea112b090073317d4: C[368] || CT.C368}), body: new single_child_scroll_view.SingleChildScrollView.new({child: new basic.Column.new({mainAxisAlignment: flex.MainAxisAlignment.center, children: T.JSArrayOfWidgetL().of([new scroll_view.ListView.builder({shrinkWrap: true, itemCount: 10, itemBuilder: dart.fn((context, index) => new list_tile.ListTile.new({leading: new text.Text.new((dart.notNull(index) + 1)[$toString](), {style: constants.kLabelStyle, $creationLocationd_0dea112b090073317d4: C[369] || CT.C369}), title: new text.Text.new("Career Name Here", {$creationLocationd_0dea112b090073317d4: C[373] || CT.C373}), onTap: dart.fn(() => {
+                    navigator.Navigator.push(dart.dynamic, context, new page.MaterialPageRoute.new({builder: dart.fn(context => new career_screen.CareerScreen.new({$creationLocationd_0dea112b090073317d4: C[376] || CT.C376}), T.BuildContextLToCareerScreenL())}));
+                  }, T.VoidToNull()), $creationLocationd_0dea112b090073317d4: C[377] || CT.C377}), T.BuildContextLAndintLToListTileL()), $creationLocationd_0dea112b090073317d4: C[382] || CT.C382})]), $creationLocationd_0dea112b090073317d4: C[383] || CT.C383}), $creationLocationd_0dea112b090073317d4: C[384] || CT.C384}), bottomNavigationBar: new bottomNavBar.BottomNavBar.new({bottomNavIndex: _bottomNavIndex, $creationLocationd_0dea112b090073317d4: C[385] || CT.C385}), $creationLocationd_0dea112b090073317d4: C[388] || CT.C388});
+    }
+  };
+  (career_list_screen._CareerListScreenState.new = function() {
+    career_list_screen._CareerListScreenState.__proto__.new.call(this);
+    ;
+  }).prototype = career_list_screen._CareerListScreenState.prototype;
+  dart.addTypeTests(career_list_screen._CareerListScreenState);
+  dart.addTypeCaches(career_list_screen._CareerListScreenState);
+  dart.setMethodSignature(career_list_screen._CareerListScreenState, () => ({
+    __proto__: dart.getMethods(career_list_screen._CareerListScreenState.__proto__),
+    build: dart.fnType(dart.legacy(framework.Widget), [dart.legacy(framework.BuildContext)])
+  }));
+  dart.setLibraryUri(career_list_screen._CareerListScreenState, I[8]);
+  dart.trackLibraries("packages/career_road/screens/career_screen.dart", {
+    "package:career_road/screens/career_screen.dart": career_screen,
+    "package:career_road/screens/search_screen.dart": search_screen,
+    "package:career_road/components/searchBar.dart": searchBar,
+    "package:career_road/screens/home_screen.dart": home_screen,
+    "package:career_road/screens/menu_screen.dart": menu_screen,
+    "package:career_road/screens/quiz_screen.dart": quiz_screen,
+    "package:career_road/screens/bookmark_screen.dart": bookmark_screen,
+    "package:career_road/components/bottomNavBar.dart": bottomNavBar,
+    "package:career_road/screens/career_list_screen.dart": career_list_screen
+  }, {
+  }, '{"version":3,"sourceRoot":"","sources":["career_screen.dart","search_screen.dart","../components/searchBar.dart","home_screen.dart","menu_screen.dart","quiz_screen.dart","bookmark_screen.dart","../components/bottomNavBar.dart","career_list_screen.dart"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;AAQsC;IAAoB;;;;;;EAC1D;;;;;;;;;;;;;;UAI4B;AACpB,4BAAkB;AAClB,2BAAiB;AACrB,YAAO,6CACY,oCACT,+BACC,6BAAc,kBAAK,6JACC,sEAEvB,gCACM,yBACR,2BACU,YACF,0BACJ,+BACc,mCACN,mBACK,kCACO,sCACM,gCACb;AAGP,oBAFF,cAAS;AACW,sBAAlB,iBAAiB;;iGAIvB,+BACc,uBACN,sBACK,kCACO,sCACM,gCACb;AAGP,oBAFF,cAAS;AACW,sBAAlB,iBAAiB;;iGAIvB,+BACc,yBACN,oBACK,kCACO,sCACM,gCACb;AAGP,oBAFF,cAAS;AACW,sBAAlB,iBAAiB;;kHAKV,cAAc,eAChB,QAAC;AAGV,gBAFF,cAAS;AACe,kBAAtB,iBAAiB,KAAK;;6FAI5B,oCAAiB,kBAAoB,cAAf,cAAc,4MAGnB,mDAA6B,eAAe;IAErE;;;;;EACF;;;;;;;;;;ACtEsC;IAAoB;;;;;;EAC1D;;;;;;;;;UAI4B;AACxB,YAAO,6CACY,oCACT,+BACC,6BAAc,kBAAK,oKACC,wEAEvB,+DACG,yCACgC,yCAC3B,yBACC,8CACK,iBACD,iBACE,SAAC,SAAS,UACd,qCACI,kBAAiB,CAAL,aAAN,KAAK,IAAG,yBAAsB,yFACtC,kBAAK,uFACL;AAIyC,oBAHpC,uCACN,OAAO,EACP,yCACa,QAAC,WAAY;+UAQvB;IAEzB;;;;;EACF;;;;;;;;;;ICrC6B;;;;;;;AAGM;IAAiB;;;;IAHvB,gBAAc;;;EAI3C;;;;;;;;;;;;;UAI4B;AAEjB,mBAAS;AACX,iBAAkB,AAAY,0BAAT,OAAO;AACjC,YAAO,iCACK,yBACR,qCACU,aACU,aAAX,AAAK,IAAD,UAAS,iBACR,sCACL,mDACO,yDACiB,sCAAU,gBACjB,2CACR,kBACJ,4BACQ,4FAEN,0BACC,uCAEF,QAAC;AACV,oBAAI,AAAI,GAAD;AACL,wBAAO;;AAET,sBAAO;mDAEE,QAAC;AAGR,gBAFF,cAAS;AACK,kBAAZ,SAAS,GAAG;;+JAKpB,gCAC6C,aAAxB,AAAY,AAAK,0BAAd,OAAO,iBAAgB,iEAG/C,2CACS,uEACsB,wCAAS,gBAExB,+BACI,gCACP;AAET,4BAAI,AAAO,AAAQ,AAAa;AAQ7B,gBALS,uCACR,OAAO,EACP,yCACW,QAAC,WAAY;;YAM7B,iDACM,kBAAK;IAIpB;;;;;EACF;;;;;;;;;;ACzEoC;IAAkB;;;;;;EACtD;;;;;;;;;UAI4B;AACnB,iBAAkB,AAAY,0BAAT,OAAO;AACL,wBAAc;AACnC,sBAAY;AAMf,4BAAkB;AAEtB,YAAO,oCACG,+BACC,6BAAc,kBAAK,8JACC,qFAEZ,kCACX,mCACG,+DACE,sCACe,kDACO,aAAX,AAAK,IAAD,UAAS,cAA0B,aAAZ,AAAK,IAAD,WAAU,aAClD,oCACE,gCACK,yBACR,6BACS,oCACE,kBACL,uBACO,8MAIb,oCACS,kBAAK,SAAS,UAAS,iJAEhC,gCAC6C,aAAxB,AAAY,AAAK,0BAAd,OAAO,iBAAgB,iEAE/C,kaAOS,mDAA6B,eAAe;IAErE;;;;;EACF;;;;;;;;;UCrD4B;AACpB,4BAAkB;AACtB,YAAO,oCACG,+BACC,6BAAc,kBAAK,8JACC,qFAEZ,kCACX,0CACmC,0CAC7B,yBACR,qCAC6C,aAAxB,AAAY,AAAK,0BAAd,OAAO,iBAAgB,UAC3B,AAAY,AAAK,0BAAd,OAAO,qBACd,8BACP,6BACI,kBACT,8BACO,8MAGX,wCAEW,cACF,qCACI,kBACD,yBACQ,yFAET,kBACL,6BACO,8MAIb,qCACW,kBACD,4BACQ,yFAET,kBAAK,kBAAiB,qOAId,mDAA6B,eAAe;IAErE;;;QAjDgB;;AAAQ,oDAAW,GAAG;;EAAC;;;;;;;;;UCCb;AACpB,4BAAkB;AACtB,YAAO,oCACG,+BACC,6BAAc,kBAAK,8JACC,qFAEZ,kCACX,oCACG,kBAAK,6JAEO,mDAA6B,eAAe;IAErE;;;;;;EACF;;;;;;;;;;ACZwC;IAAsB;;;;;;EAC9D;;;;;;;;;UAI4B;AACpB,4BAAkB;AACtB,YAAO,6CACY,oCACT,+BACC,6BAAc,kBAAK,mKACC,0EAEvB,+DACG,yCACgC,yCAC3B,yBACC,8CACK,iBACD,iBACE,SAAC,SAAS,UACd,qCACI,kBAAiB,CAAL,aAAN,KAAK,IAAG,yBAAsB,2FACtC,kBAAK,4FACF,kBAAW,4BAAsB,mYAOlC,mDAA6B,eAAe;IAErE;;;;;EACF;;;;;;;;;;IC/BM;;;;;;;AAIgC;IAAoB;;;QAHrC;;;AAAnB;;EAAmC;;;;;;;;;;;;;UAQT;AACxB,YAAO,uDACU,AAAO,2CACP,sBACC,QAAC,SAAU,cAAS;AACL,UAA7B,AAAO,6BAAiB,KAAK;AAC7B,cAAI,AAAM,KAAD,KAAI;AAML,YAJI,uCACN,OAAO,EACP,yCACW,QAAC,WAAY;gBAEvB,KAAI,AAAM,KAAD,KAAI;AAMZ,YAJI,uCACN,OAAO,EACP,yCACW,QAAC,WAAY;gBAEvB,KAAI,AAAM,KAAD,KAAI;AAMZ,YAJI,uCACN,OAAO,EACP,yCACW,QAAC,WAAY;gBAEvB,KAAI,AAAM,KAAD,KAAI;AAMZ,YAJI,uCACN,OAAO,EACP,yCACW,QAAC,WAAY;gBAEvB,KAAI,AAAM,KAAD,KAAI;AAMZ,YAJI,uCACN,OAAO,EACP,yCACW,QAAC,WAAY;;qDAIzB,oCACL,iDACQ,kBAAW,6FACV,kBAAK,mFACC,8BAEf,iDACU,kBAAW,uFACV,kBAAK,mFACC,8BAKjB,iDACU,kBAAW,uFACV,kBAAK,qFACC,8BACjB,iDACU,kBAAW,2FACV,kBAAK,uFACC,8BACjB,iDACU,kBAAW,uFACV,kBAAK,uFACQ;IAG9B;;;;;EACF;;;;;;;;;;ACpF0C;IAAwB;;;;;;EAClE;;;;;;;;;UAI4B;AACpB,4BAAkB;AACtB,YAAO,6CACY,oCACT,+BACC,6BAAc,kBAAK,iKACC,0EAEvB,+DACG,yCACgC,yCAC3B,yBACC,8CACK,iBACD,iBACE,SAAC,SAAS,UACd,qCACM,kBAAiB,CAAL,aAAN,KAAK,IAAG,yBAAsB,2FACtC,kBAAK,yFACL;AAIyC,oBAHpC,uCACN,OAAO,EACP,yCACa,QAAC,WAAY;uVAOzB,mDAA6B,eAAe;IAErE;;;;;EACF","file":"../../../../../../../../../packages/career_road/screens/career_screen.dart.lib.js"}');
+  // Exports:
+  return {
+    screens__career_screen: career_screen,
+    screens__search_screen: search_screen,
+    components__searchBar: searchBar,
+    screens__home_screen: home_screen,
+    screens__menu_screen: menu_screen,
+    screens__quiz_screen: quiz_screen,
+    screens__bookmark_screen: bookmark_screen,
+    components__bottomNavBar: bottomNavBar,
+    screens__career_list_screen: career_list_screen
+  };
+}));
+
+//# sourceMappingURL=career_screen.dart.lib.js.map
