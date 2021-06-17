@@ -5,13 +5,14 @@ import 'package:career_road/utilities/constants.dart';
 
 // In flutter, controllers are a means to give control to the parent widget over its child state
 class SignupForm extends StatefulWidget {
-  static final _formKey = new GlobalKey<FormState>();
+  final _formKey = new GlobalKey<FormState>();
 
   @override
   _SignupFormState createState() => _SignupFormState();
 }
 
 class _SignupFormState extends State<SignupForm> {
+  // final AuthService _auth = AuthService();
   String _name = '';
 
   String _email = '';
@@ -25,7 +26,7 @@ class _SignupFormState extends State<SignupForm> {
     // String _confirmPassword = '';
 
     return Form(
-      key: SignupForm._formKey,
+      key: widget._formKey,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
@@ -190,10 +191,15 @@ class _SignupFormState extends State<SignupForm> {
               textColor: Colors.white,
               onPressed: () async {
                 // Validate returns true if the form is valid, otherwise false.
-                if (SignupForm._formKey.currentState.validate()) {
+                if (widget._formKey.currentState.validate()) {
                   // If the form is valid, display a snackbar. In the real world,
                   // you'd often call a server or save the information in a database.
-
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => LoginScreen(),
+                    ),
+                  );
                 }
 
                 // register(context);

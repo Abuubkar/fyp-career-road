@@ -3,7 +3,11 @@ import 'package:career_road/screens/search_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:career_road/utilities/constants.dart';
 
+import '../screens/home_screen.dart';
+
 class SearchBar extends StatefulWidget {
+  final GlobalKey<FormState> formKey = new GlobalKey<FormState>();
+
   @override
   _SearchBarState createState() => _SearchBarState();
 }
@@ -11,71 +15,73 @@ class SearchBar extends StatefulWidget {
 class _SearchBarState extends State<SearchBar> {
   @override
   Widget build(BuildContext context) {
+    // GlobalKey<FormState> _formKey = new GlobalKey<FormState>();
     String _query = "";
     Size size = MediaQuery.of(context).size;
-    return Column(
-      children: [
-        Container(
-          height: 50,
-          width: size.width / 0.5,
-          decoration: kBoxDecorationStyle,
-          child: TextFormField(
-            decoration: InputDecoration(
-              contentPadding: EdgeInsets.only(top: 15.0),
-              border: InputBorder.none,
-              prefixIcon: Icon(
-                Icons.search,
-                color: Colors.white,
-              ),
-              hintText: "Type Career",
-              hintStyle: kHintTextStyle,
-            ),
-            validator: (str) {
-              if (str.isEmpty) {
-                return 'Text is required';
-              }
-              return null;
-            },
-            onChanged: (str) {
-              setState(() {
-                _query = str;
-              });
-            },
-          ),
-        ),
-        SizedBox(
-          height: MediaQuery.of(context).size.height / 25,
-        ),
-        // ignore: deprecated_member_use
-        RaisedButton(
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(18.0),
-          ),
-          color: Colors.blue,
-          textColor: Colors.white,
-          onPressed: () async {
-            // Validate returns true if the form is valid, otherwise false.
-            if (HomeScreen.formKey.currentState.validate()) {
-              // If the form is valid, display a snackbar. In the real world,
-              // you'd often call a server or save the information in a database.
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => SearchScreen(),
+    return Form(
+      key: widget.formKey,
+      child: Column(
+        children: [
+          Container(
+            height: 50,
+            width: size.width / 0.5,
+            decoration: kBoxDecorationStyle,
+            child: TextFormField(
+              decoration: InputDecoration(
+                contentPadding: EdgeInsets.only(top: 15.0),
+                border: InputBorder.none,
+                prefixIcon: Icon(
+                  Icons.search,
+                  color: Colors.white,
                 ),
-              );
-            }
+                hintText: "Type Career",
+                hintStyle: kHintTextStyle,
+              ),
+              validator: (str) {
+                if (str.isEmpty) {
+                  return 'Text is required';
+                }
+                return null;
+              },
+              onChanged: (str) {
+                setState(() {
+                  _query = str;
+                });
+              },
+            ),
+          ),
+          SizedBox(
+            height: MediaQuery.of(context).size.height / 25,
+          ),
+          // ignore: deprecated_member_use
+          RaisedButton(
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(18.0),
+            ),
+            color: Colors.blue,
+            textColor: Colors.white,
+            onPressed: () async {
+              // Validate returns true if the form is valid, otherwise false.
+              if (widget.formKey.currentState.validate()) {
+                // If the form is valid, display a snackbar. In the real world,
+                // you'd often call a server or save the information in a database.
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => SearchScreen(),
+                  ),
+                );
+              }
 
-            // register(context);
-          },
-          child: Text('Search'),
-        ),
-      ],
+              // register(context);
+            },
+            child: Text('Search'),
+          ),
+        ],
+      ),
     );
   }
 }
-
-
 
 // import 'dart:math';
 // import 'package:flutter/material.dart';
@@ -325,46 +331,6 @@ class _SearchBarState extends State<SearchBar> {
 //     );
 //   }
 // }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // // import 'package:flutter/material.dart';
 // // import 'package:career_road/utilities/constants.dart';

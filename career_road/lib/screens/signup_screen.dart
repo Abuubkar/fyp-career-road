@@ -27,3 +27,27 @@ class _SignupScreenState extends State<SignupScreen> {
     );
   }
 }
+
+
+  // void _registerAccount() async {
+  //   final User user = (await _auth.createUserWithEmailAndPassword(
+  //     email: _emailController.text,
+  //     password: _passwordController.text,
+  //   ))
+  //       .user;
+
+  //   if (user != null) {
+  //     if (!user.emailVerified) {
+  //       await user.sendEmailVerification();
+  //     }
+  //     await user.updateProfile(displayName: _displayName.text);
+  //     final user1 = _auth.currentUser;
+  //     Navigator.of(context).pushReplacement(MaterialPageRoute(
+  //         builder: (context) => MainPage(
+  //               user: user1,
+  //             )));
+  //   } else {
+  //     _isSuccess = false;
+  //   }
+  // }
+// }

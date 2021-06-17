@@ -7,7 +7,7 @@ class Menu extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    int _bottomNavIndex = 3;
+    int _bottomNavIndex = 4;
     return Scaffold(
       appBar: AppBar(
         title: Center(child: Text('Menu')),

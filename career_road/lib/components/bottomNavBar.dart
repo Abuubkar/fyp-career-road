@@ -1,4 +1,5 @@
 import 'package:career_road/screens/bookmark_screen.dart';
+import 'package:career_road/screens/career_list_screen.dart';
 import 'package:career_road/screens/quiz_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:career_road/utilities/constants.dart';
@@ -38,13 +39,20 @@ class _BottomNavBarState extends State<BottomNavBar> {
                 builder: (context) => HomeScreen(),
               ));
         } else if (index == 2) {
+          // Menu
+          Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => CareerListScreen(),
+              ));
+        } else if (index == 3) {
           // Bookmark
           Navigator.push(
               context,
               MaterialPageRoute(
                 builder: (context) => BookmarkScreen(),
               ));
-        } else if (index == 3) {
+        } else if (index == 4) {
           // Menu
           Navigator.push(
               context,
@@ -55,7 +63,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
       }),
       items: [
         BottomNavyBarItem(
-          icon: Icon(Icons.article),
+          icon: Icon(Icons.assignment),
           title: Text('Quiz'),
           activeColor: kBackgroundColor,
         ),
@@ -67,6 +75,10 @@ class _BottomNavBarState extends State<BottomNavBar> {
         //     icon: Icon(Icons.search),
         //     title: Text('Search'),
         //     activeColor: kBackgroundColor),
+        BottomNavyBarItem(
+            icon: Icon(Icons.work),
+            title: Text('Career'),
+            activeColor: kBackgroundColor),
         BottomNavyBarItem(
             icon: Icon(Icons.bookmark),
             title: Text('Bookmark'),

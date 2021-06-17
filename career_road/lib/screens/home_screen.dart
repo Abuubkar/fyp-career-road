@@ -1,11 +1,9 @@
-import 'dart:html';
 import 'package:career_road/components/bottomNavBar.dart';
 import 'package:career_road/components/searchBar.dart';
 import 'package:flutter/material.dart';
 import 'package:career_road/utilities/constants.dart';
 
 class HomeScreen extends StatefulWidget {
-  static final formKey = new GlobalKey<FormState>();
   @override
   _HomeScreenState createState() => _HomeScreenState();
 }
@@ -51,7 +49,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   SizedBox(
                     height: MediaQuery.of(context).size.height / 20,
                   ),
-                  Form(key: HomeScreen.formKey, child: SearchBar()),
+                  SearchBar(),
                 ],
               ),
             ),

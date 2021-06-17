@@ -1,22 +1,22 @@
 import 'package:career_road/components/bottomNavBar.dart';
+import 'package:career_road/screens/career_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:career_road/utilities/constants.dart';
-
 import '../utilities/constants.dart';
 
-class BookmarkScreen extends StatefulWidget {
+class CareerListScreen extends StatefulWidget {
   @override
-  _BookmarkScreenState createState() => _BookmarkScreenState();
+  _CareerListScreenState createState() => _CareerListScreenState();
 }
 
-class _BookmarkScreenState extends State<BookmarkScreen> {
+class _CareerListScreenState extends State<CareerListScreen> {
   @override
   Widget build(BuildContext context) {
-    int _bottomNavIndex = 3;
+    int _bottomNavIndex = 2;
     return Scaffold(
       backgroundColor: kBackgroundColor,
       appBar: AppBar(
-        title: Center(child: Text('Bookmarks')),
+        title: Center(child: Text('Courses')),
         automaticallyImplyLeading: false,
       ),
       body: SingleChildScrollView(
@@ -28,10 +28,14 @@ class _BookmarkScreenState extends State<BookmarkScreen> {
               itemCount: 10,
               itemBuilder: (context, index) {
                 return ListTile(
-                  leading: Text((index + 1).toString(), style: kLabelStyle),
-                  title: Text("Career Name Here"),
-                  trailing: Icon(Icons.delete, color: Colors.white),
-                );
+                    leading: Text((index + 1).toString(), style: kLabelStyle),
+                    title: Text("Career Name Here"),
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => CareerScreen()));
+                    });
               },
             ),
           ],

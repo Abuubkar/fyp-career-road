@@ -1,4 +1,5 @@
 import 'package:career_road/components/bottomNavBar.dart';
+import 'package:career_road/screens/career_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:career_road/utilities/constants.dart';
 
@@ -24,7 +25,16 @@ class _SearchScreenState extends State<SearchScreen> {
               shrinkWrap: true,
               itemCount: 10,
               itemBuilder: (context, index) {
-                return Container();
+                return ListTile(
+                  leading: Text((index + 1).toString(), style: kLabelStyle),
+                  title: Text("Career Name Here"),
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => CareerScreen()));
+                  },
+                );
               },
             ),
           ],
