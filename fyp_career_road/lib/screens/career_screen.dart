@@ -1,19 +1,25 @@
-import 'package:fyp_career_road/components/bottomNavBar.dart';
 import 'package:flutter/material.dart';
+import 'package:fyp_career_road/components/bottomNavBar.dart';
+import 'package:fyp_career_road/models/career_entity.dart';
 import 'package:fyp_career_road/utilities/constants.dart';
-import '../utilities/constants.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 
+import '../utilities/constants.dart';
+
 class CareerScreen extends StatefulWidget {
+  final CareerEntity career;
+
+  const CareerScreen(this.career);
   @override
   _CareerScreenState createState() => _CareerScreenState();
 }
 
 class _CareerScreenState extends State<CareerScreen> {
+  int _bottomNavIndex = 2;
+  int _selectedIndex = 0;
   @override
   Widget build(BuildContext context) {
-    int _bottomNavIndex = 2;
-    int _selectedIndex = 0;
+    print(widget.career.toJson());
     return Scaffold(
       backgroundColor: kBackgroundColor,
       appBar: AppBar(
@@ -27,7 +33,7 @@ class _CareerScreenState extends State<CareerScreen> {
             tabs: [
               GButton(
                 icon: Icons.alternate_email,
-                text: 'Info',
+                text: widget.career.info,
                 textStyle: kLabelStyle,
                 iconColor: Colors.white,
                 iconActiveColor: Colors.white,
@@ -39,7 +45,7 @@ class _CareerScreenState extends State<CareerScreen> {
               ),
               GButton(
                 icon: Icons.map,
-                text: 'Roadmap',
+                text: widget.career.roadMap,
                 textStyle: kLabelStyle,
                 iconColor: Colors.white,
                 iconActiveColor: Colors.white,
@@ -51,7 +57,7 @@ class _CareerScreenState extends State<CareerScreen> {
               ),
               GButton(
                 icon: Icons.forum,
-                text: 'Forum',
+                text: widget.career.link,
                 textStyle: kLabelStyle,
                 iconColor: Colors.white,
                 iconActiveColor: Colors.white,

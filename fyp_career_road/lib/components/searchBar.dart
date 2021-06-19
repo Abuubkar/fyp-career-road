@@ -1,5 +1,7 @@
-import 'package:fyp_career_road/screens/search_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:fyp_career_road/models/career_entity.dart';
+import 'package:fyp_career_road/screens/search_screen.dart';
+import 'package:fyp_career_road/services/firestore.dart';
 import 'package:fyp_career_road/utilities/constants.dart';
 
 class SearchBar extends StatefulWidget {
@@ -9,10 +11,10 @@ class SearchBar extends StatefulWidget {
 
 class _SearchBarState extends State<SearchBar> {
   final GlobalKey<FormState> formKey = new GlobalKey<FormState>();
+  final TextEditingController _queryController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
-    // String _query = "";
     Size size = MediaQuery.of(context).size;
     return Form(
       key: formKey,
@@ -23,6 +25,7 @@ class _SearchBarState extends State<SearchBar> {
             width: size.width / 0.5,
             decoration: kBoxDecorationStyle,
             child: TextFormField(
+              controller: _queryController,
               decoration: InputDecoration(
                 contentPadding: EdgeInsets.only(top: 15.0),
                 border: InputBorder.none,
@@ -39,43 +42,34 @@ class _SearchBarState extends State<SearchBar> {
                 }
                 return null;
               },
-              onChanged: (str) {
-                setState(() {
-                  // _query = str;
-                });
-              },
             ),
           ),
-          SizedBox(
-            height: MediaQuery.of(context).size.height / 25,
-          ),
+          SizedBox(height: MediaQuery.of(context).size.height / 25),
           // ignore: deprecated_member_use
           RaisedButton(
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(18.0),
-            ),
+            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(18.0)),
             color: Colors.blue,
             textColor: Colors.white,
-            onPressed: () async {
-              // Validate returns true if the form is valid, otherwise false.
-              if (formKey.currentState.validate()) {
-                // If the form is valid, display a snackbar. In the real world,
-                // you'd often call a server or save the information in a database.
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => SearchScreen(),
-                  ),
-                );
-              }
-
-              // register(context);
-            },
+            onPressed: searchPressed,
+            // register(context);
             child: Text('Search'),
           ),
         ],
       ),
     );
+  }
+
+  void searchPressed() async {
+    if (_queryController.text.isNotEmpty) {
+      _queryController.text = _queryController.text.trim();
+      // Validate returns true if the form is valid, otherwise false.
+      if (formKey.currentState.validate()) {
+        List<CareerEntity> careers = await Database.getCareersByName(_queryController.text);
+        // If the form is valid, display a snackbar. In the real world,
+        // you'd often call a server or save the information in a database.
+        Navigator.push(context, MaterialPageRoute(builder: (context) => SearchScreen(careers)));
+      }
+    }
   }
 }
 

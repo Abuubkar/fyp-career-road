@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
+import 'package:fyp_career_road/services/firestore.dart';
 
 import '../components/bottomNavBar.dart';
-import '../utilities/constants.dart';
 import '../utilities/constants.dart';
 import 'menu_screen.dart';
 
@@ -15,7 +14,6 @@ class AddCareerScreen extends StatefulWidget {
 class _AddCareerScreenState extends State<AddCareerScreen> {
   // final AuthService _auth = AuthService();
   String _name = '';
-
   String _info = '';
   String _roadMap = '';
   String _link = '';
@@ -36,8 +34,7 @@ class _AddCareerScreenState extends State<AddCareerScreen> {
       backgroundColor: kBackgroundColor,
       body: SingleChildScrollView(
         child: Padding(
-          padding: EdgeInsets.symmetric(
-              horizontal: size.width * 0.05, vertical: size.height / 50),
+          padding: EdgeInsets.symmetric(horizontal: size.width * 0.05, vertical: size.height / 50),
           child: Form(
             key: _formKey,
             child: Column(
@@ -123,7 +120,6 @@ class _AddCareerScreenState extends State<AddCareerScreen> {
                       hintText: "Enter Roadmap",
                       hintStyle: kHintTextStyle,
                     ),
-                    obscureText: true,
                     validator: (str) {
                       if (str.isEmpty) {
                         return 'Roadmap cannot be left empty';
@@ -154,7 +150,6 @@ class _AddCareerScreenState extends State<AddCareerScreen> {
                       hintText: "Enter Link",
                       hintStyle: kHintTextStyle,
                     ),
-                    obscureText: true,
                     validator: (str) {
                       if (str.isEmpty) {
                         return 'Link cannot be left empty';
@@ -180,28 +175,8 @@ class _AddCareerScreenState extends State<AddCareerScreen> {
                     ),
                     color: Colors.blue,
                     textColor: Colors.white,
-                    onPressed: () async {
-                      // Validate returns true if the form is valid, otherwise false.
-                      if (_formKey.currentState.validate()) {
-                        // If the form is valid, display a snackbar. In the real world,
-                        // you'd often call a server or save the information in a database.
-
-                        // QUERY TO DELETE
-
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => Menu(),
-                          ),
-                        );
-                      }
-
-                      // register(context);
-                    },
-                    child: Text(
-                      'Confirm',
-                      style: kLabelStyle,
-                    ),
+                    onPressed: confirmPressed,
+                    child: Text('Confirm', style: kLabelStyle),
                   ),
                 )
               ],
@@ -211,6 +186,25 @@ class _AddCareerScreenState extends State<AddCareerScreen> {
       ),
       bottomNavigationBar: BottomNavBar(bottomNavIndex: _bottomNavIndex),
     );
+  }
+
+  void confirmPressed() async {
+    // Validate returns true if the form is valid, otherwise false.
+    if (_formKey.currentState.validate()) {
+      // If the form is valid, display a snackbar. In the real world,
+      // you'd often call a server or save the information in a database.
+      bool success = await Database.addCareer(_name, _info, _link, _roadMap);
+      print(success);
+      if (success) {
+        //do the hell you want cuz data has been added then navigate.
+        Navigator.push(context, MaterialPageRoute(builder: (context) => Menu()));
+      } else {
+        //show error snackbar
+      }
+      // QUERY TO DELETE
+    }
+
+    // register(context);
   }
 
 // register(BuildContext context) async {

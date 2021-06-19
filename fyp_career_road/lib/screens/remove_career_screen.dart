@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fyp_career_road/components/customTextFields.dart';
+import 'package:fyp_career_road/services/firestore.dart';
 
 import '../components/bottomNavBar.dart';
 import '../components/customTextFields.dart';
@@ -12,6 +13,7 @@ class RemoveCareerScreen extends StatefulWidget {
 
 class _RemoveCareerScreenState extends State<RemoveCareerScreen> {
   final GlobalKey<FormState> formKey = new GlobalKey<FormState>();
+  final TextEditingController _idController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     int _bottomNavIndex = 4;
@@ -27,25 +29,24 @@ class _RemoveCareerScreenState extends State<RemoveCareerScreen> {
         child: Form(
           key: formKey,
           child: Padding(
-            padding: EdgeInsets.symmetric(
-                horizontal: size.width * 0.05, vertical: size.height / 20),
+            padding: EdgeInsets.symmetric(horizontal: size.width * 0.05, vertical: size.height / 20),
             child: Center(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   CustomTextField(
-                      hint: "Enter Career ID",
-                      icons: Icons.delete_forever,
-                      textInputType: TextInputType.text,
-                      lableText: ""),
+                    hint: "Enter Career ID",
+                    icons: Icons.delete_forever,
+                    textInputType: TextInputType.text,
+                    lableText: "",
+                    controller: _idController,
+                  ),
                   ElevatedButton(
                     child: Text(
                       '   Delete   ',
                       style: kLabelStyle,
                     ),
-                    onPressed: () {
-                      // DELETE THE COURSE ID
-                    },
+                    onPressed: deletePressed,
                   ),
                 ],
               ),
@@ -55,5 +56,13 @@ class _RemoveCareerScreenState extends State<RemoveCareerScreen> {
       ),
       bottomNavigationBar: BottomNavBar(bottomNavIndex: _bottomNavIndex),
     );
+  }
+
+  void deletePressed() async {
+    _idController.text = _idController.text.trim();
+    if (_idController.text != null && _idController.text.isNotEmpty) {
+      print(_idController.text);
+      Database.removeCareer(_idController.text);
+    }
   }
 }
