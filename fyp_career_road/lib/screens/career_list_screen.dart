@@ -31,7 +31,7 @@ class _CareerListScreenState extends State<CareerListScreen> {
                 builder: (context, AsyncSnapshot<List<CareerEntity>> snapshot) {
                   if (snapshot.hasError)
                     return Center(
-                      child: Text('Error occured: ${snapshot.error}'),
+                      child: Text('Error occurred: ${snapshot.error}'),
                     );
                   else if (!snapshot.hasData)
                     return Center(child: CircularProgressIndicator());

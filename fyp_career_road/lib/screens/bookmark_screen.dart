@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fyp_career_road/components/bottomNavBar.dart';
+import 'package:fyp_career_road/models/bookmark_entity.dart';
 import 'package:fyp_career_road/services/firestore.dart';
 import 'package:fyp_career_road/utilities/constants.dart';
 
@@ -26,18 +27,31 @@ class _BookmarkScreenState extends State<BookmarkScreen> {
           children: [
             FutureBuilder(
                 future: Database.getBookmarksByEmail(),
-                builder: (context, snapshot) {
-                  return ListView.builder(
-                    shrinkWrap: true,
-                    itemCount: 10,
-                    itemBuilder: (context, index) {
-                      return ListTile(
-                        leading: Text((index + 1).toString(), style: kLabelStyle),
-                        title: Text("Career Name Here"),
-                        trailing: Icon(Icons.delete, color: Colors.white),
-                      );
-                    },
-                  );
+                builder: (context, AsyncSnapshot<List<BookmarkEntity>> snapshot) {
+                  if (snapshot.hasError)
+                    return Center(
+                      child: Text('Error occurred: ${snapshot.error}'),
+                    );
+                  else if (!snapshot.hasData)
+                    return Center(child: CircularProgressIndicator());
+                  else
+                    return ListView.builder(
+                      shrinkWrap: true,
+                      itemCount: snapshot.data.length,
+                      itemBuilder: (context, index) {
+                        final BookmarkEntity bookmark = snapshot.data[index];
+                        return ListTile(
+                          leading: Text((index + 1).toString(), style: kLabelStyle),
+                          title: Text(bookmark.careerName),
+                          trailing: InkWell(
+                              onTap: () => Database.removeBookmark(bookmark.id).then((value) {
+                                    print(value);
+                                    setState(() {});
+                                  }),
+                              child: Icon(Icons.delete, color: Colors.white)),
+                        );
+                      },
+                    );
                 }),
           ],
         ),
