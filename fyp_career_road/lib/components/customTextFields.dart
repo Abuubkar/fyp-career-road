@@ -7,13 +7,16 @@ class CustomTextField extends StatelessWidget {
       @required this.textInputType,
       @required this.icons,
       @required this.hint,
-      this.hide = false});
+      this.hide = false,
+      @required this.controller});
 
   final String lableText;
+  final TextEditingController controller;
   final TextInputType textInputType;
   final IconData icons;
   final String hint;
   final bool hide;
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -29,6 +32,7 @@ class CustomTextField extends StatelessWidget {
             obscureText: this.hide,
             keyboardType: this.textInputType,
             style: kLabelStyle,
+            controller: controller,
             decoration: InputDecoration(
               contentPadding: EdgeInsets.only(top: 15.0),
               border: InputBorder.none,

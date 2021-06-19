@@ -1,5 +1,6 @@
-import 'package:fyp_career_road/components/bottomNavBar.dart';
 import 'package:flutter/material.dart';
+import 'package:fyp_career_road/components/bottomNavBar.dart';
+import 'package:fyp_career_road/services/firestore.dart';
 import 'package:fyp_career_road/utilities/constants.dart';
 
 import '../utilities/constants.dart';
@@ -23,17 +24,21 @@ class _BookmarkScreenState extends State<BookmarkScreen> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            ListView.builder(
-              shrinkWrap: true,
-              itemCount: 10,
-              itemBuilder: (context, index) {
-                return ListTile(
-                  leading: Text((index + 1).toString(), style: kLabelStyle),
-                  title: Text("Career Name Here"),
-                  trailing: Icon(Icons.delete, color: Colors.white),
-                );
-              },
-            ),
+            FutureBuilder(
+                future: Database.getBookmarksByEmail(),
+                builder: (context, snapshot) {
+                  return ListView.builder(
+                    shrinkWrap: true,
+                    itemCount: 10,
+                    itemBuilder: (context, index) {
+                      return ListTile(
+                        leading: Text((index + 1).toString(), style: kLabelStyle),
+                        title: Text("Career Name Here"),
+                        trailing: Icon(Icons.delete, color: Colors.white),
+                      );
+                    },
+                  );
+                }),
           ],
         ),
       ),

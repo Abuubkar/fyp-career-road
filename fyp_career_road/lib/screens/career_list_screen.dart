@@ -1,7 +1,10 @@
-import 'package:fyp_career_road/components/bottomNavBar.dart';
-import 'package:fyp_career_road/screens/career_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:fyp_career_road/components/bottomNavBar.dart';
+import 'package:fyp_career_road/models/career_entity.dart';
+import 'package:fyp_career_road/screens/career_screen.dart';
+import 'package:fyp_career_road/services/firestore.dart';
 import 'package:fyp_career_road/utilities/constants.dart';
+
 import '../utilities/constants.dart';
 
 class CareerListScreen extends StatefulWidget {
@@ -23,21 +26,30 @@ class _CareerListScreenState extends State<CareerListScreen> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            ListView.builder(
-              shrinkWrap: true,
-              itemCount: 10,
-              itemBuilder: (context, index) {
-                return ListTile(
-                    leading: Text((index + 1).toString(), style: kLabelStyle),
-                    title: Text("Career Name Here"),
-                    onTap: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => CareerScreen()));
-                    });
-              },
-            ),
+            FutureBuilder(
+                future: Database.getAllCareers(),
+                builder: (context, AsyncSnapshot<List<CareerEntity>> snapshot) {
+                  if (snapshot.hasError)
+                    return Center(
+                      child: Text('Error occured: ${snapshot.error}'),
+                    );
+                  else if (!snapshot.hasData)
+                    return Center(child: CircularProgressIndicator());
+                  else
+                    return ListView.builder(
+                      shrinkWrap: true,
+                      itemCount: snapshot.data.length,
+                      itemBuilder: (context, index) {
+                        final CareerEntity career = snapshot.data[index];
+                        return ListTile(
+                            leading: Text((index + 1).toString(), style: kLabelStyle),
+                            title: Text(career.name),
+                            onTap: () {
+                              Navigator.push(context, MaterialPageRoute(builder: (context) => CareerScreen(career)));
+                            });
+                      },
+                    );
+                }),
           ],
         ),
       ),
