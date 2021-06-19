@@ -7,6 +7,8 @@ import 'package:fyp_career_road/utilities/constants.dart';
 import 'package:fyp_career_road/screens/home_screen.dart';
 import 'package:provider/provider.dart';
 
+import '../utilities/constants.dart';
+
 // In flutter, controllers are a means to give control to the parent widget over its child state
 class LoginForm extends StatefulWidget {
   @override
@@ -152,7 +154,10 @@ class _LoginFormState extends State<LoginForm> {
 
                   // register(context);
                 },
-                child: Text('Login'),
+                child: Text(
+                  'Login',
+                  style: kLabelStyle,
+                ),
               ),
             )
           ],

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:fyp_career_road/screens/add_career_screen.dart';
+import 'package:fyp_career_road/screens/remove_career_screen.dart';
 import '../utilities/constants.dart';
 import 'package:fyp_career_road/components/bottomNavBar.dart';
 
@@ -22,8 +24,8 @@ class EditCareerScreen extends StatelessWidget {
                 style: kLabelStyle,
               ),
               onPressed: () {
-                // Navigator.push(context,
-                //     MaterialPageRoute(builder: (context) => AddCareerScreen()));
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => AddCareerScreen()));
               },
             ),
             ElevatedButton(
@@ -32,8 +34,10 @@ class EditCareerScreen extends StatelessWidget {
                 style: kLabelStyle,
               ),
               onPressed: () {
-                // Navigator.push(context,
-                //     MaterialPageRoute(builder: (context) => RemoveCareerScreen()));
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => RemoveCareerScreen()));
               },
             ),
           ],
