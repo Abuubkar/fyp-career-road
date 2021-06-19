@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "611810344945",
+    "project_id": "fyp-career-road",
+    "storage_bucket": "fyp-career-road.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:611810344945:android:9c9dcf94e6878bbaa48e50",
+        "android_client_info": {
+          "package_name": "com.pucit.fyp_career_road"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "611810344945-iltdtps7p923b4h2u023v1oo1m3pgflh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDsNCgciUAqLW_-xJrusCL_wG3dmlaZBNg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "611810344945-iltdtps7p923b4h2u023v1oo1m3pgflh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

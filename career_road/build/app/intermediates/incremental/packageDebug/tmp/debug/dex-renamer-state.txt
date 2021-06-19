@@ -1,4 +1,0 @@
-#Sat Jun 12 23:43:56 PKT 2021
-base.0=E\:\\FYP CareerRoad\\fyp-career-road-master\\career_road\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
-path.0=classes.dex
-renamed.0=classes.dex
