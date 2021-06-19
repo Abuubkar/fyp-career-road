@@ -6,7 +6,7 @@ abstract class Database {
   static CollectionReference _users = FirebaseFirestore.instance.collection('users');
   static CollectionReference _bookmarks = FirebaseFirestore.instance.collection('bookmarks');
   static CollectionReference _careers = FirebaseFirestore.instance.collection('careers');
-  
+
   static Future<bool> addCareer(String name, String info, String roadMap, String link) async {
     bool success = false;
     await _careers.add({
