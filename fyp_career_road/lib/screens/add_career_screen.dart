@@ -3,7 +3,6 @@ import 'package:provider/provider.dart';
 
 import '../components/bottomNavBar.dart';
 import '../utilities/constants.dart';
-import '../utilities/constants.dart';
 import 'menu_screen.dart';
 
 // In flutter, controllers are a means to give control to the parent widget over its child state
