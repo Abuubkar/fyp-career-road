@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:fyp_career_road/services/authentication.dart';
 import 'package:fyp_career_road/utilities/constants.dart';
 import 'package:provider/provider.dart';
+import 'package:rflutter_alert/rflutter_alert.dart';
 
 // In flutter, controllers are a means to give control to the parent widget over its child state
 class SignupForm extends StatefulWidget {
@@ -119,6 +120,8 @@ class _SignupFormState extends State<SignupForm> {
                 validator: (str) {
                   if (str.isEmpty) {
                     return 'Password cannot be left empty';
+                  } else if (str.contains(' ')) {
+                    return 'Password cannot contain space';
                   }
                   _password = str;
                   return null;
@@ -197,18 +200,27 @@ class _SignupFormState extends State<SignupForm> {
                   if (_formKey.currentState.validate()) {
                     // If the form is valid, display a snackbar. In the real world,
                     // you'd often call a server or save the information in a database.
-                    context.read<AuthenticationService>().signUp(
-                        email: _email, password: _password, name: _name);
 
-                    // bool shouldNavigate = await signUp(_email, _password);
-                    // if (shouldNavigate) {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => LoginScreen(),
-                      ),
-                    );
-                    // }
+                    String shouldNavigate = await context
+                        .read<AuthenticationService>()
+                        .signUp(
+                            email: _email, password: _password, name: _name);
+                    if (shouldNavigate == "Signed Up") {
+                      print(shouldNavigate);
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => LoginScreen(),
+                        ),
+                      );
+                    } else {
+                      Alert(
+                        context: context,
+                        title: 'Error',
+                        // and display its name
+                        desc: shouldNavigate,
+                      ).show();
+                    }
                   }
 
                   // register(context);

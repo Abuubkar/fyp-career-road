@@ -6,6 +6,7 @@ import 'package:fyp_career_road/services/authentication.dart';
 import 'package:fyp_career_road/utilities/constants.dart';
 import 'package:fyp_career_road/screens/home_screen.dart';
 import 'package:provider/provider.dart';
+import 'package:rflutter_alert/rflutter_alert.dart';
 
 import '../utilities/constants.dart';
 
@@ -57,6 +58,9 @@ class _LoginFormState extends State<LoginForm> {
                   if (str.isEmpty) {
                     return 'Email is required';
                   }
+                  // else if (str.contains(' ')) {
+                  //   return 'Email cannot contain space';
+                  // }
                   return null;
                 },
                 onChanged: (str) {
@@ -87,6 +91,8 @@ class _LoginFormState extends State<LoginForm> {
                 validator: (str) {
                   if (str.isEmpty) {
                     return 'Password cannot be left empty';
+                  } else if (str.contains(' ')) {
+                    return 'Password cannot contain space';
                   }
                   _password = str;
                   return null;
@@ -137,19 +143,27 @@ class _LoginFormState extends State<LoginForm> {
                   if (_formKey.currentState.validate()) {
                     // If the form is valid, display a snackbar. In the real world,
                     // you'd often call a server or save the information in a database.
-                    context
+
+                    String shouldNavigate = await context
                         .read<AuthenticationService>()
                         .signIn(email: _email, password: _password);
 
-                    // bool shouldNavigate = await logIn(_email, _password);
-                    // if (shouldNavigate) {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => HomeScreen(),
-                      ),
-                    );
-                    // }
+                    if (shouldNavigate == "Signed In") {
+                      print(shouldNavigate);
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => HomeScreen(),
+                        ),
+                      );
+                    } else {
+                      Alert(
+                        context: context,
+                        title: 'Error',
+                        // and display its name
+                        desc: shouldNavigate,
+                      ).show();
+                    }
                   }
 
                   // register(context);
