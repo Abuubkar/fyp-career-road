@@ -1,6 +1,6 @@
+import 'package:flutter/material.dart';
 import 'package:fyp_career_road/components/bottomNavBar.dart';
 import 'package:fyp_career_road/utilities/constants.dart';
-import 'package:flutter/material.dart';
 import 'package:fyp_career_road/utilities/quiz_brain.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
 
@@ -83,9 +83,7 @@ class _QuizPageState extends State<QuizPage> {
           thickness: 1.0,
         ),
         Text(
-          (quizBrain.getQuestionNumber() + 1).toString() +
-              "/" +
-              quizBrain.getQuestionCount().toString(),
+          (quizBrain.getQuestionNumber() + 1).toString() + "/" + quizBrain.getQuestionCount().toString(),
           textAlign: TextAlign.center,
           style: kTitleStyle,
         ),

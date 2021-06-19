@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:fyp_career_road/models/bookmark_entity.dart';
 import 'package:fyp_career_road/models/career_entity.dart';
 
 abstract class Database {
@@ -39,7 +40,7 @@ abstract class Database {
 
   static Future<bool> removeCareer(String id) async {
     bool success = false;
-    _careers.doc(id).delete().onError((error, stackTrace) {
+    await _careers.doc(id).delete().onError((error, stackTrace) {
       print('Error occurred: $error');
       return null;
     }).then((value) => success = true);
@@ -76,8 +77,26 @@ abstract class Database {
     return careers;
   }
 
-  static Future getBookmarksByEmail() async {
-    final String email = FirebaseAuth.instance.currentUser?.email;
-    print(email);
+  static Future<List<BookmarkEntity>> getBookmarksByEmail() async {
+    List<BookmarkEntity> bookmarks = [];
+    final String email = FirebaseAuth.instance.currentUser?.email ?? "bakar@khawaja.com";
+    await _bookmarks.where('email', isEqualTo: email).get().onError((error, stackTrace) {
+      print('Error occurred: $error');
+      return null;
+    }).then((value) {
+      value.docs.forEach((QueryDocumentSnapshot element) {
+        bookmarks.add(BookmarkEntity().fromJson({...element.data(), "id": element.id}));
+      });
+    });
+    return bookmarks;
+  }
+
+  static Future<bool> removeBookmark(String id) async {
+    bool success = false;
+    await _bookmarks.doc(id).delete().onError((error, stackTrace) {
+      print('Error occurred: $error');
+      return null;
+    }).then((value) => success = true);
+    return success;
   }
 }
