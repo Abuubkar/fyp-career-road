@@ -1,4 +1,5 @@
 import 'package:fyp_career_road/components/bottomNavBar.dart';
+import 'package:fyp_career_road/screens/edit_career_screen.dart';
 import 'package:fyp_career_road/screens/login_screen.dart';
 import 'package:fyp_career_road/services/authentication.dart';
 import 'package:fyp_career_road/utilities/constants.dart';
@@ -32,7 +33,7 @@ class Menu extends StatelessWidget {
           ),
           Visibility(
             // visible: isAdmin variable,
-            visible: false,
+            visible: true,
             child: ListTile(
               leading: Icon(
                 Icons.add,
@@ -42,6 +43,12 @@ class Menu extends StatelessWidget {
                 "Add/Remove Career",
                 style: kLabelStyle,
               ),
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => EditCareerScreen()));
+              },
             ),
           ),
           ListTile(
