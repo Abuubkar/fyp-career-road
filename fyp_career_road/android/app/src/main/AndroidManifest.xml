@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.pucit.fyp_career_road">
    <application
-        android:label="fyp_career_road"
+        android:label="Career Road"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"
