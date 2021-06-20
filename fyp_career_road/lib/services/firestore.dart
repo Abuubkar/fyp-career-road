@@ -44,6 +44,7 @@ abstract class Database {
 
   static Future<bool> removeCareer(String name) async {
     bool success = false;
+    String bookmarkId = await isBookmarkPresent(name);
 
     List<CareerEntity> careers = await getCareersByName(name);
     if (careers.isEmpty) return success;
@@ -51,7 +52,10 @@ abstract class Database {
     await _careers.doc(careers[0].id).delete().onError((error, stackTrace) {
       print('Error occurred: $error');
       return null;
-    }).then((value) => success = true);
+    }).then((value) {
+      success = true;
+      removeBookmark(bookmarkId);
+    });
     return success;
   }
 
@@ -154,7 +158,6 @@ abstract class Database {
           id = value.docs.first.id;
       });
     });
-    print("Success: $id.........................................");
     return id;
   }
 }
