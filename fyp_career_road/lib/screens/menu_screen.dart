@@ -33,8 +33,7 @@ class Menu extends StatelessWidget {
             )),
           ),
           Visibility(
-            // visible: isAdmin variable,
-            visible: true,
+            visible: isAdmin(),
             child: ListTile(
               leading: Icon(
                 Icons.add,
@@ -68,5 +67,11 @@ class Menu extends StatelessWidget {
       ),
       bottomNavigationBar: BottomNavBar(bottomNavIndex: _bottomNavIndex),
     );
+  }
+
+  bool isAdmin() {
+    return FirebaseAuth.instance.currentUser.email.startsWith('_')
+        ? true
+        : false;
   }
 }

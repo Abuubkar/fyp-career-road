@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:fyp_career_road/components/customTextFields.dart';
+import 'package:fyp_career_road/screens/career_list_screen.dart';
 import 'package:fyp_career_road/services/firestore.dart';
+import 'package:rflutter_alert/rflutter_alert.dart';
 
 import '../components/bottomNavBar.dart';
 import '../components/customTextFields.dart';
@@ -63,7 +65,28 @@ class _RemoveCareerScreenState extends State<RemoveCareerScreen> {
     _idController.text = _idController.text.trim();
     if (_idController.text != null && _idController.text.isNotEmpty) {
       print(_idController.text);
-      Database.removeCareer(_idController.text);
+      bool isRemoved = await Database.removeCareer(_idController.text);
+      if (isRemoved)
+        Alert(
+          context: context,
+          title: 'Notice',
+          // and display its name
+          desc: 'Career Removed',
+        ).show();
+      else
+        Alert(
+          context: context,
+          title: 'Notice',
+          // and display its name
+          desc: 'No such career found',
+        ).show();
+    } else {
+      Alert(
+        context: context,
+        title: 'Notice',
+        // and display its name
+        desc: 'Input Assertion Failed',
+      ).show();
     }
   }
 }

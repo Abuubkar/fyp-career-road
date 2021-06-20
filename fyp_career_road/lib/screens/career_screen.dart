@@ -92,7 +92,6 @@ class _CareerScreenState extends State<CareerScreen> {
                     } else {
                       print('bookmark removed');
                       bookmarkIcon = Icons.bookmark_outline;
-                      // TODO: AND REMOVE BOOKMARK
                       Database.removeBookmark(id).then((value) {
                         Alert(
                           context: context,

@@ -14,6 +14,10 @@ abstract class Database {
   static Future<bool> addCareer(
       String name, String info, String roadMap, String link) async {
     bool success = false;
+
+    List<CareerEntity> careers = await getCareersByName(name);
+    if (careers.isNotEmpty) return success;
+
     await _careers.add({
       'name': name,
       'info': info,

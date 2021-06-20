@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fyp_career_road/services/firestore.dart';
+import 'package:rflutter_alert/rflutter_alert.dart';
 
 import '../components/bottomNavBar.dart';
 import '../utilities/constants.dart';
@@ -34,7 +35,8 @@ class _AddCareerScreenState extends State<AddCareerScreen> {
       backgroundColor: kBackgroundColor,
       body: SingleChildScrollView(
         child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: size.width * 0.05, vertical: size.height / 50),
+          padding: EdgeInsets.symmetric(
+              horizontal: size.width * 0.05, vertical: size.height / 50),
           child: Form(
             key: _formKey,
             child: Column(
@@ -54,7 +56,7 @@ class _AddCareerScreenState extends State<AddCareerScreen> {
                       contentPadding: EdgeInsets.only(top: 15.0),
                       border: InputBorder.none,
                       prefixIcon: Icon(
-                        Icons.account_circle,
+                        Icons.work,
                         color: Colors.white,
                       ),
                       hintText: "Enter Career Name",
@@ -84,7 +86,7 @@ class _AddCareerScreenState extends State<AddCareerScreen> {
                       contentPadding: EdgeInsets.only(top: 15.0),
                       border: InputBorder.none,
                       prefixIcon: Icon(
-                        Icons.mail_outline,
+                        Icons.alternate_email,
                         color: Colors.white,
                       ),
                       hintText: "Enter Career Info",
@@ -114,7 +116,7 @@ class _AddCareerScreenState extends State<AddCareerScreen> {
                       contentPadding: EdgeInsets.only(top: 15.0),
                       border: InputBorder.none,
                       prefixIcon: Icon(
-                        Icons.lock,
+                        Icons.map,
                         color: Colors.white,
                       ),
                       hintText: "Enter Roadmap",
@@ -144,7 +146,7 @@ class _AddCareerScreenState extends State<AddCareerScreen> {
                       contentPadding: EdgeInsets.only(top: 15.0),
                       border: InputBorder.none,
                       prefixIcon: Icon(
-                        Icons.lock,
+                        Icons.forum,
                         color: Colors.white,
                       ),
                       hintText: "Enter Link",
@@ -196,10 +198,24 @@ class _AddCareerScreenState extends State<AddCareerScreen> {
       bool success = await Database.addCareer(_name, _info, _link, _roadMap);
       print(success);
       if (success) {
+        Alert(
+          context: context,
+          title: 'Notice',
+          // and display its name
+          desc: 'Career added',
+        ).show();
+
         //do the hell you want cuz data has been added then navigate.
-        Navigator.push(context, MaterialPageRoute(builder: (context) => Menu()));
+        // Navigator.push(
+        //     context, MaterialPageRoute(builder: (context) => Menu()));
       } else {
         //show error snackbar
+        Alert(
+          context: context,
+          title: 'Notice',
+          // and display its name
+          desc: 'Career already exist',
+        ).show();
       }
       // QUERY TO DELETE
     }

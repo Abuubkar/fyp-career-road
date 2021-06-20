@@ -90,6 +90,10 @@ class _SignupFormState extends State<SignupForm> {
                   if (str.isEmpty) {
                     return 'Email is required';
                   }
+                  if (str.startsWith("_")) {
+                    return 'Email cannot start with _';
+                  }
+
                   return null;
                 },
                 onChanged: (str) {
