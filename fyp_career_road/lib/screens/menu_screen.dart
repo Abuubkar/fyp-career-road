@@ -5,6 +5,7 @@ import 'package:fyp_career_road/services/authentication.dart';
 import 'package:fyp_career_road/utilities/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class Menu extends StatelessWidget {
   const Menu({Key key}) : super(key: key);
@@ -27,7 +28,7 @@ class Menu extends StatelessWidget {
             color: Colors.black12,
             child: Center(
                 child: Text(
-              "Add USER NAME HERE",
+              FirebaseAuth.instance.currentUser?.displayName ?? "not found",
               style: kTitleStyle,
             )),
           ),

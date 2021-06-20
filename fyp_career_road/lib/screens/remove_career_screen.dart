@@ -29,13 +29,14 @@ class _RemoveCareerScreenState extends State<RemoveCareerScreen> {
         child: Form(
           key: formKey,
           child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: size.width * 0.05, vertical: size.height / 20),
+            padding: EdgeInsets.symmetric(
+                horizontal: size.width * 0.05, vertical: size.height / 20),
             child: Center(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   CustomTextField(
-                    hint: "Enter Career ID",
+                    hint: "Enter Career Name",
                     icons: Icons.delete_forever,
                     textInputType: TextInputType.text,
                     lableText: "",

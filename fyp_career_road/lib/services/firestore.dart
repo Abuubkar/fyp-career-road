@@ -4,11 +4,15 @@ import 'package:fyp_career_road/models/bookmark_entity.dart';
 import 'package:fyp_career_road/models/career_entity.dart';
 
 abstract class Database {
-  static CollectionReference _users = FirebaseFirestore.instance.collection('users');
-  static CollectionReference _bookmarks = FirebaseFirestore.instance.collection('bookmarks');
-  static CollectionReference _careers = FirebaseFirestore.instance.collection('careers');
+  static CollectionReference _users =
+      FirebaseFirestore.instance.collection('users');
+  static CollectionReference _bookmarks =
+      FirebaseFirestore.instance.collection('bookmarks');
+  static CollectionReference _careers =
+      FirebaseFirestore.instance.collection('careers');
 
-  static Future<bool> addCareer(String name, String info, String roadMap, String link) async {
+  static Future<bool> addCareer(
+      String name, String info, String roadMap, String link) async {
     bool success = false;
     await _careers.add({
       'name': name,
@@ -38,9 +42,13 @@ abstract class Database {
     return career;
   }
 
-  static Future<bool> removeCareer(String id) async {
+  static Future<bool> removeCareer(String name) async {
     bool success = false;
-    await _careers.doc(id).delete().onError((error, stackTrace) {
+
+    List<CareerEntity> careers = await getCareersByName(name);
+    if (careers.isEmpty) return success;
+
+    await _careers.doc(careers[0].id).delete().onError((error, stackTrace) {
       print('Error occurred: $error');
       return null;
     }).then((value) => success = true);
@@ -55,7 +63,8 @@ abstract class Database {
     }).then((value) {
       if (value.docs.isNotEmpty) {
         value.docs.forEach((element) {
-          careers.add(CareerEntity().fromJson({...element.data(), "id": element.id}));
+          careers.add(
+              CareerEntity().fromJson({...element.data(), "id": element.id}));
         });
       }
     });
@@ -64,28 +73,51 @@ abstract class Database {
 
   static Future<List<CareerEntity>> getCareersByName(String name) async {
     List<CareerEntity> careers = [];
-    await _careers.where('name', isEqualTo: name).get().onError((error, stackTrace) {
+    await _careers
+        .where('name', isEqualTo: name)
+        .get()
+        .onError((error, stackTrace) {
       print('Error occurred: $error');
       return null;
     }).then((value) {
       if (value.docs.isNotEmpty) {
         value.docs.forEach((element) {
-          careers.add(CareerEntity().fromJson({...element.data(), "id": element.id}));
+          careers.add(
+              CareerEntity().fromJson({...element.data(), "id": element.id}));
         });
       }
     });
     return careers;
   }
 
+  static Future<bool> addBookmark(String name, String id, String email) async {
+    bool success = false;
+    await _bookmarks.add({
+      'careerName': name,
+      'careerId': id,
+      'email': email,
+    }).onError((error, stackTrace) {
+      print('Error occurred: $error');
+      return null;
+    }).then((value) => success = true);
+
+    return success;
+  }
+
   static Future<List<BookmarkEntity>> getBookmarksByEmail() async {
     List<BookmarkEntity> bookmarks = [];
-    final String email = FirebaseAuth.instance.currentUser?.email ?? "bakar@khawaja.com";
-    await _bookmarks.where('email', isEqualTo: email).get().onError((error, stackTrace) {
+    final String email =
+        FirebaseAuth.instance.currentUser?.email ?? "bakar@khawaja.com";
+    await _bookmarks
+        .where('email', isEqualTo: email)
+        .get()
+        .onError((error, stackTrace) {
       print('Error occurred: $error');
       return null;
     }).then((value) {
       value.docs.forEach((QueryDocumentSnapshot element) {
-        bookmarks.add(BookmarkEntity().fromJson({...element.data(), "id": element.id}));
+        bookmarks.add(
+            BookmarkEntity().fromJson({...element.data(), "id": element.id}));
       });
     });
     return bookmarks;
@@ -98,5 +130,31 @@ abstract class Database {
       return null;
     }).then((value) => success = true);
     return success;
+  }
+
+  static Future<String> isBookmarkPresent(String courseName) async {
+    String id = '';
+    List<BookmarkEntity> bookmarks = [];
+    final String email =
+        FirebaseAuth.instance.currentUser?.email ?? "bakar@khawaja.com";
+    await _bookmarks
+        .where(
+          'email',
+          isEqualTo: email,
+        )
+        .where('careerName', isEqualTo: courseName)
+        .get()
+        .onError((error, stackTrace) {
+      print('Error occurred: $error');
+      return null;
+    }).then((value) {
+      print(value.docs.length);
+      value.docs.forEach((QueryDocumentSnapshot element) {
+        if (value.docs.isNotEmpty && value.docs.first.exists)
+          id = value.docs.first.id;
+      });
+    });
+    print("Success: $id.........................................");
+    return id;
   }
 }

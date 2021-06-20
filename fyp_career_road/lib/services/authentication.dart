@@ -22,8 +22,8 @@ class AuthenticationService {
     try {
       await _firebaseAuth.createUserWithEmailAndPassword(
           email: email, password: password);
-      // await _firebaseAuth.instance.currentUser
-      //     .updateProfile(displayName: user.displayName);
+      await _firebaseAuth.currentUser.updateProfile(displayName: name);
+      //aesy ni chta?
 
       return "Signed Up";
     } on FirebaseAuthException catch (e) {

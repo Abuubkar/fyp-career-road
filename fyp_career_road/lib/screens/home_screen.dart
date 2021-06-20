@@ -13,11 +13,8 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     // final TextEditingController _controller = TextEditingController();
-    String introText = """\n
-          Welcome To Career Road  this app will help you find and build your career 
-          by providing its road map and related learning sources. 
-          Assisting you in your self-learning process. We wish you Happy Learning.
-          Regards,
+    String introText =
+        """\nWelcome To Career Road  this app will help you find and build your career by providing its road map and related learning sources. Assisting you in your self-learning process. We wish you Happy Learning.\n\nRegards,
           Career Road Team""";
     int _bottomNavIndex = 1;
 
@@ -44,7 +41,8 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                   ),
                   Container(
-                    child: Text(introText, style: kLabelStyle),
+                    child: Text(introText,
+                        textAlign: TextAlign.justify, style: kLabelStyle),
                   ),
                   SizedBox(
                     height: MediaQuery.of(context).size.height / 20,
