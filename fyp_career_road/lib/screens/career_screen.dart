@@ -45,7 +45,7 @@ class _CareerScreenState extends State<CareerScreen> {
                     child: Text('Error occurred: ${snapshot.error}'),
                   );
                 } else if (!snapshot.hasData) {
-                  return Container();
+                  return Center(child: CircularProgressIndicator());
                 } else
                   bookmarkIcon = snapshot.data.isNotEmpty
                       ? Icons.bookmark

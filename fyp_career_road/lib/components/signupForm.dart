@@ -93,6 +93,11 @@ class _SignupFormState extends State<SignupForm> {
                   if (str.startsWith("_")) {
                     return 'Email cannot start with _';
                   }
+                  if (!RegExp(
+                          r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
+                      .hasMatch(str)) {
+                    return "formate error: i.e:abc@efgh.xyz";
+                  }
 
                   return null;
                 },

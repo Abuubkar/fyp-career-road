@@ -30,33 +30,49 @@ class QuizPage extends StatefulWidget {
 }
 
 class _QuizPageState extends State<QuizPage> {
-  List<String> scoreKeeper = [];
+  Map<String, int> scoreKeeper = {};
 
   void checkAnswer(bool userPickedAnswer) {
     String correctAnswer = quizBrain.getCorrectAnswer();
 
     setState(() {
-      if (quizBrain.isFinished()) {
-        //Creating alert
-        Alert(
-          context: context,
-          title: 'Finished!',
-          // TODO: Add code to count which courseID is most present in list
-          // and display its name
-          desc: 'You\'ve reached the end of the quiz.',
-        ).show();
+      // adding user choice
+      if (userPickedAnswer == true) {
+        if (scoreKeeper.containsKey(correctAnswer))
+          scoreKeeper[correctAnswer] = scoreKeeper[correctAnswer] + 1;
+        else
+          scoreKeeper[correctAnswer] = 1;
 
-        //reset the questionNumber,
-        quizBrain.reset();
+        //If we've not reached the end, ELSE do the answer checking steps below
+        if (quizBrain.isFinished()) {
+          int max = -1;
+          List<String> answer = ["Go to Army"];
+          print(scoreKeeper.keys);
+          for (var k in scoreKeeper.keys) {
+            print("$k ${scoreKeeper[k]} max:$max");
 
-        //empty out the scoreKeeper.
-        scoreKeeper = [];
-      }
+            if (scoreKeeper[k] > 0 && scoreKeeper[k] == max) {
+              answer.add(k);
+            } else if (scoreKeeper[k] > max) {
+              max = scoreKeeper[k];
 
-      //If we've not reached the end, ELSE do the answer checking steps below
-      else {
-        // adding user choice
-        if (userPickedAnswer == true) scoreKeeper.add(correctAnswer);
+              answer.clear();
+              answer.add(k);
+            }
+          }
+          //Creating alert
+          Alert(
+            context: context,
+            title: 'Result!',
+            content: Text("Try $answer"),
+          ).show();
+
+          //reset the questionNumber,
+          quizBrain.reset();
+
+          //empty out the scoreKeeper.
+          scoreKeeper = {};
+        }
 
         quizBrain.nextQuestion();
       }
@@ -71,16 +87,19 @@ class _QuizPageState extends State<QuizPage> {
       crossAxisAlignment: CrossAxisAlignment.center,
       children: <Widget>[
         Padding(
-          padding: const EdgeInsets.all(15.0),
+          padding: const EdgeInsets.all(20.0),
           child: Text(
-            "This test will assist you in finding a career based on your interest.",
+            "This test will assist you in finding a career based on these question.",
             textAlign: TextAlign.justify,
             style: kTitleStyle,
           ),
         ),
-        Divider(
-          color: Colors.white,
-          thickness: 1.0,
+        Padding(
+          padding: const EdgeInsets.fromLTRB(0, 0, 0, 15),
+          child: Divider(
+            color: Colors.white,
+            thickness: 1.0,
+          ),
         ),
         Text(
           (quizBrain.getQuestionNumber() + 1).toString() +

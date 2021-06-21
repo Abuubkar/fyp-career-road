@@ -4,12 +4,19 @@ class QuizBrain {
   int _questionNumber = 0;
 
   List<Question> _questionBank = [
-    Question('Some cats are actually allergic to humans', '1'),
-    Question('You can lead a cow down stairs but not up stairs.', '0'),
-    Question('Approximately one quarter of human bones are in the feet.', '1'),
-    Question('A slug\'s blood is green.', '0'),
-    Question('Buzz Aldrin\'s mother\'s maiden name was \"Moon\".', '1'),
-    Question('It is illegal to pee in the Ocean in Portugal.', '1'),
+    Question('Have interest in automating things intelligently ', 'AI/ML'),
+    Question('Like to play with data.', 'AI/ML'),
+    Question('Ever dreamed of making machines as efficient as human.', 'AI/ML'),
+    Question('Have interest in gaming and characters ', 'Game Development'),
+    Question('Like to design characters.', 'Game Development'),
+    Question('Love to design and innovate envirment  ', 'Game Development'),
+    Question('Like to design user interfaces ', 'Development'),
+    Question('Are u coding geek ', 'Development'),
+    Question('Can u work continuously and efficiently ', 'Development'),
+    Question('Are you a perfectionist', 'Quality Assurance'),
+    Question('Love to find bugs and filter out things', 'Quality Assurance'),
+    Question(
+        'Think about all possibilities of a situation', 'Quality Assurance')
   ];
 
   void nextQuestion() {
