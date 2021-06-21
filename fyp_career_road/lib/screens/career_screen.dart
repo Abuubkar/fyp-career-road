@@ -122,7 +122,7 @@ class _CareerScreenState extends State<CareerScreen> {
                 GButton(
                   icon: Icons.alternate_email,
                   text: 'Info',
-                  textStyle: kLabelStyle,
+                  textStyle: kTitleStyle,
                   iconColor: Colors.white,
                   iconActiveColor: Colors.white,
                   onPressed: () {
@@ -175,7 +175,7 @@ class _CareerScreenState extends State<CareerScreen> {
                   const EdgeInsets.symmetric(vertical: 8.0, horizontal: 10.0),
               child: Container(
                   child: Text(
-                careerData,
+                careerData.replaceAll(',', '\n'),
                 textAlign: TextAlign.justify,
                 style: kTextStyle,
               )),
