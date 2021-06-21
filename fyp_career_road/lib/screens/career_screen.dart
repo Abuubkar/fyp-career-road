@@ -183,13 +183,15 @@ class _CareerScreenState extends State<CareerScreen> {
               child: Container(
                 child: makeLink
                     ? ListView.builder(
+                        shrinkWrap: true,
                         itemCount: urlList.length,
                         itemBuilder: (context, index) {
                           return InkWell(
                               onTap: () {
                                 launch(urlList[index]);
                               },
-                              child: Text(urlList[index]));
+                              child: Text(urlList[index] + '\n',
+                                  style: kTextStyle));
                         },
                       )
                     : Text(
