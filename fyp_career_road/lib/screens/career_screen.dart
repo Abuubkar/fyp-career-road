@@ -113,73 +113,75 @@ class _CareerScreenState extends State<CareerScreen> {
         ],
         automaticallyImplyLeading: false,
       ),
-      body: Column(
-        children: [
-          GNav(
-            haptic: true,
-            tabs: [
-              GButton(
-                icon: Icons.alternate_email,
-                text: 'Info',
-                textStyle: kLabelStyle,
-                iconColor: Colors.white,
-                iconActiveColor: Colors.white,
-                onPressed: () {
-                  setState(() {
-                    _selectedIndex = 0;
-                    careerData = widget.career.info;
-                  });
-                },
-              ),
-              GButton(
-                icon: Icons.map,
-                text: 'Roadmap',
-                textStyle: kTitleStyle,
-                iconColor: Colors.white,
-                iconActiveColor: Colors.white,
-                onPressed: () {
-                  setState(() {
-                    _selectedIndex = 1;
-                    careerData = widget.career.roadMap;
-                  });
-                },
-              ),
-              GButton(
-                icon: Icons.forum,
-                text: 'Links',
-                textStyle: kTitleStyle,
-                iconColor: Colors.white,
-                iconActiveColor: Colors.white,
-                onPressed: () {
-                  setState(() {
-                    _selectedIndex = 2;
-                    careerData = widget.career.link;
-                  });
-                },
-              ),
-            ],
-            selectedIndex: _selectedIndex,
-            onTabChange: (index) {
-              setState(() {
-                _selectedIndex = index;
-              });
-            },
-          ),
-          Divider(
-            thickness: 1,
-            color: Colors.white,
-          ),
-          Padding(
-            padding:
-                const EdgeInsets.symmetric(vertical: 8.0, horizontal: 10.0),
-            child: Container(
-                child: Text(
-              careerData,
-              textAlign: TextAlign.justify,
-              style: kTextStyle,
-            )),
-          )
-        ],
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            GNav(
+              haptic: true,
+              tabs: [
+                GButton(
+                  icon: Icons.alternate_email,
+                  text: 'Info',
+                  textStyle: kLabelStyle,
+                  iconColor: Colors.white,
+                  iconActiveColor: Colors.white,
+                  onPressed: () {
+                    setState(() {
+                      _selectedIndex = 0;
+                      careerData = widget.career.info;
+                    });
+                  },
+                ),
+                GButton(
+                  icon: Icons.map,
+                  text: 'Roadmap',
+                  textStyle: kTitleStyle,
+                  iconColor: Colors.white,
+                  iconActiveColor: Colors.white,
+                  onPressed: () {
+                    setState(() {
+                      _selectedIndex = 1;
+                      careerData = widget.career.roadMap;
+                    });
+                  },
+                ),
+                GButton(
+                  icon: Icons.forum,
+                  text: 'Links',
+                  textStyle: kTitleStyle,
+                  iconColor: Colors.white,
+                  iconActiveColor: Colors.white,
+                  onPressed: () {
+                    setState(() {
+                      _selectedIndex = 2;
+                      careerData = widget.career.link;
+                    });
+                  },
+                ),
+              ],
+              selectedIndex: _selectedIndex,
+              onTabChange: (index) {
+                setState(() {
+                  _selectedIndex = index;
+                });
+              },
+            ),
+            Divider(
+              thickness: 1,
+              color: Colors.white,
+            ),
+            Padding(
+              padding:
+                  const EdgeInsets.symmetric(vertical: 8.0, horizontal: 10.0),
+              child: Container(
+                  child: Text(
+                careerData,
+                textAlign: TextAlign.justify,
+                style: kTextStyle,
+              )),
+            )
+          ],
+        ),
       ),
       bottomNavigationBar: BottomNavBar(bottomNavIndex: _bottomNavIndex),
     );
