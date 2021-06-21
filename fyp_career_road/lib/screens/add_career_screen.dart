@@ -3,7 +3,7 @@ import 'package:fyp_career_road/services/firestore.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
 
 import '../components/bottomNavBar.dart';
-import '../utilities/constants.dart';
+import '../models/constants.dart';
 import 'menu_screen.dart';
 
 // In flutter, controllers are a means to give control to the parent widget over its child state

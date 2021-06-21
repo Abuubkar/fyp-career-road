@@ -3,6 +3,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:fyp_career_road/screens/home_screen.dart';
 import 'package:fyp_career_road/screens/login_screen.dart';
+import 'package:fyp_career_road/screens/splash_screen.dart';
 import 'package:fyp_career_road/services/authentication.dart';
 import 'package:provider/provider.dart';
 // Import the firebase_core plugin
@@ -28,7 +29,7 @@ class MyApp extends StatelessWidget {
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
-        home: AuthenticationWrapper(),
+        home: SplashScreen(),
       ),
     );
   }

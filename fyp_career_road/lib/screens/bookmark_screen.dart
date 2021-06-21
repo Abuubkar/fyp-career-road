@@ -4,9 +4,8 @@ import 'package:fyp_career_road/models/bookmark_entity.dart';
 import 'package:fyp_career_road/models/career_entity.dart';
 import 'package:fyp_career_road/screens/career_screen.dart';
 import 'package:fyp_career_road/services/firestore.dart';
-import 'package:fyp_career_road/utilities/constants.dart';
-
-import '../utilities/constants.dart';
+import 'package:fyp_career_road/models/constants.dart';
+import '../models/constants.dart';
 
 class BookmarkScreen extends StatefulWidget {
   @override

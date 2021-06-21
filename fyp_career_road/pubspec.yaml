@@ -26,6 +26,9 @@ dependencies:
   cloud_firestore: ^0.14.0
   rflutter_alert: ^2.0.2
 
+  #spinkit
+  flutter_spinkit: "^4.1.2"
+
 dev_dependencies:
   flutter_test:
     sdk: flutter

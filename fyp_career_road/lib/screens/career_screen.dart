@@ -2,11 +2,10 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:fyp_career_road/components/bottomNavBar.dart';
 import 'package:fyp_career_road/models/career_entity.dart';
-import 'package:fyp_career_road/utilities/constants.dart';
+import 'package:fyp_career_road/models/constants.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:fyp_career_road/services/firestore.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
-import '../utilities/constants.dart';
 
 class CareerScreen extends StatefulWidget {
   final CareerEntity career;

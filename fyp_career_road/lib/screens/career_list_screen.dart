@@ -3,9 +3,7 @@ import 'package:fyp_career_road/components/bottomNavBar.dart';
 import 'package:fyp_career_road/models/career_entity.dart';
 import 'package:fyp_career_road/screens/career_screen.dart';
 import 'package:fyp_career_road/services/firestore.dart';
-import 'package:fyp_career_road/utilities/constants.dart';
-
-import '../utilities/constants.dart';
+import 'package:fyp_career_road/models/constants.dart';
 
 class CareerListScreen extends StatefulWidget {
   @override
@@ -42,10 +40,15 @@ class _CareerListScreenState extends State<CareerListScreen> {
                       itemBuilder: (context, index) {
                         final CareerEntity career = snapshot.data[index];
                         return ListTile(
-                            leading: Text((index + 1).toString(), style: kLabelStyle),
+                            leading: Text((index + 1).toString(),
+                                style: kLabelStyle),
                             title: Text(career.name),
                             onTap: () {
-                              Navigator.push(context, MaterialPageRoute(builder: (context) => CareerScreen(career)));
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) =>
+                                          CareerScreen(career)));
                             });
                       },
                     );

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:fyp_career_road/models/career_entity.dart';
 import 'package:fyp_career_road/screens/search_screen.dart';
 import 'package:fyp_career_road/services/firestore.dart';
-import 'package:fyp_career_road/utilities/constants.dart';
+import 'file:///E:/fyp-career-road/fyp_career_road/lib/models/constants.dart';
 
 class SearchBar extends StatefulWidget {
   @override
@@ -47,7 +47,8 @@ class _SearchBarState extends State<SearchBar> {
           SizedBox(height: MediaQuery.of(context).size.height / 25),
           // ignore: deprecated_member_use
           RaisedButton(
-            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(18.0)),
+            shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(18.0)),
             color: Colors.blue,
             textColor: Colors.white,
             onPressed: searchPressed,
@@ -64,10 +65,12 @@ class _SearchBarState extends State<SearchBar> {
       _queryController.text = _queryController.text.trim();
       // Validate returns true if the form is valid, otherwise false.
       if (formKey.currentState.validate()) {
-        List<CareerEntity> careers = await Database.getCareersByName(_queryController.text);
+        List<CareerEntity> careers =
+            await Database.getCareersByName(_queryController.text);
         // If the form is valid, display a snackbar. In the real world,
         // you'd often call a server or save the information in a database.
-        Navigator.push(context, MaterialPageRoute(builder: (context) => SearchScreen(careers)));
+        Navigator.push(context,
+            MaterialPageRoute(builder: (context) => SearchScreen(careers)));
       }
     }
   }

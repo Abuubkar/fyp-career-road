@@ -3,12 +3,10 @@ import 'package:fyp_career_road/screens/signup_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:fyp_career_road/services/authentication.dart';
-import 'package:fyp_career_road/utilities/constants.dart';
+import 'package:fyp_career_road/models/constants.dart';
 import 'package:fyp_career_road/screens/home_screen.dart';
 import 'package:provider/provider.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
-
-import '../utilities/constants.dart';
 
 // In flutter, controllers are a means to give control to the parent widget over its child state
 class LoginForm extends StatefulWidget {

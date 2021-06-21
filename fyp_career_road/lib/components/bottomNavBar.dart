@@ -2,7 +2,7 @@ import 'package:fyp_career_road/screens/bookmark_screen.dart';
 import 'package:fyp_career_road/screens/career_list_screen.dart';
 import 'package:fyp_career_road/screens/quiz_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:fyp_career_road/utilities/constants.dart';
+import 'file:///E:/fyp-career-road/fyp_career_road/lib/models/constants.dart';
 import 'package:bottom_navy_bar/bottom_navy_bar.dart';
 import 'package:fyp_career_road/screens/menu_screen.dart';
 import 'package:fyp_career_road/screens/home_screen.dart';

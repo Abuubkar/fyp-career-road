@@ -6,7 +6,7 @@ import 'package:rflutter_alert/rflutter_alert.dart';
 
 import '../components/bottomNavBar.dart';
 import '../components/customTextFields.dart';
-import '../utilities/constants.dart';
+import '../models/constants.dart';
 
 class RemoveCareerScreen extends StatefulWidget {
   @override
