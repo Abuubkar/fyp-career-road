@@ -45,7 +45,10 @@ class _CareerScreenState extends State<CareerScreen> {
                     child: Text('Error occurred: ${snapshot.error}'),
                   );
                 } else if (!snapshot.hasData) {
-                  return Center(child: CircularProgressIndicator());
+                  return Padding(
+                    padding: const EdgeInsets.all(20.0),
+                    child: Center(child: CircularProgressIndicator()),
+                  );
                 } else
                   bookmarkIcon = snapshot.data.isNotEmpty
                       ? Icons.bookmark
@@ -131,7 +134,7 @@ class _CareerScreenState extends State<CareerScreen> {
               GButton(
                 icon: Icons.map,
                 text: 'Roadmap',
-                textStyle: kLabelStyle,
+                textStyle: kTitleStyle,
                 iconColor: Colors.white,
                 iconActiveColor: Colors.white,
                 onPressed: () {
@@ -144,7 +147,7 @@ class _CareerScreenState extends State<CareerScreen> {
               GButton(
                 icon: Icons.forum,
                 text: 'Links',
-                textStyle: kLabelStyle,
+                textStyle: kTitleStyle,
                 iconColor: Colors.white,
                 iconActiveColor: Colors.white,
                 onPressed: () {
@@ -167,12 +170,13 @@ class _CareerScreenState extends State<CareerScreen> {
             color: Colors.white,
           ),
           Padding(
-            padding: const EdgeInsets.symmetric(vertical: 8.0),
+            padding:
+                const EdgeInsets.symmetric(vertical: 8.0, horizontal: 10.0),
             child: Container(
                 child: Text(
               careerData,
-              textAlign: TextAlign.center,
-              style: kLabelStyle,
+              textAlign: TextAlign.justify,
+              style: kTextStyle,
             )),
           )
         ],
