@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:fyp_career_road/components/bottomNavBar.dart';
-import 'file:///E:/fyp-career-road/fyp_career_road/lib/models/constants.dart';
-import 'file:///E:/fyp-career-road/fyp_career_road/lib/models/quiz_brain.dart';
+import 'package:fyp_career_road/models/constants.dart';
+import 'package:fyp_career_road/models/quiz_brain.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
 
 QuizBrain quizBrain = QuizBrain();

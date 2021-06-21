@@ -2,7 +2,7 @@ import 'package:fyp_career_road/components/bottomNavBar.dart';
 import 'package:fyp_career_road/screens/edit_career_screen.dart';
 import 'package:fyp_career_road/screens/login_screen.dart';
 import 'package:fyp_career_road/services/authentication.dart';
-import 'file:///E:/fyp-career-road/fyp_career_road/lib/models/constants.dart';
+import 'package:fyp_career_road/models/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:firebase_auth/firebase_auth.dart';

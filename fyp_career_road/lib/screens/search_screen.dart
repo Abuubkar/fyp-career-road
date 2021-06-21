@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:fyp_career_road/components/bottomNavBar.dart';
 import 'package:fyp_career_road/models/career_entity.dart';
 import 'package:fyp_career_road/screens/career_screen.dart';
-import 'file:///E:/fyp-career-road/fyp_career_road/lib/models/constants.dart';
+import 'package:fyp_career_road/models/constants.dart';
 
 class SearchScreen extends StatefulWidget {
   final List<CareerEntity> careers;

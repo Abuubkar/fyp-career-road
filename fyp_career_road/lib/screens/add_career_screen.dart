@@ -4,7 +4,6 @@ import 'package:rflutter_alert/rflutter_alert.dart';
 
 import '../components/bottomNavBar.dart';
 import '../models/constants.dart';
-import 'menu_screen.dart';
 
 // In flutter, controllers are a means to give control to the parent widget over its child state
 class AddCareerScreen extends StatefulWidget {

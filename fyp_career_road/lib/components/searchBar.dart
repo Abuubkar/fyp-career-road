@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:fyp_career_road/models/career_entity.dart';
 import 'package:fyp_career_road/screens/search_screen.dart';
 import 'package:fyp_career_road/services/firestore.dart';
-import 'file:///E:/fyp-career-road/fyp_career_road/lib/models/constants.dart';
+import 'package:fyp_career_road/models/constants.dart';
 
 class SearchBar extends StatefulWidget {
   @override

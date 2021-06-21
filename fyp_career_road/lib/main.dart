@@ -38,6 +38,7 @@ class MyApp extends StatelessWidget {
 class AuthenticationWrapper extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    // ignore: non_constant_identifier_names
     final FirebaseUser = context.watch<User>();
     if (FirebaseUser != null) {
       return HomeScreen();

@@ -16,9 +16,11 @@ class _SplashScreenState extends State<SplashScreen> {
   }
 
   void getData() async {
-    Widget nextWidget = await AuthenticationWrapper();
-    Navigator.push(
-        context, MaterialPageRoute(builder: (context) => nextWidget));
+    Future.delayed(Duration(seconds: 2)).then((val) {
+      return AuthenticationWrapper();
+    });
+    // Navigator.push(context,
+    //     MaterialPageRoute(builder: (context) => AuthenticationWrapper()));
   }
 
   @override

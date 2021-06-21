@@ -142,7 +142,6 @@ abstract class Database {
 
   static Future<String> isBookmarkPresent(String courseName) async {
     String id = '';
-    List<BookmarkEntity> bookmarks = [];
     final String email =
         FirebaseAuth.instance.currentUser?.email ?? "bakar@khawaja.com";
     await _bookmarks

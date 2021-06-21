@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:fyp_career_road/components/customTextFields.dart';
-import 'package:fyp_career_road/screens/career_list_screen.dart';
 import 'package:fyp_career_road/services/firestore.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
 
