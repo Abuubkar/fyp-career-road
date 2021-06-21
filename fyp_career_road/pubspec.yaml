@@ -28,6 +28,7 @@ dependencies:
 
   #spinkit
   flutter_spinkit: "^4.1.2"
+  url_launcher: ^6.0.5
 
 dev_dependencies:
   flutter_test:

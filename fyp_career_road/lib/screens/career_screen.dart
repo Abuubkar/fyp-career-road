@@ -6,6 +6,7 @@ import 'package:fyp_career_road/models/constants.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:fyp_career_road/services/firestore.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class CareerScreen extends StatefulWidget {
   final CareerEntity career;
@@ -22,7 +23,8 @@ class _CareerScreenState extends State<CareerScreen> {
   String careerData = "";
   String isHere = " ";
   IconData bookmarkIcon;
-
+  List<String> urlList = [];
+  bool makeLink = false;
   @override
   void initState() {
     super.initState();
@@ -129,6 +131,7 @@ class _CareerScreenState extends State<CareerScreen> {
                     setState(() {
                       _selectedIndex = 0;
                       careerData = widget.career.info;
+                      makeLink = false;
                     });
                   },
                 ),
@@ -142,6 +145,7 @@ class _CareerScreenState extends State<CareerScreen> {
                     setState(() {
                       _selectedIndex = 1;
                       careerData = widget.career.roadMap;
+                      makeLink = false;
                     });
                   },
                 ),
@@ -153,8 +157,11 @@ class _CareerScreenState extends State<CareerScreen> {
                   iconActiveColor: Colors.white,
                   onPressed: () {
                     setState(() {
+                      makeLink = true;
                       _selectedIndex = 2;
                       careerData = widget.career.link;
+                      urlList = careerData.split(',');
+                      print(urlList);
                     });
                   },
                 ),
@@ -174,11 +181,23 @@ class _CareerScreenState extends State<CareerScreen> {
               padding:
                   const EdgeInsets.symmetric(vertical: 8.0, horizontal: 10.0),
               child: Container(
-                  child: Text(
-                careerData.replaceAll(',', '\n'),
-                textAlign: TextAlign.justify,
-                style: kTextStyle,
-              )),
+                child: makeLink
+                    ? ListView.builder(
+                        itemCount: urlList.length,
+                        itemBuilder: (context, index) {
+                          return InkWell(
+                              onTap: () {
+                                launch(urlList[index]);
+                              },
+                              child: Text(urlList[index]));
+                        },
+                      )
+                    : Text(
+                        careerData.replaceAll(',', '\n'),
+                        textAlign: TextAlign.justify,
+                        style: kTextStyle,
+                      ),
+              ),
             )
           ],
         ),
